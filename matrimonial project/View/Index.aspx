@@ -49,10 +49,13 @@
                             <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Marital Status : </label>
 								<div class="col-sm-7 form_radios">
-									<input runat="server" type="checkbox" class="radio_1" checked="checked"/> Single &nbsp;&nbsp;
-									<input runat="server" type="checkbox" class="radio_1"/> Divorced &nbsp;&nbsp;
-									<input runat="server" type="checkbox" class="radio_1" value="Cheese"/> Widowed &nbsp;&nbsp;
-									<input runat="server" type="checkbox" class="radio_1" value="Cheese"/> Separated &nbsp;&nbsp;
+									<asp:CheckBoxList runat="server" ID="MaritalStatus" OnSelectedIndexChanged="MaritalStatus_SelectedIndexChanged" AutoPostBack="True">
+                                        <Items>
+                                            <asp:ListItem Text="Single" Value="Single"></asp:ListItem>
+                                            <asp:ListItem Text="Married" Value="Married"></asp:ListItem>
+                                            <asp:ListItem Text="Divorced" Value="Divorced"></asp:ListItem>
+                                        </Items>
+                                    </asp:CheckBoxList>
 								</div>
 								<div class="clearfix"> </div>
 							  </div> 
@@ -172,24 +175,37 @@
                               <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Diet : </label>
 								<div class="col-sm-7 form_radios">
-									<input runat="server" type="checkbox" class="radio_1" checked="checked"/> Vegetarian &nbsp;&nbsp;
-									<input runat="server" type="checkbox" class="radio_1"/> Non Vegetarian &nbsp;&nbsp;
+									<asp:CheckBoxList runat="server" ID="Diet" OnSelectedIndexChanged="Diet_SelectedIndexChanged" AutoPostBack="True">
+                                        <Items>
+                                            <asp:ListItem Text="Vegetarian" Value="Vegetarian"></asp:ListItem>
+                                            <asp:ListItem Text="Non Vegetarian" Value="Vegetarian"></asp:ListItem>
+                                            
+                                        </Items>
+                                    </asp:CheckBoxList>
 									</div>
 								<div class="clearfix"> </div>
 							  </div>
                             <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Drink : </label>
 								<div class="col-sm-7 form_radios">
-									<input runat="server" type="checkbox" class="radio_1" checked="checked"/>Drinker  &nbsp;&nbsp;
-									<input runat="server" type="checkbox" class="radio_1"/> Non Drinker &nbsp;&nbsp;
+									<asp:CheckBoxList runat="server" ID="Drink" OnSelectedIndexChanged="Drink_SelectedIndexChanged" AutoPostBack="True">
+                                        <Items>
+                                            <asp:ListItem Text="Drinker" Value="Drinker"></asp:ListItem>
+                                            <asp:ListItem Text="Non Drinker" Value="Non Drinker"></asp:ListItem>                                            
+                                        </Items>
+                                    </asp:CheckBoxList>
 									</div>
 								<div class="clearfix"> </div>
 							  </div>
                             <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Smoke : </label>
 								<div class="col-sm-7 form_radios">
-									<input runat="server" type="checkbox" class="radio_1" checked="checked"/>Smoker  &nbsp;&nbsp;
-									<input runat="server" type="checkbox" class="radio_1"/> Non Smoker &nbsp;&nbsp;
+									<asp:CheckBoxList runat="server" ID="Smoke" OnSelectedIndexChanged="Smoke_SelectedIndexChanged" AutoPostBack="True">
+                                        <Items>
+                                            <asp:ListItem Text="Smoker" Value="Smoker"></asp:ListItem>
+                                            <asp:ListItem Text="Non Smoker" Value="Non Smoker"></asp:ListItem>                                            
+                                        </Items>
+                                    </asp:CheckBoxList>
 									</div>
 								<div class="clearfix"> </div>
 							  </div>
@@ -207,7 +223,8 @@
 							  </div>
 							 
 							  <asp:Button style="width:auto;"  ID="ContentPlaceHolder1_Submit" runat="server" Text="Submit"  OnClick="Submit_Click"  />
-							   <asp:Button ID="ContentPlaceHolder1_Cancel"  runat="server" Text="Cancel"  OnClick="Cancel_Click" />
+							  <asp:Button ID="ContentPlaceHolder1_Cancel"  runat="server" Text="Cancel"  OnClick="Cancel_Click" />
+                                <asp:Label Text="" runat="server"  ID="message" />
 						</div>
 					</div>
 					

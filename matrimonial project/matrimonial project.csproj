@@ -4405,6 +4405,7 @@
     <Content Include="Content\matrimonial\js\utils.js" />
     <Content Include="View\Home.aspx" />
     <Content Include="View\Search.aspx" />
+    <Content Include="View\User.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -4467,6 +4468,13 @@
     </Compile>
     <Compile Include="View\Search.aspx.designer.cs">
       <DependentUpon>Search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\User.aspx.cs">
+      <DependentUpon>User.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\User.aspx.designer.cs">
+      <DependentUpon>User.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -2,6 +2,8 @@
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
+using System.Web;
 using System.Web.UI;
 
 namespace matrimonial_project.View
@@ -58,13 +60,33 @@ namespace matrimonial_project.View
                 {
                     gender = "Female";
                 }
+                HttpPostedFile file = image.PostedFile;
+                string photo = "no image";
+                if (file != null)
+                {
+                    if (!Directory.Exists(Server.MapPath("~/Upload")))
+                    {
+                        Directory.CreateDirectory(Server.MapPath("~/Upload"));
+                    }
 
-                string strQuery = "INSERT INTO dbo.Register (Name,Gender,DateOfBirth,Religion,Mobile,Email,Password,UserStatus) VALUES (@Name,@Gender,@DateOfBirth,@Religion,@Mobile,@Email,@Password,@UserStatus)";
+                    var extension = Path.GetExtension(file.FileName).ToLower();
+                    if (extension == ".png" || extension == ".jpg" || extension == ".jpeg")
+                    {
+                        var filezize = file.ContentLength;
+                        if (filezize <= 1024 * 1024 * 5)
+                        {
+                            var filename = Guid.NewGuid().ToString() + extension;
+                            file.SaveAs(Server.MapPath($"~/Upload/{filename}"));
+                            photo = $"{filename}";
+                        }
+                    }
+                }
+                string strQuery = "INSERT INTO dbo.Profile (Name,Gender,DateOfBirth,MaritalStatus,Nationality,Religion,MotherTongue,Education,Profession,Country,State,District,Mobile,Email,Age,Height,Weight,Complexion,Diet,Drink,Smoker,ProfileImage,ProfileStatus) VALUES (@Name,@Gender,@DateOfBirth,@MaritalStatus,@Nationality,@Religion,@MotherTongue,@Education,@Profession,@Country,@State,@District,@Mobile,@Email,@Age,@Height,@Weight,@Complexion,@Diet,@Drink,@Smoker,@ProfileImage,@ProfileStatus)";
                 SqlCommand cmd = new SqlCommand(strQuery);
                 cmd.Parameters.Add("@Name", SqlDbType.VarChar).Value = Name.Value.Trim();
                 cmd.Parameters.Add("@Gender", SqlDbType.VarChar).Value = gender;
                 cmd.Parameters.Add("@DateOfBirth", SqlDbType.VarChar).Value = DateOfBirth.Value.Trim();
-                cmd.Parameters.Add("@MaritalStatus", SqlDbType.VarChar).Value = 
+                cmd.Parameters.Add("@MaritalStatus", SqlDbType.VarChar).Value =MaritalStatus.SelectedValue;
                 cmd.Parameters.Add("@Nationality", SqlDbType.VarChar).Value = Nationality.Value.Trim();
                 cmd.Parameters.Add("@Religion", SqlDbType.VarChar).Value = religious.Trim();
                 cmd.Parameters.Add("@MotherTongue", SqlDbType.VarChar).Value = Mothertongue.Value.Trim();
@@ -79,32 +101,32 @@ namespace matrimonial_project.View
                 cmd.Parameters.Add("@Height", SqlDbType.Int).Value = height.Value.Trim();
                 cmd.Parameters.Add("@Weight", SqlDbType.Int).Value = Weight.Value.Trim();
                 cmd.Parameters.Add("@Complexion", SqlDbType.VarChar).Value = Complexion.Value.Trim();
-                cmd.Parameters.Add("@Diet", SqlDbType.VarChar).Value =
-                cmd.Parameters.Add("@Drink", SqlDbType.VarChar).Value =
-                cmd.Parameters.Add("@Smoker", SqlDbType.VarChar).Value =
-                cmd.Parameters.Add("@ProfileImage", SqlDbType.VarChar).Value = image.Value.Trim();
-                cmd.Parameters.Add("@UserStatus", SqlDbType.VarChar).Value = "1";
+                cmd.Parameters.Add("@Diet", SqlDbType.VarChar).Value = Diet.SelectedValue;
+                cmd.Parameters.Add("@Drink", SqlDbType.VarChar).Value = Drink.SelectedValue;
+                cmd.Parameters.Add("@Smoker", SqlDbType.VarChar).Value = Smoke.SelectedValue;
+                cmd.Parameters.Add("@ProfileImage", SqlDbType.VarChar).Value = photo;
+                cmd.Parameters.Add("@ProfileStatus", SqlDbType.VarChar).Value = "1";
                 DBconnection conn_ = new DBconnection();
 
                 bool result = conn_.ExecuteData(cmd);
                 if (result)
                 {
 
-                    Response.Redirect("home.aspx", false);
+                    Response.Redirect("User.aspx", false);
 
                 }
                 else
                 {
 
-                    //message.Text = "Sorry Something Went Wrong";
+                    message.Text = "Sorry Something Went Wrong";
 
 
                 }
             }
             catch (Exception ex)
             {
+                message.Text = Convert.ToString(ex);
 
-                
             }
         }
 
@@ -113,6 +135,26 @@ namespace matrimonial_project.View
         protected void Cancel_Click(object sender, EventArgs e)
         {
 
+        }
+
+        protected void MaritalStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.MaritalStatus.Enabled = false;
+        }
+
+        protected void Diet_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.Diet.Enabled = false;
+        }
+
+        protected void Drink_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.Drink.Enabled = false;
+        }
+
+        protected void Smoke_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.Smoke.Enabled = false;
         }
     }
 }

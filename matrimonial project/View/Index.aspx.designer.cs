@@ -49,6 +49,15 @@ namespace matrimonial_project.View {
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl DateOfBirth;
         
         /// <summary>
+        /// MaritalStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBoxList MaritalStatus;
+        
+        /// <summary>
         /// Nationality control.
         /// </summary>
         /// <remarks>
@@ -175,6 +184,33 @@ namespace matrimonial_project.View {
         protected global::System.Web.UI.HtmlControls.HtmlInputText Complexion;
         
         /// <summary>
+        /// Diet control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBoxList Diet;
+        
+        /// <summary>
+        /// Drink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBoxList Drink;
+        
+        /// <summary>
+        /// Smoke control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBoxList Smoke;
+        
+        /// <summary>
         /// image control.
         /// </summary>
         /// <remarks>
@@ -200,5 +236,14 @@ namespace matrimonial_project.View {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button ContentPlaceHolder1_Cancel;
+        
+        /// <summary>
+        /// message control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label message;
     }
 }
