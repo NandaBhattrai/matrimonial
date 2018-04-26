@@ -7,14 +7,9 @@ using System.Web.UI.WebControls;
 
 namespace matrimonial_project.View
 {
-    public partial class User : System.Web.UI.Page
+    public partial class DesiredPartner : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void Search_Click(object sender, EventArgs e)
         {
 
         }

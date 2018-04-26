@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace matrimonial_project.view {
+namespace matrimonial_project.View {
     
     
-    public partial class home {
+    public partial class Home {
         
         /// <summary>
         /// form1 control.
@@ -119,6 +119,15 @@ namespace matrimonial_project.view {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox c1;
+        
+        /// <summary>
+        /// register control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button register;
         
         /// <summary>
         /// message control.

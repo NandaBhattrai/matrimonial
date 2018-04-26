@@ -203,7 +203,7 @@ $(document).ready(function(){
 		   <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 		        <ul class="nav navbar-nav nav_1">
-		            <li class="active"><a href="Home.aspx">Home</a></li>
+		            <li><a href="Home.aspx">Home</a></li>
 		            <li><a href="About.aspx">About</a></li>	            
 		            <li><a href="Search.aspx">Search</a></li>	
 					 <li class="dropdown">

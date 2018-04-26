@@ -3496,7 +3496,11 @@
     <Content Include="Content\matrimonial\fonts\Poppins-Regular.ttf" />
     <Content Include="View\About.aspx" />
     <Content Include="View\Admin\Home.aspx" />
+    <Content Include="View\Admin\Profile.aspx" />
+    <Content Include="View\Admin\Settings.aspx" />
     <Content Include="View\Contact.aspx" />
+    <Content Include="View\DesiredPartner.aspx" />
+    <Content Include="View\Home.aspx" />
     <Content Include="View\Index.aspx" />
     <Content Include="View\Matrimonial.Master" />
     <Content Include="Content\admin\documentation\fonts\fonts\fontawesome-webfont.eot" />
@@ -4403,7 +4407,6 @@
     <Content Include="Content\matrimonial\js\main.js" />
     <Content Include="Content\matrimonial\js\move-top.js" />
     <Content Include="Content\matrimonial\js\utils.js" />
-    <Content Include="View\Home.aspx" />
     <Content Include="View\Search.aspx" />
     <Content Include="View\User.aspx" />
     <Content Include="Web.config">
@@ -4434,12 +4437,33 @@
     <Compile Include="View\Admin\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\Admin\Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Admin\Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\Settings.aspx.cs">
+      <DependentUpon>Settings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Admin\Settings.aspx.designer.cs">
+      <DependentUpon>Settings.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="View\Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\DesiredPartner.aspx.cs">
+      <DependentUpon>DesiredPartner.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\DesiredPartner.aspx.designer.cs">
+      <DependentUpon>DesiredPartner.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>

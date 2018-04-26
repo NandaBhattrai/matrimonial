@@ -1,8 +1,9 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="matrimonial_project.view.home"%>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="matrimonial_project.View.Home" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
      <style>
         /* Paste this css to your style sheet file or under head tag */
@@ -129,6 +130,7 @@ $(document).ready(function(){
 				<div class="w3_modal_body_grid w3_modal_body_grid1">
 					<span>Name:</span>
 					<input id="name" runat="server" type="text" name="Name" placeholder="Enter Name"/>
+                    <small id="namevalidate" style="display:none;">Name is Required</small>
                      <asp:RegularExpressionValidator ID="rev_bname" runat="server"
                             ControlToValidate="Name" 
                             ForeColor="Red" 
@@ -155,12 +157,14 @@ $(document).ready(function(){
 				<div class="w3_modal_body_grid w3_modal_body_grid1">
 					<span>Date Of Birth:</span>
 					<input runat="server" class="date" id="datepick" name="Text" type="date"/>
+                    <small id="datevalidate" style="display:none;">Date is Required</small>
 				</div>
                 <div class="clearfix"></div>
 				<div class="w3_modal_body_grid w3_modal_body_grid1">
 					<span>religion:</span>
-					     <asp:DropDownList ID="religion" runat="server">                                                            
+  					     <asp:DropDownList ID="religion" runat="server">                                                            
                          </asp:DropDownList>
+                    <small id="religionvalidate" style="display:none;">Date is Required</small>
 				</div>
                 <div class="clearfix"></div>
 				<div class="w3_modal_body_grid w3_modal_body_grid1">
@@ -172,6 +176,7 @@ $(document).ready(function(){
                         ForeColor="Red" 
                         ErrorMessage="Invalid Phone Number" ValidationExpression="^[0-9]{10}">
                     </asp:RegularExpressionValidator>
+                    <small id="phonevalidate" style="display:none;">Phone Number is Required</small>
 				  <!-- Load jQuery from CDN so can run demo immediately -->
 				  <script src="../content/matrimonial/js/intlTelInput.js"></script>
 				  <script>
@@ -214,7 +219,7 @@ $(document).ready(function(){
 					<label class="agileits-agree">I have read & agree to the <a href="terms.html">Terms and Conditions</a></label>
 				</div>
              
-                <asp:Button runat="server" Text="Register" OnClick="register_Click" novalidate="novalidate" />
+                <asp:Button runat="server" Text="Register" OnClientClick="return validate()" ID="register" OnClick="register_Click"/>
                 <asp:Label Text="" runat="server"  ID="message" />
 
 				<div class="clearfix"></div>
@@ -414,6 +419,19 @@ $(document).ready(function(){
 	});
 	</script>
 	<!-- //for smooth scrolling -->
-
+    <!--validation-->
+    <script>
+        function validate() {
+            if($('#name').val()=="")
+            {
+                $('#namevalidate').show();
+                return false;
+            }
+            return true;
+        }
+    </script>
+    <!-- validation-->
 </body>
+
+
 </html>

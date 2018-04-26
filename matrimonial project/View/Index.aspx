@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Matrimonial.Master" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="matrimonial_project.View.Index" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -56,6 +57,9 @@
                                             <asp:ListItem Text="Divorced" Value="Divorced"></asp:ListItem>
                                         </Items>
                                     </asp:CheckBoxList>
+                                    <input type="checkbox" id="single" onchange="validate()" />Single
+                                    <input type="checkbox" id="married" onchange="validate()"/>Married
+                                    <input type="checkbox" id="divorce" />Divorced
 								</div>
 								<div class="clearfix"> </div>
 							  </div> 
@@ -124,7 +128,14 @@
 								     <input runat="server" id="city" type="text" />
 								</div>
 								<div class="clearfix"> </div>
-							  </div>							 
+							  </div>
+                            <div class="form_but1">
+								<label class="col-sm-5 control-label1" for="sex">Stay : </label>
+								<div class="col-sm-7 form_radios">
+								    <input runat="server" id="Stay" type="text" placeholder="Current Stay Address"/>
+								</div>
+								<div class="clearfix"> </div>
+							 </div>							 
                             <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Phone Number : </label>
 								<div class="col-sm-7 form_radios">
@@ -139,7 +150,6 @@
 								</div>
 								<div class="clearfix"> </div>
 							  </div>
-
                              <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex"><h3>Other Details</h3> </label>
                                 <div class="clearfix"></div>
@@ -188,7 +198,7 @@
                             <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Drink : </label>
 								<div class="col-sm-7 form_radios">
-									<asp:CheckBoxList runat="server" ID="Drink" OnSelectedIndexChanged="Drink_SelectedIndexChanged" AutoPostBack="True">
+									<asp:CheckBoxList runat="server" ID="Drink" OnSelectedIndexChanged="Drink_SelectedIndexChanged" AutoPostBack="true">
                                         <Items>
                                             <asp:ListItem Text="Drinker" Value="Drinker"></asp:ListItem>
                                             <asp:ListItem Text="Non Drinker" Value="Non Drinker"></asp:ListItem>                                            
@@ -197,10 +207,19 @@
 									</div>
 								<div class="clearfix"> </div>
 							  </div>
+                             <div class="form_but1">
+								<label class="col-sm-5 control-label1" for="sex">Smoke : </label>
+								<div class="col-sm-7 form_radios">
+									<input runat="server" name="myCheckbox" type="checkbox" id="Check1" value="Smoker" onclick="selectOnlyThis(this.id)"/> Smoker
+                                    <input runat="server" name="myCheckbox" type="checkbox" id="Check2" value="Non Smoker" onclick="selectOnlyThis(this.id)"/> Non Smoker
+                               
+									</div>
+								<div class="clearfix"> </div>
+							  </div>
                             <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Smoke : </label>
 								<div class="col-sm-7 form_radios">
-									<asp:CheckBoxList runat="server" ID="Smoke" OnSelectedIndexChanged="Smoke_SelectedIndexChanged" AutoPostBack="True">
+									<asp:CheckBoxList runat="server" ID="Smoke" OnSelectedIndexChanged="Smoke_SelectedIndexChanged" AutoPostBack="true">
                                         <Items>
                                             <asp:ListItem Text="Smoker" Value="Smoker"></asp:ListItem>
                                             <asp:ListItem Text="Non Smoker" Value="Non Smoker"></asp:ListItem>                                            
@@ -216,12 +235,62 @@
 							  <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Profile : </label>
 								<div class="col-sm-7 form_radios">
-									<input id="image" type="file" runat="server" />
-									
+									<input id="image" type="file" runat="server" />									
 								</div>
 								<div class="clearfix"> </div>
 							  </div>
-							 
+							 <div class="form_but1">
+								<label class="col-sm-5 control-label1" for="sex"><h3>Family Details</h3> </label>
+                                <div class="clearfix"></div>
+							</div>
+                            <div class="form_but1">
+								<label class="col-sm-5 control-label1" for="sex">Family Members : </label>
+								<div class="col-sm-7 form_radios">
+								     <input runat="server" id="Family" type="number" />
+								</div>
+								<div class="clearfix"> </div>
+							  </div>
+                            <div class="form_but1">
+								<label class="col-sm-5 control-label1" for="sex">Father : </label>
+								<div class="col-sm-7 form_radios">
+                                       <input runat="server" id="FName" type="text" placeholder="Name" />
+								     <input runat="server" id="FProfession" type="text" placeholder="Profession" />
+								</div>
+								<div class="clearfix"> </div>
+							  </div>
+                            <div class="form_but1">
+								<label class="col-sm-5 control-label1" for="sex">Mother : </label>
+								<div class="col-sm-7 form_radios">
+                                    <input runat="server" id="MName" type="text" placeholder="Name" />
+								     <input runat="server" id="MProfession" type="text" placeholder="Profession" />
+								</div>
+								<div class="clearfix"> </div>
+							  </div>
+                            <div class="form_but1">
+								<label class="col-sm-5 control-label1" for="sex">Brother : </label>
+								<div class="col-sm-7 form_radios">
+                                    <textarea runat="server" id="Brother"></textarea>
+								</div>
+								<div class="clearfix"> </div>
+							  </div>
+                            <div class="form_but1">
+								<label class="col-sm-5 control-label1" for="sex">Sister : </label>
+								<div class="col-sm-7 form_radios">
+                                    <textarea runat="server" id="Sister"></textarea>
+								</div>
+								<div class="clearfix"> </div>
+							  </div>
+                            <div class="form_but1">
+								<label class="col-sm-5 control-label1" for="sex"><h3>Brief About Yourself</h3> </label>
+                                <div class="clearfix"></div>
+							</div>
+                                <div class="form_but1">
+								<label class="col-sm-5 control-label1" for="sex">Yourself : </label>
+								<div class="col-sm-7 form_radios">
+                                    <textarea runat="server" id="MySelf"></textarea>
+								</div>
+								<div class="clearfix"> </div>
+							  </div>
 							  <asp:Button style="width:auto;"  ID="ContentPlaceHolder1_Submit" runat="server" Text="Submit"  OnClick="Submit_Click"  />
 							  <asp:Button ID="ContentPlaceHolder1_Cancel"  runat="server" Text="Cancel"  OnClick="Cancel_Click" />
                                 <asp:Label Text="" runat="server"  ID="message" />
@@ -231,7 +300,20 @@
 				</div>
 			</div>
 		</div>
-		
+		<script type="text/javascript">
+		    function validate() {
+		        if ($('#single').prop(':checked')) {
+		            $('#married').attr('checked', false);
+		            $('#divorce').attr('checked', false);
+		        }
+		        if ($('#married').prop(':checked')) {
+		            $('#single').attr('checked', false);
+		            $('#divorce').attr('checked', false);
+		        }
+		    }
+		    
+		    
+		</script>
 	<div class="clearfix"></div>
 	</div>
 	</div>
@@ -257,6 +339,9 @@
 			});
 	 
 		});
+
+       
+
 	</script>
 	
 </asp:Content>

@@ -112,7 +112,7 @@ namespace matrimonial_project.View
                 if (result)
                 {
 
-                    Response.Redirect("User.aspx", false);
+                    Response.Redirect("DesiredPartner.aspx", false);
 
                 }
                 else
