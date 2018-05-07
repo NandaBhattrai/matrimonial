@@ -11,7 +11,13 @@ namespace matrimonial_project.view
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!string.IsNullOrEmpty(Session["Name"].ToString()))
+            {
+                string UserName_ = (string)(Session["Name"]);
+                UserName.Text = UserName_.ToString();               
+            }
+            else
+                Response.Redirect("../Home.aspx", false);
         }
     }
 }

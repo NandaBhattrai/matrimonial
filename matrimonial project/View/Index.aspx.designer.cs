@@ -13,6 +13,15 @@ namespace matrimonial_project.View {
     public partial class Index {
         
         /// <summary>
+        /// register control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl register;
+        
+        /// <summary>
         /// Name control.
         /// </summary>
         /// <remarks>
@@ -49,13 +58,31 @@ namespace matrimonial_project.View {
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl DateOfBirth;
         
         /// <summary>
-        /// MaritalStatus control.
+        /// Single control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList MaritalStatus;
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox Single;
+        
+        /// <summary>
+        /// Married control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox Married;
+        
+        /// <summary>
+        /// Divorced control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox Divorced;
         
         /// <summary>
         /// Nationality control.
@@ -67,22 +94,49 @@ namespace matrimonial_project.View {
         protected global::System.Web.UI.HtmlControls.HtmlInputText Nationality;
         
         /// <summary>
-        /// religion control.
+        /// Religion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList religion;
+        protected global::System.Web.UI.WebControls.DropDownList Religion;
         
         /// <summary>
-        /// Mothertongue control.
+        /// Caste control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Mothertongue;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Caste;
+        
+        /// <summary>
+        /// MotherTongue control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText MotherTongue;
+        
+        /// <summary>
+        /// KnownLanguage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText KnownLanguage;
+        
+        /// <summary>
+        /// Blood control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Blood;
         
         /// <summary>
         /// Education control.
@@ -103,13 +157,13 @@ namespace matrimonial_project.View {
         protected global::System.Web.UI.HtmlControls.HtmlInputText Profession;
         
         /// <summary>
-        /// country control.
+        /// Country control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText country;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Country;
         
         /// <summary>
         /// State control.
@@ -121,13 +175,13 @@ namespace matrimonial_project.View {
         protected global::System.Web.UI.HtmlControls.HtmlInputText State;
         
         /// <summary>
-        /// city control.
+        /// City control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText city;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText City;
         
         /// <summary>
         /// Stay control.
@@ -157,22 +211,22 @@ namespace matrimonial_project.View {
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl Email;
         
         /// <summary>
-        /// age control.
+        /// Age control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl age;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl Age;
         
         /// <summary>
-        /// height control.
+        /// Height control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl height;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl Height;
         
         /// <summary>
         /// Weight control.
@@ -193,121 +247,76 @@ namespace matrimonial_project.View {
         protected global::System.Web.UI.HtmlControls.HtmlInputText Complexion;
         
         /// <summary>
-        /// Diet control.
+        /// Vegetarian control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList Diet;
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox Vegetarian;
         
         /// <summary>
-        /// Drink control.
+        /// Non_Vegetarian control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList Drink;
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox Non_Vegetarian;
         
         /// <summary>
-        /// Check1 control.
+        /// Drinker control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox Check1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox Drinker;
         
         /// <summary>
-        /// Check2 control.
+        /// Non_Drinker control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox Check2;
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox Non_Drinker;
         
         /// <summary>
-        /// Smoke control.
+        /// Smoker control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList Smoke;
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox Smoker;
         
         /// <summary>
-        /// image control.
+        /// Non_Smoker control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputFile image;
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox Non_Smoker;
         
         /// <summary>
-        /// Family control.
+        /// Image control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl Family;
+        protected global::System.Web.UI.HtmlControls.HtmlInputFile Image;
         
         /// <summary>
-        /// FName control.
+        /// Textarea1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText FName;
-        
-        /// <summary>
-        /// FProfession control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText FProfession;
-        
-        /// <summary>
-        /// MName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText MName;
-        
-        /// <summary>
-        /// MProfession control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText MProfession;
-        
-        /// <summary>
-        /// Brother control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea Brother;
-        
-        /// <summary>
-        /// Sister control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea Sister;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea Textarea1;
         
         /// <summary>
         /// MySelf control.

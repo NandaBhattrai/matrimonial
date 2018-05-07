@@ -13,10 +13,6 @@ namespace matrimonial_project.View
         {
 
         }
-
-        protected void Search_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

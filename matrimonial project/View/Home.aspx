@@ -164,7 +164,7 @@ $(document).ready(function(){
 					<span>religion:</span>
   					     <asp:DropDownList ID="religion" runat="server">                                                            
                          </asp:DropDownList>
-                    <small id="religionvalidate" style="display:none;">Date is Required</small>
+                    <small id="religionvalidate" style="display:none;"> is Required</small>
 				</div>
                 <div class="clearfix"></div>
 				<div class="w3_modal_body_grid w3_modal_body_grid1">

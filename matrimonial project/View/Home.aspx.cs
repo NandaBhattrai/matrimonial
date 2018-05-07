@@ -61,7 +61,7 @@ namespace matrimonial_project.View
                     string strQuery = "SELECT Name,Password FROM dbo.Register WHERE Name=@Name AND Password=@Password";
                     SqlCommand cmd = new SqlCommand(strQuery);
                     cmd.Parameters.Add("@Name", SqlDbType.VarChar).Value = user.Value.Trim();
-                    cmd.Parameters.Add("@Password", SqlDbType.VarChar).Value = password.Value.Trim();
+                    cmd.Parameters.Add("@Password", SqlDbType.VarChar).Value = pass.Value.Trim();
                     DBconnection conn_ = new DBconnection();
                     dt = conn_.SelectData(cmd);
                     if (dt.Rows.Count > 0)
@@ -69,7 +69,7 @@ namespace matrimonial_project.View
                         DataRow row = dt.Rows[0];
                         Session["Name"] = row["Name"].ToString();
                         Session["Password"] = row["Password"].ToString();
-                        Response.Redirect("Home.aspx", false);
+                        Response.Redirect("Index.aspx", false);
                     }
                     else
                     {
@@ -107,10 +107,8 @@ namespace matrimonial_project.View
 
         protected void register_Click(object sender, EventArgs e)
         {
-
             try
             {
-
                 string religious = religion.SelectedItem.ToString();
                 bool male = rad_male.Checked;
                 bool female = rad_female.Checked;
@@ -139,16 +137,14 @@ namespace matrimonial_project.View
                 bool result = conn_.ExecuteData(cmd);
                 if (result)
                 {
-
+                    message.Visible = true;
+                    message.Text = "Successfully Registered";
                     Response.Redirect("home.aspx", false);
-
                 }
                 else
                 {
-
+                    message.Visible = true;
                     message.Text = "Sorry Something Went Wrong";
-
-
                 }
             }
             catch (Exception ex)

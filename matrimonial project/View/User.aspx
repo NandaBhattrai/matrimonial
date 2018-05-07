@@ -36,35 +36,12 @@
 				<div class="agileits_aboutme">
 					<h4>About me</h4>
 					<h5>Brief about me:</h5>
-					
-					<h5>Family Details:</h5>
+                    <div class="form_but1">
+						
+					</div>					
+					<h5>Family Details:</h5>		
 					<div class="form_but1">
-						<label class="col-sm-3 control-label1">Mother : </label>
-						<div class="col-sm-9 w3_details">
-				        
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-					<div class="form_but1">
-						<label class="col-sm-3 control-label1">Father : </label>
-						<div class="col-sm-9 w3_details">
-							
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-					<div class="form_but1">
-						<label class="col-sm-3 control-label1">Sister's : </label>
-						<div class="col-sm-9 w3_details">
-							
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-					<div class="form_but1">
-						<label class="col-sm-3 control-label1">Brother's : </label>
-						<div class="col-sm-9 w3_details">
-							
-						</div>
-						<div class="clearfix"> </div>
+						
 					</div>			
 					<h5>Education Details:</h5>
 					<div class="form_but1">
@@ -174,7 +151,7 @@
 			<h3>Search by Profile ID:</h3>
 		
 				<input class="form-control" type="text" name="profile_id" placeholder="Enter ID" required=""/>
-				<asp:Button runat="server" ID="Search" Text="Search" OnClick="Search_Click" />
+				<asp:Button runat="server" ID="Search" Text="Search"/>
 				<div class="clearfix"></div>
 			
 			<div class="view_profile">
@@ -208,19 +185,18 @@
 						<h4 class="modal-title">Login to Continue</h4>
 					  </div>
 					  <div class="modal-body">
-						<div class="login-w3ls">
-							<form id="signin" action="#" method="post">
+						<div class="login-w3ls">							
 								<label>User Name </label>
-								<input type="text" name="User Name" placeholder="Username" required="">
+								<input type="text" name="User Name" placeholder="Username" required=""/>
 								<label>Password</label>
-								<input type="password" name="Password" placeholder="Password" required="">	
+								<input type="password" name="Password" placeholder="Password" required=""/>	
 								<div class="w3ls-loginr"> 
-									<input type="checkbox" id="brand" name="checkbox" value="">
+									<input type="checkbox" id="brand" name="checkbox" value=""/>
 									<span> Remember me ?</span> 
 									<a href="#">Forgot password ?</a>
 								</div>
 								<div class="clearfix"> </div>
-								<input type="submit" name="submit" value="Login">
+								<input type="submit" name="submit" value="Login"/>
 								<div class="clearfix"> </div>
 								<div class="social-icons">
 									<ul>  
@@ -228,8 +204,7 @@
 										<li class="twt"><a href="#"><span class="icons"><i class="fa fa-twitter" aria-hidden="true"></i></span><span class="text">Twitter</span></a></li>  
 									</ul> 
 									<div class="clearfix"> </div>
-								</div>	
-							</form>
+								</div>								
 						</div>
 					  </div>
 					</div>
