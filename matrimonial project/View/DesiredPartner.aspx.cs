@@ -84,8 +84,8 @@ namespace matrimonial_project.View
                         Smoke = "Smoker";
                     else
                         Smoke = "Non Smoker";
-                    int val;
-                    string Query = "INSERT INTO dbo.UserProfile (Gender,MaritalStatus,Religion,Caste,Education,Profession,Country,Agefrom,AgeTo,HeightFrom,HeightTo,Complexion,Diet,Drink,Smoke,RegisterId) VALUES (@Gender,@MaritalStatus,@Religion,@Caste,@Education,@Profession,@Country,@Agefrom,@AgeTo,@HeightFrom,@HeightTo,@Complexion,@Diet,@Drink,@Smoke,@RegisterId)";
+                    
+                    string Query = "INSERT INTO dbo.Partner (Gender,MaritalStatus,Religion,Caste,Education,Profession,Country,Agefrom,AgeTo,HeightFrom,HeightTo,Complexion,Diet,Drink,Smoke,RegisterId) VALUES (@Gender,@MaritalStatus,@Religion,@Caste,@Education,@Profession,@Country,@Agefrom,@AgeTo,@HeightFrom,@HeightTo,@Complexion,@Diet,@Drink,@Smoke,@RegisterId)";
                     SqlCommand cmmd = new SqlCommand(Query);
                     cmmd.Parameters.Add("@Gender", SqlDbType.VarChar).Value =Gender;
                     cmmd.Parameters.Add("@MaritalStatus", SqlDbType.VarChar).Value = Marital;
@@ -94,10 +94,10 @@ namespace matrimonial_project.View
                     cmmd.Parameters.Add("@Education", SqlDbType.VarChar).Value = Education.Value.Trim();
                     cmmd.Parameters.Add("@Profession", SqlDbType.VarChar).Value = Profession.Value.Trim();
                     cmmd.Parameters.Add("@Country", SqlDbType.VarChar).Value = Country.Value.Trim();
-                    cmmd.Parameters.Add("@AgeFrom", SqlDbType.Int).Value =int.TryParse(AgeFrom.Value,out val);
-                    cmmd.Parameters.Add("@AgeTo", SqlDbType.Int).Value = int.TryParse(AgeTo.Value, out val);
-                    cmmd.Parameters.Add("@HeightFrom", SqlDbType.Int).Value =int.TryParse(HeightFrom.Value,out val);
-                    cmmd.Parameters.Add("@HeightTo", SqlDbType.Int).Value =int.TryParse(HeightTo.Value,out val);
+                    cmmd.Parameters.Add("@AgeFrom", SqlDbType.Int).Value =Convert.ToInt32(AgeFrom.Value);
+                    cmmd.Parameters.Add("@AgeTo", SqlDbType.Int).Value = Convert.ToInt32(AgeTo.Value);
+                    cmmd.Parameters.Add("@HeightFrom", SqlDbType.Float).Value =Convert.ToDouble(HeightFrom.Value);
+                    cmmd.Parameters.Add("@HeightTo", SqlDbType.Float).Value =Convert.ToDouble(HeightTo.Value);
                     cmmd.Parameters.Add("@Complexion", SqlDbType.VarChar).Value = complexion.Value.Trim();
                     cmmd.Parameters.Add("@Diet", SqlDbType.VarChar).Value = Diet;
                     cmmd.Parameters.Add("@Drink", SqlDbType.VarChar).Value = Drink;

@@ -4408,6 +4408,7 @@
     <Content Include="Content\matrimonial\js\move-top.js" />
     <Content Include="Content\matrimonial\js\utils.js" />
     <Content Include="View\Search.aspx" />
+    <Content Include="View\SearchResult.aspx" />
     <Content Include="View\Settings.aspx" />
     <Content Include="View\User.aspx" />
     <Content Include="Web.config">
@@ -4493,6 +4494,13 @@
     </Compile>
     <Compile Include="View\Search.aspx.designer.cs">
       <DependentUpon>Search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\SearchResult.aspx.cs">
+      <DependentUpon>SearchResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\SearchResult.aspx.designer.cs">
+      <DependentUpon>SearchResult.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Settings.aspx.cs">
       <DependentUpon>Settings.aspx</DependentUpon>
