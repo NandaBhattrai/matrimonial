@@ -22,10 +22,10 @@
 					<div>	
 						<div class="w3_regular_search">
                             <div class="form_but1">
-								<label class="col-sm-5 control-label1" for="sex"><h3>Profile Details</h3> </label>
-                                <input id="register" runat="server" type="number" Visible="false"/>
+								<label class="col-sm-5 control-label1" for="sex"><h3>Profile Details</h3> </label>                                
                                 <div class="clearfix"></div>
 							</div>
+                             <asp:Label Text="" runat="server"  ID="message" CssClass="alert" />
 							<div class="form_but1">                            
 								<label class="col-sm-5 control-label1" for="sex">Name : </label>
 								<div class="col-sm-7 form_radios">    
@@ -96,7 +96,16 @@
                             <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Blood Group : </label>
 								<div class="col-sm-7 form_radios">
-								  <input runat="server" id="Blood" type="text" />
+								  <select id="BloodGroup" runat="server">
+                                        <option runat="server" value="O+">O+</option>
+                                        <option runat="server" value="O-">O-</option>
+                                        <option runat="server" value="A+">A+</option>
+                                        <option runat="server" value="A-">A-</option>
+                                        <option runat="server" value="B+">B+</option>
+                                        <option runat="server" value="B-">B-</option>
+                                        <option runat="server" value="AB+">AB+</option>
+                                        <option runat="server" value="AB-">AB-</option>
+								  </select>
 								</div>
 								<div class="clearfix"> </div>
 							  </div>
@@ -256,7 +265,7 @@
 							  </div>
 							  <asp:Button style="width:auto;"  ID="ContentPlaceHolder1_Submit" runat="server" Text="Submit"  OnClick="Submit_Click"  />
 							  <asp:Button ID="ContentPlaceHolder1_Cancel"  runat="server" Text="Cancel"  OnClick="Cancel_Click" />
-                                <asp:Label Text="" runat="server"  ID="message" />
+                               
 						</div>
 					</div>
 					

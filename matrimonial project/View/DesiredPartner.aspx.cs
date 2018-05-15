@@ -50,18 +50,6 @@ namespace matrimonial_project.View
         {
             try
             {
-                DataTable dt = new DataTable();
-                string UserName_ = (Session["Name"]).ToString();
-                string strQuery = "SELECT  UserId FROM dbo.Register WHERE Name=@Name";
-                SqlCommand cmd = new SqlCommand(strQuery);
-                cmd.Parameters.Add("@Name", SqlDbType.VarChar).Value = UserName_;
-                DBconnection conn_ = new DBconnection();
-                dt = conn_.SelectData(cmd);
-                if (dt.Rows.Count > 0)
-                {
-                    DataRow row = dt.Rows[0];
-                    ProfileId.Value = row["UserId"].ToString();
-
                     string Religious = Religion.SelectedItem.ToString();
                     bool male = rad_male.Checked;
                     bool female = rad_female.Checked;
@@ -97,7 +85,7 @@ namespace matrimonial_project.View
                     else
                         Smoke = "Non Smoker";
                     int val;
-                    string Query = "INSERT INTO dbo.UserProfile (Gender,MaritalStatus,Religion,Caste,Education,Profession,Country,Agefrom,AgeTo,HeightFrom,HeightTo,Complexion,Diet,Drink,Smoke,ProfileId) VALUES (@Gender,@MaritalStatus,@Religion,@Caste,@Education,@Profession,@Country,@Agefrom,@AgeTo,@HeightFrom,@HeightTo,@Complexion,@Diet,@Drink,@Smoke,@ProfileId)";
+                    string Query = "INSERT INTO dbo.UserProfile (Gender,MaritalStatus,Religion,Caste,Education,Profession,Country,Agefrom,AgeTo,HeightFrom,HeightTo,Complexion,Diet,Drink,Smoke,RegisterId) VALUES (@Gender,@MaritalStatus,@Religion,@Caste,@Education,@Profession,@Country,@Agefrom,@AgeTo,@HeightFrom,@HeightTo,@Complexion,@Diet,@Drink,@Smoke,@RegisterId)";
                     SqlCommand cmmd = new SqlCommand(Query);
                     cmmd.Parameters.Add("@Gender", SqlDbType.VarChar).Value =Gender;
                     cmmd.Parameters.Add("@MaritalStatus", SqlDbType.VarChar).Value = Marital;
@@ -114,7 +102,7 @@ namespace matrimonial_project.View
                     cmmd.Parameters.Add("@Diet", SqlDbType.VarChar).Value = Diet;
                     cmmd.Parameters.Add("@Drink", SqlDbType.VarChar).Value = Drink;
                     cmmd.Parameters.Add("@Smoke", SqlDbType.VarChar).Value = Smoke;
-                    cmmd.Parameters.Add("@ProfileId", SqlDbType.Int).Value = int.TryParse(ProfileId.Value, out val);
+                    cmmd.Parameters.Add("@RegisterId", SqlDbType.Int).Value = Convert.ToInt32(Session["UserId"]);
                     DBconnection conn = new DBconnection();
                     bool result = conn.ExecuteData(cmmd);
                     if (result)
@@ -125,12 +113,6 @@ namespace matrimonial_project.View
                     {
                         message.Text = "Sorry Something Went Wrong";
                     }
-                }
-                else
-                {
-                    message.Visible = true;
-                    message.Text = "ProfileId is not defined!!!!!";
-                }
            }
             catch (Exception ex)
             {

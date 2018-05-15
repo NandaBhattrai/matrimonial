@@ -12,6 +12,7 @@ namespace matrimonial_project.View
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+             
             try
             {
                 if (!Page.IsPostBack)
@@ -25,13 +26,31 @@ namespace matrimonial_project.View
                         Religion.DataValueField = "ReligionId";
                         Religion.DataBind();
                     }
+                    DataTable value = this.getValue();
+                    if (value.Rows.Count > 0)
+                    {
+                        DataRow row = value.Rows[0];                       
+                        Name.Value = row["Name"].ToString();
+                        DateOfBirth.Value = row["DateOfBirth"].ToString();
+                        Phone.Value = row["Mobile"].ToString();
+                        Email.Value = row["Email"].ToString();              
+                    }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-
+                message.Text = Convert.ToString(ex);
             }
+        }
+
+        private DataTable getValue()
+        {
+            DataTable dt = new DataTable();
+            string strQuery = "SELECT * FROM dbo.Register";
+            SqlCommand cmd = new SqlCommand(strQuery);
+            DBconnection conn_ = new DBconnection();
+            dt = conn_.SelectData(cmd);
+            return dt;
         }
 
         private DataTable getreligion()
@@ -48,20 +67,9 @@ namespace matrimonial_project.View
         {
             try
             {
-                DataTable dt = new DataTable();
-                string UserName_ = (Session["Name"]).ToString();
-                string strQuery = "SELECT  UserId FROM dbo.Register WHERE Name=@Name";
-                SqlCommand cmd = new SqlCommand(strQuery);
-                cmd.Parameters.Add("@Name", SqlDbType.VarChar).Value = UserName_;
-                DBconnection conn_ = new DBconnection();
-                dt = conn_.SelectData(cmd);
-                if (dt.Rows.Count > 0)
-                {
-                    DataRow row = dt.Rows[0];
-                    register.Value = row["UserId"].ToString();
-
-                    string Religious = Religion.SelectedItem.ToString();
-                    bool male = rad_male.Checked;
+                   string Religious = Religion.SelectedItem.ToString();
+                     string Blood = BloodGroup.SelectedIndex.ToString();
+                bool male = rad_male.Checked;
                     bool female = rad_female.Checked;
                     string Gender;
                     if (male)
@@ -121,8 +129,8 @@ namespace matrimonial_project.View
                             }
                         }
                     }
-                    int val;
-                    string Query = "INSERT INTO dbo.UserProfile (Name,Gender,DateOfBirth,MaritalStatus,Nationality,Religion,Caste,MotherTongue,KnownLanguage,BloodGroup,Education,Profession,Country,State,District,Stay,Mobile,Email,Age,Height,Weight,Complexion,Diet,Drink,Smoker,ProfileImage,Family,Yourself,ProfileStatus,RegisterId) VALUES (@Name,@Gender,@DateOfBirth,@MaritalStatus,@Nationality,@Religion,@Caste,@MotherTongue,@KnownLanguage,@BloodGroup,@Education,@Profession,@Country,@State,@District,@Stay,@Mobile,@Email,@Age,@Height,@Weight,@Complexion,@Diet,@Drink,@Smoker,@ProfileImage,@Family,@Yourself,@ProfileStatus,@RegisterId)";
+                    
+                    string Query = "INSERT INTO dbo.UserProfile (Name,Gender,DateOfBirth,MaritalStatus,Nationality,Religion,Caste,MotherTongue,KnownLanguage,BloodGroup,Education,Profession,Country,State,District,Stay,Mobile,Email,Age,Weight,Complexion,Diet,Drink,Smoker,ProfileImage,Family,Yourself,ProfileStatus,RegisterId,Height) VALUES (@Name,@Gender,@DateOfBirth,@MaritalStatus,@Nationality,@Religion,@Caste,@MotherTongue,@KnownLanguage,@BloodGroup,@Education,@Profession,@Country,@State,@District,@Stay,@Mobile,@Email,@Age,@Weight,@Complexion,@Diet,@Drink,@Smoker,@ProfileImage,@Family,@Yourself,@ProfileStatus,@RegisterId,@Height)";
                     SqlCommand cmmd = new SqlCommand(Query);
                     cmmd.Parameters.Add("@Name", SqlDbType.VarChar).Value = Name.Value.Trim();
                     cmmd.Parameters.Add("@Gender", SqlDbType.VarChar).Value = Gender;
@@ -133,7 +141,7 @@ namespace matrimonial_project.View
                     cmmd.Parameters.Add("@Caste", SqlDbType.VarChar).Value = Caste.Value.Trim();
                     cmmd.Parameters.Add("@MotherTongue", SqlDbType.VarChar).Value = MotherTongue.Value.Trim();
                     cmmd.Parameters.Add("@KnownLanguage", SqlDbType.VarChar).Value = KnownLanguage.Value.Trim();
-                    cmmd.Parameters.Add("@BloodGroup", SqlDbType.VarChar).Value = Blood.Value.Trim();
+                    cmmd.Parameters.Add("@BloodGroup", SqlDbType.VarChar).Value = Blood;
                     cmmd.Parameters.Add("@Education", SqlDbType.VarChar).Value = Education.Value.Trim();
                     cmmd.Parameters.Add("@Profession", SqlDbType.VarChar).Value = Profession.Value.Trim();
                     cmmd.Parameters.Add("@Country", SqlDbType.VarChar).Value = Country.Value.Trim();
@@ -142,9 +150,8 @@ namespace matrimonial_project.View
                     cmmd.Parameters.Add("@Stay", SqlDbType.VarChar).Value = Stay.Value.Trim();
                     cmmd.Parameters.Add("@Mobile", SqlDbType.VarChar).Value = Phone.Value.Trim();
                     cmmd.Parameters.Add("@Email", SqlDbType.VarChar).Value = Email.Value.Trim();
-                    cmmd.Parameters.Add("@Age", SqlDbType.Int).Value =int.TryParse(Age.Value,out val);
-                    cmmd.Parameters.Add("@Height", SqlDbType.Int).Value =int.TryParse(Height.Value,out val);
-                    cmmd.Parameters.Add("@Weight", SqlDbType.Int).Value = int.TryParse(Weight.Value,out val);
+                    cmmd.Parameters.Add("@Age", SqlDbType.Int).Value =Convert.ToInt16(Age.Value.Trim());                    
+                    cmmd.Parameters.Add("@Weight", SqlDbType.Int).Value =Convert.ToInt16(Weight.Value.Trim());
                     cmmd.Parameters.Add("@Complexion", SqlDbType.VarChar).Value = Complexion.Value.Trim();
                     cmmd.Parameters.Add("@Diet", SqlDbType.VarChar).Value = Diet;
                     cmmd.Parameters.Add("@Drink", SqlDbType.VarChar).Value = Drink;
@@ -153,9 +160,10 @@ namespace matrimonial_project.View
                     cmmd.Parameters.Add("@Family", SqlDbType.VarChar).Value = Textarea1.Value.Trim();
                     cmmd.Parameters.Add("@Yourself", SqlDbType.VarChar).Value = MySelf.Value.Trim();
                     cmmd.Parameters.Add("@ProfileStatus", SqlDbType.VarChar).Value = "1";
-                    cmmd.Parameters.Add("@RegisterId", SqlDbType.Int).Value = int.TryParse(register.Value, out val);
-                    //int.TryParse(RegisterId.Text,out val);
-                    DBconnection conn = new DBconnection();
+                    cmmd.Parameters.Add("@RegisterId", SqlDbType.Int).Value = Convert.ToInt32(Session["UserId"]);
+                    cmmd.Parameters.Add("@Height", SqlDbType.Float).Value =Convert.ToDouble(Height.Value);
+
+                DBconnection conn = new DBconnection();
                     bool result = conn.ExecuteData(cmmd);
                     if (result)
                     {
@@ -163,14 +171,9 @@ namespace matrimonial_project.View
                     }
                     else
                     {
+                        message.Visible = true;
                         message.Text = "Sorry Something Went Wrong";
-                    }
-                }
-                else
-                {
-                    message.Visible = true;
-                    message.Text = "RegisterId is not defined!!!!!";
-                }               
+                    }            
             }
             catch (Exception ex)
             {
@@ -180,9 +183,15 @@ namespace matrimonial_project.View
 
         protected void Cancel_Click(object sender, EventArgs e)
         {
+            try
+            {
+                Response.Redirect("index.aspx", false);
+            }
+            catch (Exception ex)
+            {
+                message.Text = Convert.ToString(ex);
+            }
 
-        }
-
-       
+        }       
     }
 }

@@ -140,6 +140,13 @@ $(document).ready(function(){
                      </asp:RegularExpressionValidator>
 				</div>
                 <div class="clearfix"></div>
+                <div class="w3_modal_body_grid w3_modal_body_grid1">
+					<span>UserName:</span>
+					<input id="username" runat="server" type="text" name="Username" placeholder="Enter UserName"/>
+                    
+                     
+				</div>
+                <div class="clearfix"></div>
 				<div class="w3_modal_body_grid">
 					<span>Gender:</span>
 					<div class="w3_gender">

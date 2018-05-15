@@ -58,17 +58,18 @@ namespace matrimonial_project.View
                    
                     //username and & password logic
                     DataTable dt = new DataTable();
-                    string strQuery = "SELECT Name,Password FROM dbo.Register WHERE Name=@Name AND Password=@Password";
+                    string strQuery = "SELECT UserName,Password,UserId FROM dbo.Register WHERE UserName=@UserName AND Password=@Password";
                     SqlCommand cmd = new SqlCommand(strQuery);
-                    cmd.Parameters.Add("@Name", SqlDbType.VarChar).Value = user.Value.Trim();
+                    cmd.Parameters.Add("@UserName", SqlDbType.VarChar).Value = user.Value.Trim();
                     cmd.Parameters.Add("@Password", SqlDbType.VarChar).Value = pass.Value.Trim();
                     DBconnection conn_ = new DBconnection();
                     dt = conn_.SelectData(cmd);
                     if (dt.Rows.Count > 0)
                     {
                         DataRow row = dt.Rows[0];
-                        Session["Name"] = row["Name"].ToString();
+                        Session["UserName"] = row["UserName"].ToString();
                         Session["Password"] = row["Password"].ToString();
+                        Session["UserId"] = row["UserId"].ToString();
                         Response.Redirect("Index.aspx", false);
                     }
                     else
@@ -83,7 +84,7 @@ namespace matrimonial_project.View
                         if (dt1.Rows.Count > 0)
                         {
                             DataRow row = dt1.Rows[0];
-                            Session["Name"] = row["Name"].ToString();
+                            Session["UserName"] = row["Name"].ToString();
                             Session["Password"] = row["Password"].ToString();
                             Response.Redirect("Admin/Home.aspx", false);
                         }
@@ -122,9 +123,10 @@ namespace matrimonial_project.View
                     gender = "Female";
                 }
                
-                string strQuery = "INSERT INTO dbo.Register (Name,Gender,DateOfBirth,Religion,Mobile,Email,Password,UserStatus) VALUES (@Name,@Gender,@DateOfBirth,@Religion,@Mobile,@Email,@Password,@UserStatus)";
+                string strQuery = "INSERT INTO dbo.Register (Name,UserName,Gender,DateOfBirth,Religion,Mobile,Email,Password,UserStatus) VALUES (@Name,@UserName,@Gender,@DateOfBirth,@Religion,@Mobile,@Email,@Password,@UserStatus)";
                 SqlCommand cmd = new SqlCommand(strQuery);
                 cmd.Parameters.Add("@Name", SqlDbType.VarChar).Value = name.Value.Trim();
+                cmd.Parameters.Add("@UserName", SqlDbType.VarChar).Value = username.Value.Trim();
                 cmd.Parameters.Add("@Gender", SqlDbType.VarChar).Value = gender;
                 cmd.Parameters.Add("@DateOfBirth", SqlDbType.VarChar).Value = datepick.Value.Trim();
                 cmd.Parameters.Add("@Religion", SqlDbType.VarChar).Value = religious.Trim();
@@ -133,13 +135,12 @@ namespace matrimonial_project.View
                 cmd.Parameters.Add("@Password", SqlDbType.VarChar).Value = password.Value.Trim();
                 cmd.Parameters.Add("@UserStatus", SqlDbType.VarChar).Value = "1";
                 DBconnection conn_ = new DBconnection();
-
                 bool result = conn_.ExecuteData(cmd);
                 if (result)
                 {
-                    message.Visible = true;
-                    message.Text = "Successfully Registered";
                     Response.Redirect("home.aspx", false);
+                    message.Visible = true;
+                    message.Text = "Successfully Registered";                   
                 }
                 else
                 {
@@ -149,7 +150,6 @@ namespace matrimonial_project.View
             }
             catch (Exception ex)
             {
-
                 message.Text = Convert.ToString(ex);
             }
         }
