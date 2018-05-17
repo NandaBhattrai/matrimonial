@@ -99,9 +99,8 @@ namespace matrimonial_project.View.Admin
             }
             catch (Exception ex)
             {
-
-                
+                message.Text = Convert.ToString(ex);                
             }
         }
     }
-    }
+}

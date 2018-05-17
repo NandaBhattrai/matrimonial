@@ -4411,6 +4411,7 @@
     <Content Include="View\SearchResult.aspx" />
     <Content Include="View\Settings.aspx" />
     <Content Include="View\User.aspx" />
+    <Content Include="View\UserHome.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -4515,6 +4516,13 @@
     </Compile>
     <Compile Include="View\User.aspx.designer.cs">
       <DependentUpon>User.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserHome.aspx.cs">
+      <DependentUpon>UserHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\UserHome.aspx.designer.cs">
+      <DependentUpon>UserHome.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

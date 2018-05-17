@@ -33,7 +33,18 @@ namespace matrimonial_project.View
                         Name.Value = row["Name"].ToString();
                         DateOfBirth.Value = row["DateOfBirth"].ToString();
                         Phone.Value = row["Mobile"].ToString();
-                        Email.Value = row["Email"].ToString();              
+                        Email.Value = row["Email"].ToString();
+                        Religion.Items.FindByText(row["Religion"].ToString()).Selected = true;
+                        if (row["Gender"].ToString() == "Male")
+                        {
+                            rad_male.Checked = true;
+                            rad_female.Checked = false;
+                        }
+                        else
+                        {
+                            rad_female.Checked = true;
+                            rad_male.Checked = false;
+                        }
                     }
                 }
             }
@@ -68,7 +79,7 @@ namespace matrimonial_project.View
             try
             {
                    string Religious = Religion.SelectedItem.ToString();
-                     string Blood = BloodGroup.SelectedIndex.ToString();
+                string Blood = BloodGroup.Value.ToString();
                 bool male = rad_male.Checked;
                     bool female = rad_female.Checked;
                     string Gender;

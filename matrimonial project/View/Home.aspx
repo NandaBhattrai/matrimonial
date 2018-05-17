@@ -105,7 +105,7 @@ $(document).ready(function(){
 		        
                 <ul class="nav navbar-nav nav_1">
 		            <li class="active"><a href="Home.aspx">Home</a></li>
-		            
+		           <li><a href="#" data-toggle="modal" data-target="#myModal">Login</a></li>
 		        </ul>
 		     </div><!-- /.navbar-collapse -->
 		    </nav>

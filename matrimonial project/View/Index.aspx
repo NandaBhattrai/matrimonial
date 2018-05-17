@@ -18,7 +18,7 @@
 		<div class="col-md-12 profiles-list-agileits">
 		<!--Horizontal Tab-->
 			<div id="parentHorizontalTab">
-				<div class="resp-tabs-container hor_1">
+                <div class="resp-tabs-container hor_1">  
 					<div>	
 						<div class="w3_regular_search">
                             <div class="form_but1">
@@ -268,9 +268,8 @@
                                
 						</div>
 					</div>
-					
+					</div>
 				</div>
-			</div>
 		</div>		
 	<div class="clearfix"></div>
 	</div>

@@ -28,10 +28,9 @@ namespace matrimonial_project.View
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-
+                message.Text = Convert.ToString(ex);
             }
         }
 
@@ -43,9 +42,7 @@ namespace matrimonial_project.View
             DBconnection conn_ = new DBconnection();
             dt = conn_.SelectData(cmd);
             return dt;
-        }
-
-      
+        }  
 
         
 
@@ -70,7 +67,7 @@ namespace matrimonial_project.View
                         Session["UserName"] = row["UserName"].ToString();
                         Session["Password"] = row["Password"].ToString();
                         Session["UserId"] = row["UserId"].ToString();
-                        Response.Redirect("Index.aspx", false);
+                        this.getaddress();
                     }
                     else
                     {
@@ -102,9 +99,33 @@ namespace matrimonial_project.View
                 message.Text = ex.ToString();
             }
         }
-    
 
-        
+        private void getaddress()
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                string strQuery = "SELECT ProfileId FROM dbo.UserProfile WHERE RegisterId=@RegisterId";
+                SqlCommand cmd = new SqlCommand(strQuery);
+                cmd.Parameters.Add("@RegisterId", SqlDbType.Int).Value = Convert.ToInt32(Session["UserId"].ToString());
+                DBconnection conn_ = new DBconnection();
+                dt = conn_.SelectData(cmd);
+                if (dt.Rows.Count > 0)
+                {
+                    DataRow row = dt.Rows[0];
+                    Session["ProfileId"] = row["ProfileId"];
+                    Response.Redirect("UserHome.aspx", false);
+                }
+                else
+                {
+                    Response.Redirect("Index.aspx", false);
+                }
+            }
+            catch (Exception ex)
+            {
+                message.Text = Convert.ToString(ex);
+            }
+        }
 
         protected void register_Click(object sender, EventArgs e)
         {
