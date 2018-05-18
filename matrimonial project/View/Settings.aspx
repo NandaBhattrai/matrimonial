@@ -75,7 +75,7 @@
 								<div class="clearfix"> </div>
 							  </div>
                             <div class="form_but1">
-								<label class="col-sm-5 control-label1" for="sex">New Password : </label>
+								<label class="col-sm-5 control-label1" for="sex">Password : </label>
 								<div class="col-sm-7 form_radios">
 								    <input runat="server" id="Password1" type="Password" disabled="disabled" />
 								</div>

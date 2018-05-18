@@ -98,6 +98,7 @@ namespace matrimonial_project.View
                 Phone.Disabled = false;
                 Update.Visible = true;
                 Check.Visible = false;
+                Pass.Disabled = true;
             }
             else
             {

@@ -29,10 +29,9 @@ namespace matrimonial_project.View
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-
+                
             }
         }
 

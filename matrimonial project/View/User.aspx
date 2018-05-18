@@ -31,8 +31,17 @@
 				<div class="clearfix"></div>
 			</div>
             </div>
-     <div class="col-md-12 profiles-list-agileits">
-	    <div class="col-md-6 profile_w3layouts_details">
+<div class="col-md-12 profiles-list-agileits">
+    <!--Horizontal Tab-->
+<div id="parentHorizontalTab">
+		<ul class="resp-tabs-list hor_1">
+			<li>About Me</li>
+			<li>Partner Detail</li>
+		</ul>
+		<div class="resp-tabs-container hor_1">
+			<div>	
+				<div class="w3_regular_search">
+	        <div class="profile_w3layouts_details">
 				<div class="agileits_aboutme">
 					<h4>About me</h4>
 					<h5>Brief about me:</h5>
@@ -175,8 +184,10 @@
 					</div>
 				</div>
 	    </div>           
-		    
-		<div class="col-md-6  profile_w3layouts_details">
+		        </div>
+            </div>
+                <div class="w3_regular_search">
+		<div class="profile_w3layouts_details">
 				 <div class="agileits_aboutme">
 		            <h4> Partner Details</h4>
                     <div class="form_but1">
@@ -264,10 +275,13 @@
 					</div>
 		</div>
         </div>
+                </div>
 	<div class="clearfix"></div>
     </div>
     </div>
 	</div>
+</div>
+</div>
 	<!-- // Profile Details -->
 
      <!-- Profile Edit Block-->
@@ -562,13 +576,13 @@
 								</div>
 								<div class="clearfix"> </div>
 							  </div> 
-                            <div class="form_but1">
-								<label class="col-sms-5 control-label1" for="sex">Caste : </label>
+                             <div class="form_but1">
+								<label class="col-sm-5 control-label1" for="sex">Caste : </label>
 								<div class="col-sm-7 form_radios">
-								 <input runat="server" id="PartCaste" type="text" />
+								    <input runat="server" id="PartCaste" type="text"/>
 								</div>
 								<div class="clearfix"> </div>
-							  </div>                           
+							  </div>                         
                             <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Education : </label>
 								<div class="col-sm-7 form_radios">
@@ -646,4 +660,28 @@
 	</div>
 	</div>
     <!--Partner Block-->
+
+    <script src="../Content/matrimonial/js/easyResponsiveTabs.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+
+			$('#parentHorizontalTab').easyResponsiveTabs({
+				type: 'default', //Types: default, vertical, accordion
+				width: 'auto', //auto or any width like 600px
+				fit: true, // 100% fit in a container
+				closed: 'accordion', // Start closed if in accordion view
+				tabidentify: 'hor_1', // The tab groups identifier
+				activate: function (event) { // Callback function if tab is switched
+					var $tab = $(this);
+					var $info = $('#nested-tabInfo');
+					var $name = $('span', $info);
+		
+					$name.text($tab.text());
+		
+					$info.show();
+				}
+			});
+	 
+		});
+	</script>
 </asp:Content>

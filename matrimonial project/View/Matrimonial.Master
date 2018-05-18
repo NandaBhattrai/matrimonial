@@ -213,40 +213,23 @@ $(document).ready(function(){
 		                           <div class="w3agile_banner_btom_login">			
 				                        <div class="w3agile__text w3agile_banner_btom_login_left">
 					                        <h4>I'm looking for a</h4>
-					                        <select id="country" onchange="change_country(this.value)" class="frm-field required">
+					                        <select runat="server" id="Gender" class="frm-field required">
 						                        <option value="null">Bride</option>
 						                        <option value="null">Groom</option>   
 					                        </select>
 				                        </div>
 				                        <div class="w3agile__text w3agile_banner_btom_login_left2">
-					                        <h4>Religion</h4>
+					                        <h4>Religion :</h4>
 					                        <asp:DropDownList ID="religion" runat="server">                                                            
                                                  </asp:DropDownList>
 				                        </div>
                                        <div class="w3agile__text w3agile_banner_btom_login_left1">
-					                        <h4>Aged</h4>
-					                        <select id="country1" onchange="change_country(this.value)" class="frm-field required">
-						                        <option value="null">20</option>
-						                        <option value="null">21</option>   
-						                        <option value="null">22</option>   
-						                        <option value="null">23</option>   
-						                        <option value="null">24</option>   
-						                        <option value="null">25</option>  
-						                        <option value="null">- - -</option>   					
-					                        </select>
-					                        <span>To </span>
-					                        <select id="country2" onchange="change_country(this.value)" class="frm-field required">
-						                        <option value="null">30</option>
-						                        <option value="null">31</option>   
-						                        <option value="null">32</option>   
-						                        <option value="null">33</option>   
-						                        <option value="null">34</option>   
-						                        <option value="null">35</option>  
-						                        <option value="null">- - -</option>   					
-					                        </select>
+					                        <h4>Aged :</h4>
+					                        <input type="number" id="AgeFrom" runat="server" /><span>To</span>
+                                            <input type="number" id="AgeTo" runat="server" />
 				                        </div>
 				                        <div class="w3agile_banner_btom_login_left3">
-					                        <input type="submit" value="Search" />
+					                        <asp:Button runat="server" ID="Search" Text="Search"/>
 				                        </div>
 				                        <div class="clearfix"> </div>
 			
