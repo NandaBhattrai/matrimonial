@@ -29,7 +29,7 @@
 							<div class="form_but1">                            
 								<label class="col-sm-5 control-label1" for="sex">Name : </label>
 								<div class="col-sm-7 form_radios">    
-                                <input type="text" id="Name" runat="server"/>
+                                <input type="text" id="Name" runat="server" required="required"/>
                                  </div>
 								<div class="clearfix"></div>
 							</div>
@@ -44,7 +44,7 @@
                             <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Date Of Birth : </label>
 								<div class="col-sm-7 form_radios">    
-                                <input type="date" id="DateOfBirth" runat="server"/>
+                                <input type="date" id="DateOfBirth" runat="server" required="required"/>
                                  </div>
 								<div class="clearfix"></div>
 							</div>
@@ -60,7 +60,7 @@
                             <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Nationality : </label>
 								<div class="col-sm-7 form_radios">
-								  <input runat="server" id="Nationality" type="text" />
+								  <input runat="server" id="Nationality" type="text" required="required" />
 								</div>
 								<div class="clearfix"> </div>
 							  </div>                    		
@@ -75,21 +75,21 @@
                             <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Caste : </label>
 								<div class="col-sm-7 form_radios">
-								  <input runat="server" id="Caste" type="text" />
+								  <input runat="server" id="Caste" type="text" required="required" />
 								</div>
 								<div class="clearfix"> </div>
 							  </div>
 							  <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Mother Tongue : </label>
 								<div class="col-sm-7 form_radios">
-								  <input runat="server" id="MotherTongue" type="text" />
+								  <input runat="server" id="MotherTongue" type="text" required="required" />
 								</div>
 								<div class="clearfix"> </div>
 							  </div>
                             <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Known Languages : </label>
 								<div class="col-sm-7 form_radios">
-								  <input runat="server" id="KnownLanguage" type="text" />
+								  <input runat="server" id="KnownLanguage" type="text" required="required" />
 								</div>
 								<div class="clearfix"> </div>
 							  </div>
@@ -116,14 +116,14 @@
                             <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Education : </label>
 								<div class="col-sm-7 form_radios">
-								    <input runat="server" id="Education" type="text" />
+								    <input runat="server" id="Education" type="text" required="required" />
 								</div>
 								<div class="clearfix"> </div>
 							  </div>
                              <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Profession : </label>
 								<div class="col-sm-7 form_radios">
-								    <input type="text" id="Profession" runat="server" />
+								    <input type="text" id="Profession" runat="server" required="required" />
 								</div>
 								<div class="clearfix"> </div>
 							  </div>
@@ -135,42 +135,42 @@
                             <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Country : </label>
 								<div class="col-sm-7 form_radios">
-								    <input runat="server" id="Country" type="text" />
+								    <input runat="server" id="Country" type="text" required="required" />
 								</div>
 								<div class="clearfix"> </div>
 							  </div>
                              <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">State : </label>
 								<div class="col-sm-7 form_radios">
-								    <input type="text" id="State" runat="server" />
+								    <input type="text" id="State" runat="server" required="required" />
 								</div>
 								<div class="clearfix"> </div>
 							  </div>
 							  <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">District / City : </label>
 								<div class="col-sm-7 form_radios">
-								     <input runat="server" id="City" type="text" />
+								     <input runat="server" id="City" type="text" required="required" />
 								</div>
 								<div class="clearfix"> </div>
 							  </div>
                             <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Stay : </label>
 								<div class="col-sm-7 form_radios">
-								    <input runat="server" id="Stay" type="text" placeholder="Current Stay Address"/>
+								    <input runat="server" id="Stay" type="text" placeholder="Current Stay Address" required="required"/>
 								</div>
 								<div class="clearfix"> </div>
 							 </div>							 
                             <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Phone Number : </label>
 								<div class="col-sm-7 form_radios">
-								  <input runat="server" id="Phone" type="text" />
+								  <input runat="server" id="Phone" type="text" required="required" />
 								</div>
 								<div class="clearfix"> </div>
 							  </div>
                              <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Email Address : </label>
 								<div class="col-sm-7 form_radios">
-								  <input runat="server" id="Email" type="email"/>
+								  <input runat="server" id="Email" type="email" required="required"/>
 								</div>
 								<div class="clearfix"> </div>
 							  </div>
@@ -181,28 +181,28 @@
 							<div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Age in years : </label>
 								<div class="col-sm-7 form_radios">    
-                                <input type="number" id="Age" runat="server" />
+                                <input type="number" id="Age" runat="server" required="required" />
                                  </div>
 								<div class="clearfix"></div>
 							</div>
 							<div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Height : </label>
 								<div class="col-sm-7 form_radios">     
-                                <input type="number" id="Height" runat="server" />
+                                <input type="number" id="Height" runat="server" required="required" />
                                 </div>
 								<div class="clearfix"></div>
 							</div>
                             <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Weight : </label>
 								<div class="col-sm-7 form_radios">     
-                                <input type="number" id="Weight" runat="server" />
+                                <input type="number" id="Weight" runat="server" required="required" />
                                 </div>
 								<div class="clearfix"></div>
 							</div>
                              <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Complexion : </label>
 								<div class="col-sm-7 form_radios">     
-                                <input type="text" id="Complexion" runat="server" />
+                                <input type="text" id="Complexion" runat="server" required="required"/>
                                 </div>
 								<div class="clearfix"></div>
 							</div>
@@ -237,7 +237,7 @@
 							  <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Profile : </label>
 								<div class="col-sm-7 form_radios">
-									<input id="Image" type="file" runat="server" />									
+									<input id="Image" type="file" runat="server" required="required" />									
 								</div>
 								<div class="clearfix"> </div>
 							  </div>
@@ -248,7 +248,7 @@
                             <div class="form_but1">
 								<label class="col-sm-5 control-label1">Family Description : </label>
 								<div class="col-sm-7 form_radios">                                     
-                                    <textarea runat="server" id="Textarea1"></textarea>
+                                    <textarea runat="server" id="Textarea1" required="required"></textarea>
 								</div>
 								<div class="clearfix"> </div>
 							  </div>
@@ -259,7 +259,7 @@
                                 <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Yourself : </label>
 								<div class="col-sm-7 form_radios">
-                                    <textarea runat="server" id="MySelf"></textarea>
+                                    <textarea runat="server" id="MySelf" required="required"></textarea>
 								</div>
 								<div class="clearfix"> </div>
 							  </div>

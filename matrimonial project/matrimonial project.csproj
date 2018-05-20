@@ -3498,8 +3498,11 @@
     <Content Include="View\Admin\Home.aspx" />
     <Content Include="View\Admin\Profile.aspx" />
     <Content Include="View\Admin\Settings.aspx" />
+    <Content Include="View\Assisted_Services.aspx" />
     <Content Include="View\Contact.aspx" />
     <Content Include="View\DesiredPartner.aspx" />
+    <Content Include="View\Feedback.aspx" />
+    <Content Include="View\Help.aspx" />
     <Content Include="View\Home.aspx" />
     <Content Include="View\Index.aspx" />
     <Content Include="View\Matrimonial.Master" />
@@ -4455,6 +4458,13 @@
     <Compile Include="View\Admin\Settings.aspx.designer.cs">
       <DependentUpon>Settings.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\Assisted_Services.aspx.cs">
+      <DependentUpon>Assisted_Services.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Assisted_Services.aspx.designer.cs">
+      <DependentUpon>Assisted_Services.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -4468,6 +4478,20 @@
     </Compile>
     <Compile Include="View\DesiredPartner.aspx.designer.cs">
       <DependentUpon>DesiredPartner.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Feedback.aspx.cs">
+      <DependentUpon>Feedback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Feedback.aspx.designer.cs">
+      <DependentUpon>Feedback.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Help.aspx.cs">
+      <DependentUpon>Help.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Help.aspx.designer.cs">
+      <DependentUpon>Help.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>

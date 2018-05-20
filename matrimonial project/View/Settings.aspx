@@ -88,12 +88,12 @@
 								</div>
 								<div class="clearfix"> </div>
 							  </div>
-                            <div id="Check" runat="server">			
+                            <span id="Check" runat="server">			
 								<asp:Button style="width:auto;"  ID="ContentPlaceHolder1_Submit" runat="server" Text="Check" OnClick="ContentPlaceHolder1_Submit_Click"/>
-                            </div>
-                            <div id="Update" runat="server" visible="false">								
+                            </span>
+                            <span id="Update" runat="server" visible="false">								
                               <asp:Button style="width:auto;"  ID="ContentPlaceHolder1_Update" runat="server" Text="Update" OnClick="ContentPlaceHolder1_Update_Click1"/>
-							</div>
+							</span>
 							<asp:Button ID="ContentPlaceHolder1_Cancel"  runat="server" Text="Cancel"/>
                        </div>
 					</div>

@@ -319,7 +319,7 @@ $(document).ready(function(){
 	<div class="agile-assisted-service text-center">
 		<h4>Assisted Service</h4>
 		<p>Our Relationship Managers have helped thousands of members find their life partners.</p>
-		<a href="assisted_services.html">Know More</a>
+		<a href="Assisted_Services.aspx">Know More</a>
 	</div>
 <!-- //Assisted Service -->
 
@@ -341,33 +341,13 @@ $(document).ready(function(){
 						<h6>Get in Touch.</h6>
 					</div>
 					<ul>
-						<li><i class="fa fa-map-marker"></i> 123 San Sebastian, New York City USA.</li>
-						<li><i class="fa fa-mobile"></i> 333 222 3333 </li>
-						<li><i class="fa fa-phone"></i> +222 11 4444 </li>
-						<li><i class="fa fa-envelope-o"></i> <a href="mailto:example@mail.com"> mail@example.com</a></li>
+						<li><i class="fa fa-map-marker"></i> Divertol, Tilottama City Nepal.</li>
+						<li><i class="fa fa-mobile"></i> 9847133318 </li>
+						<li><i class="fa fa-phone"></i> 9812993483 </li>
+						<li><i class="fa fa-envelope-o"></i> <a href="mailto:nandabhattarai1@gmail.com"> nandabhattarai1@gmail.com</a></li>
 					</ul> 
 				</div>
-				<div class="col-md-8 address-right">
-					<div class="col-md-4 footer-grids">
-						<h3>Company</h3>
-						<ul>
-							<li><a href="About.aspx">About Us</a></li>
-							<li><a href="Feedback.aspx">Feedback</a></li>  
-							<li><a href="Help.aspx">Help</a></li>  
-							<li><a href="Tips.aspx">Safety Tips</a></li>
-							<li><a href="Typo.aspx">Typography</a></li>
-							<li><a href="Icons.aspx">Icons Page</a></li>
-						</ul>
-					</div>
-					<div class="col-md-4 footer-grids">
-						<h3>Quick links</h3>
-						<ul>
-							<li><a href="Terms.aspx">Terms of use</a></li>
-							<li><a href="Privacy_Policy.aspx">Privacy Policy</a></li>
-							<li><a href="Contact.aspx">Contact Us</a></li>
-							<li><a href="Faq.aspx">FAQ</a></li>
-						</ul> 
-					</div>
+				<div class="col-md-8 address-right">					
 					<div class="col-md-4 footer-grids">
 						<h3>Follow Us on</h3>
 						<section class="social">

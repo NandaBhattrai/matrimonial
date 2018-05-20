@@ -60,8 +60,9 @@ namespace matrimonial_project.View
         private DataTable getValue()
         {
             DataTable dt = new DataTable();
-            string strQuery = "SELECT * FROM dbo.Register";
+            string strQuery = "SELECT * FROM dbo.Register where UserId=@UserId";
             SqlCommand cmd = new SqlCommand(strQuery);
+            cmd.Parameters.Add("@UserId", SqlDbType.Int).Value = Convert.ToInt32(Session["UserId"]);
             DBconnection conn_ = new DBconnection();
             dt = conn_.SelectData(cmd);
             return dt;

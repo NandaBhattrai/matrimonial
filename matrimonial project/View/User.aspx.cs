@@ -107,8 +107,9 @@ namespace matrimonial_project.View
         private DataTable getPartner()
         {
             DataTable dt = new DataTable();
-            string strQuery = "SELECT * FROM dbo.Partner";
+            string strQuery = "SELECT * FROM dbo.Partner where RegisterId=@RegisterId";
             SqlCommand cmd = new SqlCommand(strQuery);
+            cmd.Parameters.Add("@RegisterId", SqlDbType.Int).Value = Convert.ToInt32(Session["UserId"]);
             DBconnection conn_ = new DBconnection();
             dt = conn_.SelectData(cmd);
             return dt;
@@ -385,8 +386,8 @@ namespace matrimonial_project.View
             try
             {
                 string Religious = PartReligion.SelectedItem.ToString();
-                bool male = rad_male.Checked;
-                bool female = rad_female.Checked;
+                bool male = radmale.Checked;
+                bool female = radfemale.Checked;
                 string Gender;
                 if (male)
                     Gender = "Male";
