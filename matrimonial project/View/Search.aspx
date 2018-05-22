@@ -173,8 +173,8 @@
 			</div>
 		</div>
 		<div class="col-md-3 w3ls-aside">
-			<h3>Search by Profile ID:</h3>			
-				<input class="form-control" type="text" runat="server" name="profile_id" placeholder="Enter Profile ID"/>
+			<h3>Search by UserName:</h3>			
+				<input class="form-control" type="text" runat="server" id="username" placeholder="Enter Username"/>
 				<asp:Button runat="server" Text="Submit" ID="submit" OnClick="submit_Click"/>
 				<div class="clearfix"></div>			
 			<h4>Filter Profiles by</h4>

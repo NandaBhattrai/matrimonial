@@ -55,7 +55,7 @@ namespace matrimonial_project.View
                    
                     //username and & password logic
                     DataTable dt = new DataTable();
-                    string strQuery = "SELECT UserName,Password,UserId FROM dbo.Register WHERE UserName=@UserName AND Password=@Password";
+                    string strQuery = "SELECT UserName,Password,UserId FROM dbo.Register WHERE UserName=@UserName AND Password=@Password AND UserStatus=1";
                     SqlCommand cmd = new SqlCommand(strQuery);
                     cmd.Parameters.Add("@UserName", SqlDbType.VarChar).Value = user.Value.Trim();
                     cmd.Parameters.Add("@Password", SqlDbType.VarChar).Value = pass.Value.Trim();
@@ -86,7 +86,7 @@ namespace matrimonial_project.View
                             Response.Redirect("Admin/Home.aspx", false);
                         }
                         else
-                        {
+                        {                            
                             message.Text = "Username and Password mismatch";
                         }
 

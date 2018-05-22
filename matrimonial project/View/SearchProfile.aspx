@@ -170,8 +170,8 @@
 			</div>
 		</div>
 		<div class="col-md-3 w3ls-aside">
-			<h3>Search by Profile ID:</h3>			 
-				<input class="col-md-12" type="text" name="profile_id" placeholder="Enter Profile ID" runat="server"/>
+			<h3>Search by UserName:</h3>			 
+				<input class="col-md-12" type="text" id="username" placeholder="Enter Username" runat="server"/>
 				<input type="submit" value="Search" runat="server"/>
 				<div class="clearfix"></div>
 			<div class="view_profile">

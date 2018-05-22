@@ -5,7 +5,7 @@
      <!-- breadcrumbs -->
 	<div class="w3layouts-breadcrumbs text-center">
 		<div class="container">
-			<span class="agile-breadcrumbs"><a href="index.html">Home</a> > <span>Help</span></span>
+			<span class="agile-breadcrumbs"><a href="UserHome.html">Home</a> > <span>Help</span></span>
 		</div>
 	</div>
 	<!-- //breadcrumbs -->
@@ -15,8 +15,11 @@
 		<div class="container">
 			<div class="wthree-help">
 				<h3>How Can We help you</h3>
-			        <textarea placeholder="Your Query" name="Message" required="" runat="server"></textarea>
-					<asp:Button runat="server" ID="Submit" Text="submit" OnClick="Submit_Click"/>
+                   <div><asp:Label runat="server" ID="msg" Text=""></asp:Label></div>
+			        <textarea placeholder="Your Query" id="Message" required="" runat="server"></textarea>
+                    <div class="w3_submit">
+					<asp:Button runat="server" ID="ContentPlaceHolder1_Submit" Text="submit" OnClick="Submit_Click"/>
+                    </div>
 			        <h5>OR</h5>
 				<a href="Contact.aspx">Contact Us</a>
 			</div>

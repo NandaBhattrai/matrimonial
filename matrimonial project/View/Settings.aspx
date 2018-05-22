@@ -63,7 +63,7 @@
                              <div class="form_but1">                            
 								<label class="col-sm-5 control-label1" for="sex">UserName : </label>
 								<div class="col-sm-7 form_radios">    
-                                <input type="text" id="User" runat="server"/>
+                                <input type="text" id="Username" runat="server"/>
                                  </div>
 								<div class="clearfix"></div>
 							</div>

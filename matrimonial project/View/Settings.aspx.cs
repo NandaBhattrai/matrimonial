@@ -83,7 +83,7 @@ namespace matrimonial_project.View
             DataTable dt = new DataTable();
             string strQuery = "SELECT UserName,Password FROM dbo.Register WHERE UserName=@UserName AND Password=@Password";
             SqlCommand cmd = new SqlCommand(strQuery);
-            cmd.Parameters.Add("@UserName", SqlDbType.VarChar).Value = User.Value.Trim();
+            cmd.Parameters.Add("@UserName", SqlDbType.VarChar).Value = Username.Value.Trim();
             cmd.Parameters.Add("@Password", SqlDbType.VarChar).Value = Pass.Value.Trim();
             DBconnection conn_ = new DBconnection();
             dt = conn_.SelectData(cmd);
@@ -136,7 +136,7 @@ namespace matrimonial_project.View
                     cmd.Parameters.Add("@Religion", SqlDbType.VarChar).Value = religious;
                     cmd.Parameters.Add("@Mobile", SqlDbType.VarChar).Value = Phone.Value.Trim();
                     cmd.Parameters.Add("@Email", SqlDbType.VarChar).Value = Email.Value.Trim();
-                    cmd.Parameters.Add("@UserName", SqlDbType.VarChar).Value = User.Value.Trim();
+                    cmd.Parameters.Add("@UserName", SqlDbType.VarChar).Value = Username.Value.Trim();
                     cmd.Parameters.Add("@Password", SqlDbType.VarChar).Value = Password1.Value.Trim();
                     cmd.Parameters.Add("@UserId", SqlDbType.Int).Value = Id.Value.Trim();
                     DBconnection conn_ = new DBconnection();

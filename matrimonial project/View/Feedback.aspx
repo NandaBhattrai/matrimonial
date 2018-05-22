@@ -16,27 +16,22 @@
 			<h2>Tell us what you think of us</h2>
 			<p>Please feel free to post your questions, comments and suggestions. We are eager to assist you and serve you better.</p>
 			<p class="text-right"><span style="color:red;font-weight: 100;">*</span>Mandatory</p>
-            <asp:Label runat="server" Text="" ID="message"></asp:Label>
+           <div><asp:Label runat="server" Text="" ID="message"></asp:Label></div>
 				<div class="col-md-6">
 					<div class="agileits">
-						<label><span style="color:red;font-weight: 100;">*</span>Name:</label>
+						<label>Name:</label>
 						<input type="text" id="name" runat="server" placeholder="Name" required="required"/>
 					</div>
 					<div class="agileits">
-						<label><span style="color:red;font-weight: 100;">*</span>Your Email:</label>
+						<label>Your Email:</label>
 						<input type="email" id="email" runat="server" placeholder="Email" required="required"/>
-					</div>
-				</div>
+					</div>	
+                 </div>
 				<div class="col-md-6">
-					<div class="agileits">
-						<label>Address:</label>
-						<input type="text" id="address" placeholder="Address" runat="server" required="required"/>
-					</div>
 					<div class="agileits">
 						<label>Username:</label>
 						<input type="text" id="username" placeholder="Username" runat="server" required="required"/>
-					</div>
-					
+					</div>			
 					<div class="agileits">
 						<label>Phone no:</label>
 						<input type="tel" id="tel" placeholder="Phone no" runat="server" required="required"/>
@@ -45,7 +40,7 @@
 				<div class="clearfix"></div>
 				<div class="col-md-12 w3_feedbacktextmessage">
 					<label><span style="color:red;font-weight: 100;">*</span>Feedback:</label>
-					<textarea name="Comments" id="feedback" runat="server"></textarea>
+					<textarea required="required" name="Comments" id="feedback" runat="server"></textarea>
 				</div>
 				<div class="clearfix"></div>
 				<div class="w3_submit">

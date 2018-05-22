@@ -148,6 +148,15 @@ namespace matrimonial_project.View {
         protected global::System.Web.UI.WebControls.Button ContentPlaceHolder1_Cancel;
         
         /// <summary>
+        /// username control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText username;
+        
+        /// <summary>
         /// submit control.
         /// </summary>
         /// <remarks>
