@@ -130,7 +130,8 @@
                             <li><a href="Feedback.aspx">Feedback</a></li>
                             <li><a href="Assisted.aspx">Assisted</a></li>                     
                         </ul>
-                        </li>                        
+                        </li>
+                    <li><a href="Report.aspx"><i class="fa fa-windows"></i>Report</a></li>                        
                     </ul>
                 </div>                 
             </div>

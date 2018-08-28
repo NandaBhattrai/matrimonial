@@ -48,6 +48,14 @@
                   <div class="count"><span  style="color:red; font-size:20px;">Today:&nbsp;<asp:Label ID="TodayAssisted" runat="server" Text=""></asp:Label></span></div>
                 </div>
               </div></a>
+                <a href="Report.aspx"><div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="tile-stats">
+                  <div class="icon"><i class="fa fa-check-square-o"></i></div>
+                  <div class="count"><asp:Label ID="ReportCount" runat="server" Text=""></asp:Label></div>
+                  <h3>Report Profile</h3>
+                  <div class="count"><span  style="color:red; font-size:20px;">Today:&nbsp;<asp:Label ID="TodayReport" runat="server" Text=""></asp:Label></span></div>
+                </div>
+              </div></a>
             </div>
           </div>
           <!-- /top tiles -->

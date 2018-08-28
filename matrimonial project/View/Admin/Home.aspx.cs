@@ -28,6 +28,18 @@ namespace matrimonial_project.View.Admin
             getTodayAssisted();
             getTodayRegister();
             getTodayProfile();
+            getTodayReport();
+        }
+
+        private void getTodayReport()
+        {
+            string stq = "select count(ReportId) as count from Report where ReportStatus=1 AND Date=@Date ";
+            SqlCommand cmd = new SqlCommand(stq);
+            cmd.Parameters.Add("@Date", SqlDbType.VarChar).Value = DateTime.Now.ToString("yyyy-MM-dd");
+            DBconnection conn_ = new DBconnection();
+            DataTable dt = conn_.SelectData(cmd);
+            int datacount = Convert.ToInt32(dt.Rows[0]["count"]);
+            TodayReport.Text = datacount.ToString();
         }
 
         private void getTodayProfile()
@@ -95,7 +107,19 @@ namespace matrimonial_project.View.Admin
             getHelp();
             getAssisted();
             getFeedback();
+            getReport();
         }
+
+        private void getReport()
+        {        
+            string stq = "select count(ReportId) as count from Report where ReportStatus=1";
+            SqlCommand cmd = new SqlCommand(stq);
+            DBconnection conn_ = new DBconnection();
+            DataTable dt = conn_.SelectData(cmd);
+            int datacount = Convert.ToInt32(dt.Rows[0]["count"]);
+            ReportCount.Text = datacount.ToString();
+        }
+    
 
         private void getFeedback()
         {
