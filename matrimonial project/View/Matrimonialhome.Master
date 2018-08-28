@@ -1,11 +1,12 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Matrimonial.Master.cs" Inherits="matrimonial_project.view.matrimonial" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Matrimonialhome.master.cs" Inherits="matrimonial_project.View.Matrimonialhome" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-     <link href="../Content/matrimonial/css/ScrollIndicator.css" rel="stylesheet" />
-     <style>
+    <title></title>
+ <link href="../Content/matrimonial/css/ScrollIndicator.css" rel="stylesheet" />
+         <style>
         /* Paste this css to your style sheet file or under head tag */
         /* This only works with JavaScript, 
         if it's not present, don't show loader */
@@ -31,7 +32,6 @@
             $(".se-pre-con").fadeOut("slow");;
         });
     </script>
-    <title></title>
     <link href="../content/matrimonial/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" /><!-- bootstrap-CSS -->
 <link href="../content/matrimonial/css/font-awesome.css" rel="stylesheet" type="text/css" media="all" /><!-- Fontawesome-CSS -->
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -71,19 +71,15 @@ $(document).ready(function(){
 		
 <link rel="stylesheet" href="../Content/matrimonial/css/intlTelInput.css"/>
 
-   
-<!-- //head -->
-   
-     <asp:ContentPlaceHolder ID="head" runat="server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-
 </head>
-<body>
+    <body>
     <!--preloader-->
     <div class="se-pre-con">      
     </div>
     <!--preloader-->
-    <form id="form1" method="post" runat="server" novalidate="novalidate">
+    <form id="form2" method="post" runat="server" novalidate="novalidate">
 <header>
 	<!--  Navigation Start -->
  <div class="navbar navbar-inverse-blue navbar">
@@ -91,58 +87,8 @@ $(document).ready(function(){
       <div class="navbar-inner">
         <div class="container">
           <div class="menu">
-					<div class="cd-dropdown-wrapper">
-						<a class="cd-dropdown-trigger" href="#0">Browse Profiles by</a>
-						<nav class="cd-dropdown"> 
-							<a href="#0" class="cd-close">Close</a>
-							<ul class="cd-dropdown-content"> 
-								<li><a href="matches.html" runat="server">All Profiles</a></li>
-                                
-                                <asp:Label runat="server" ID="countrylist" Text=""></asp:Label>
-								<!-- here ends country -->
-								<li class="has-children">
-									<a href="#">Caste</a> 
-									<ul class="cd-secondary-dropdown is-hidden">
-										<li class="go-back"><a href="#">Menu</a></li>
-												
-												
-									</ul> <!-- .cd-secondary-dropdown --> 
-								</li> <!-- .has-children -->
-								<li class="has-children">
-									<a href="products2.html">Religion</a> 
-									<ul class="cd-secondary-dropdown is-hidden"> 
-										<li class="go-back"><a href="#">Menu</a></li>
-											
-												 
-									</ul><!-- .cd-secondary-dropdown --> 
-								</li> <!-- .has-children --> 
-								<li class="has-children">
-									<a href="#">City</a> 
-									<ul class="cd-secondary-dropdown is-hidden">
-										<li class="go-back"><a href="#">Menu</a></li>
-												 
-											 
-									</ul><!-- .cd-secondary-dropdown --> 
-								</li> <!-- .has-children -->  
-								<li class="has-children">
-									<a href="#">Occupation</a>
-									<ul class="cd-secondary-dropdown is-hidden">
-										<li class="go-back"><a href="#">Menu</a></li>
-												
-									</ul><!-- .cd-secondary-dropdown --> 
-								</li> <!-- .has-children -->  
-								<li class="has-children">
-									<a href="#">State</a>
-									<ul class="cd-secondary-dropdown is-hidden">
-										<li class="go-back"><a href="#">Menu</a></li>
-												
-												
-									</ul><!-- .cd-secondary-dropdown --> 
-								</li> <!-- .has-children -->
-							</ul> <!-- .cd-dropdown-content -->
-						</nav> <!-- .cd-dropdown -->
-					</div> <!-- .cd-dropdown-wrapper -->	 
-				</div>
+					 
+		    </div>
            <div class="pull-right">
           	<nav class="navbar nav_bottom" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -157,46 +103,9 @@ $(document).ready(function(){
 		   <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 		        <ul class="nav navbar-nav nav_1">
-		            <li><a href="UserHome.aspx">Home</a></li>
-		            <li><a href="About.aspx">About</a></li>	            
-		            <li><a href="Search.aspx">Search</a></li>	
-					 <li class="dropdown">
-		              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Quick Search<span class="caret"></span></a>
-		              <ul class="dropdown-menu" role="menu">
-		                     <div class="banner-bottom-login">
-		                           <div class="w3agile_banner_btom_login">			
-				                        <div class="w3agile__text w3agile_banner_btom_login_left">
-					                        <h4>I'm looking for a</h4>
-					                        <select runat="server" id="Gender" class="frm-field required">
-						                        <option value="Female">Bride</option>
-						                        <option value="Male">Groom</option>   
-					                        </select>
-                                            <asp:TextBox ID="ids" runat="server" Visible="false"></asp:TextBox>
-				                        </div>
-				                        <div class="w3agile__text w3agile_banner_btom_login_left2">
-					                        <h4>Religion :</h4>
-					                        <asp:DropDownList ID="religion" runat="server">                                                            
-                                                 </asp:DropDownList>
-				                        </div>
-                                       <div class="w3agile__text w3agile_banner_btom_login_left1">
-					                        <h4>Aged :</h4>
-                                           <input type="number" id="age" runat="server" visible="false" />
-					                        <input type="number" id="AgeFrom" runat="server" /><span>To</span>
-                                            <input type="number" id="AgeTo" runat="server" />
-				                        </div>
-				                        <div class="w3agile_banner_btom_login_left3">
-					                        <asp:Button runat="server" ID="Search" Text="Search" OnClick="Search_Click"/>
-				                        </div>
-				                        <div class="clearfix"> </div>
-			
-		                        </div>
-	                        </div>
-		              </ul>
-		            </li> 	            
-		            <li><a href="Contact.aspx">Contacts</a></li>
-                     <li runat="server" id="Stories" visible="false"><a href="Stories.aspx"><i class="fa  fa-bell-o"></i><span>Story</span>
-                            <span class="badge bg-red"><asp:Label runat="server" Text="" ID="Count"></asp:Label></span></a>                     
-                    </li>
+		            <li><a href="Home.aspx">Home</a></li>
+		            <li><a href="About.aspx">About</a></li>	   					 	            
+		            <li><a href="Contact.aspx">Contacts</a></li>                     
                      <li class="">
                     <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                         <i class="fa fa-user"></i>
@@ -204,9 +113,7 @@ $(document).ready(function(){
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
-                    <li><a href="User.aspx"><i class="fa fa-smile-o pull-right"></i>Profile</a></li>
-                    <li><a href="Settings.aspx"><i class="fa fa-gears pull-right"></i>Setting</a></li>
-                   <li><a href="Home.aspx"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                   <li><a href="Home.aspx"><i class="fa fa-sign-out pull-right"></i>Log Out</a></li>
                   </ul>
                 </li>
 		        </ul>               
@@ -223,7 +130,7 @@ $(document).ready(function(){
 
     <div>
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            <div class="progress-container header">
+             <div class="progress-container header">
             <div class="progress-bar" id="myBar"></div>
             </div>
         </asp:ContentPlaceHolder>

@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="Help.aspx.cs" Inherits="matrimonial_project.View.Admin.Help" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-     <link href="../../Content/admin/GridviewPaging.css" rel="stylesheet" />
+     
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:ScriptManager ID="adminScriptManager" runat="server" EnablePageMethods="true"></asp:ScriptManager>

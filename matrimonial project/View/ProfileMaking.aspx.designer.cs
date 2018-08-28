@@ -10,7 +10,7 @@
 namespace matrimonial_project.View {
     
     
-    public partial class Index {
+    public partial class ProfileMaking {
         
         /// <summary>
         /// message control.

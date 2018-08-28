@@ -1,11 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Matrimonial.Master" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="matrimonial_project.View.Index" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Matrimonialhome.Master" AutoEventWireup="true" CodeBehind="ProfileMaking.aspx.cs" Inherits="matrimonial_project.View.ProfileMaking" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="../Content/matrimonial/css/ScrollIndicator.css" rel="stylesheet" />
 </asp:Content>
-
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="progress-container header">
+       <div class="progress-container header">
             <div class="progress-bar" id="myBar"></div>
     </div>
     <div class="w3layouts-breadcrumbs text-center">
@@ -267,8 +264,8 @@
 								</div>
 								<div class="clearfix"> </div>
 							  </div>
-							  <asp:Button style="width:auto;"  ID="ContentPlaceHolder1_Submit" runat="server" Text="Submit"  OnClick="Submit_Click"  />
-							  <asp:Button ID="ContentPlaceHolder1_Cancel"  runat="server" Text="Cancel"  OnClick="Cancel_Click" />
+							  <asp:Button style="width:auto;"  ID="ContentPlaceHolder1_Submit" runat="server" Text="Submit" OnClick="ContentPlaceHolder1_Submit_Click"  />
+							  <asp:Button ID="ContentPlaceHolder1_Cancel"  runat="server" Text="Cancel" OnClick="ContentPlaceHolder1_Cancel_Click" />
                                
 						</div>
 					</div>
@@ -336,5 +333,4 @@ function myFunction() {
   document.getElementById("myBar").style.width = scrolled + "%";
 }
 </script>
-                
 </asp:Content>

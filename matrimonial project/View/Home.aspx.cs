@@ -119,7 +119,7 @@ namespace matrimonial_project.View
                 }
                 else
                 {
-                    Response.Redirect("Index.aspx", false);
+                    Response.Redirect("ProfileMaking.aspx", false);
                 }
             }
             catch (Exception ex)

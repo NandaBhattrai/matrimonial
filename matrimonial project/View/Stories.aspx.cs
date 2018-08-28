@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -72,7 +73,11 @@ namespace matrimonial_project.View
                 string SId = row["SRegisterId"].ToString();
                 Sid.Value = row["StoryId"].ToString();
                  date.Text = row["Date"].ToString();
-                story_edit.Value = row["Story"].ToString();
+                story_edit.Value = row["SImage"].ToString();
+                string Imag = row["ProfileImage"].ToString();
+                Imag = "../Upload/" + Imag;
+                Imag = "<img src='" + Imag + "'/>";
+                Pic.Text = Imag;
                 DataTable dta = new DataTable();
                 string str = "SELECT SUserName,SRegisterId,Date,Story,StoryId from Story WHERE RUserName=@RUserName AND Status=0";
                 SqlCommand comd = new SqlCommand(str);
@@ -100,6 +105,7 @@ namespace matrimonial_project.View
                         Image = "../Upload/" + Image;
                         Image = "<img src='" + Image + "'/>";
                         Pimage.Text = Image;
+
                     }
                 }
                 else
@@ -134,11 +140,7 @@ namespace matrimonial_project.View
             {
                 throw;
             }
-        }
-
-      
-
-      
+        }      
 
         protected void Btn_btnNo_Click(object sender, EventArgs e)
         {
@@ -169,6 +171,32 @@ namespace matrimonial_project.View
         {
             try
             {
+                HttpPostedFile filepic = photo.PostedFile;
+                string Picture = "no image";
+                if (filepic != null)
+                {
+                    if (!Directory.Exists(Server.MapPath("~/Upload")))
+                    {
+                        Directory.CreateDirectory(Server.MapPath("~/Upload"));
+                    }
+
+                    var extension = Path.GetExtension(filepic.FileName).ToLower();
+                    if (extension == ".png" || extension == ".jpg" || extension == ".jpeg")
+                    {
+                        var filezize = filepic.ContentLength;
+                        if (filezize <= 1024 * 1024 * 5)
+                        {
+                            var filename = Guid.NewGuid().ToString() + extension;
+                            filepic.SaveAs(Server.MapPath($"~/Upload/{filename}"));
+                            Picture = $"{filename}";
+                        }
+                        else
+                        {
+                            message.Visible = true;
+                            message.Text = "Image Size is large Please select small size image";
+                        }
+                    }
+                }
                 DataTable dt = new DataTable();
                 string strquery = "SELECT ProfileId from UserProfile WHERE Name=@Name  AND Email=@Email AND Country=@Country AND Mobile=@Mobile AND ProfileStatus=1";
                 SqlCommand cmd = new SqlCommand(strquery);
@@ -180,7 +208,7 @@ namespace matrimonial_project.View
                 dt = conn_.SelectData(cmd);
                 if (dt.Rows.Count > 0)
                 {
-                    string Query = "INSERT INTO dbo.Story (ReceiverName,RUserName,REmail,RCountry,SUsername,RPhone,Story,Date,Status,SRegisterId) VALUES (@ReceiverName,@RUserName,@REmail,@RCountry,@SUsername,@RPhone,@Story,@Date,@Status,@SRegisterId)";
+                    string Query = "INSERT INTO dbo.Story (ReceiverName,RUserName,REmail,RCountry,SUsername,RPhone,Story,Date,Status,SRegisterId,SImage) VALUES (@ReceiverName,@RUserName,@REmail,@RCountry,@SUsername,@RPhone,@Story,@Date,@Status,@SRegisterId,@SImage)";
                     SqlCommand cmmd = new SqlCommand(Query);
                     cmmd.Parameters.Add("@ReceiverName", SqlDbType.VarChar).Value = name.Value.Trim();
                     cmmd.Parameters.Add("@RUserName", SqlDbType.VarChar).Value = User.Value.Trim();
@@ -192,6 +220,7 @@ namespace matrimonial_project.View
                     cmmd.Parameters.Add("@Status", SqlDbType.VarChar).Value = "0";
                     cmmd.Parameters.Add("@SRegisterId", SqlDbType.Int).Value = Convert.ToInt32(Session["UserId"].ToString());
                     cmmd.Parameters.Add("@SUsername", SqlDbType.VarChar).Value = Session["UserName"].ToString();
+                    cmmd.Parameters.Add("@SImage", SqlDbType.VarChar).Value = Picture;
                     DBconnection conn = new DBconnection();
                     bool result = conn.ExecuteData(cmmd);
                     if (result)
@@ -208,7 +237,7 @@ namespace matrimonial_project.View
                 else
                 {
                     msg.Visible = true;
-                    message.Text = "User cannot be Found";
+                    message.Text = "User cannot be Found or select your picture!!!!!";
                 }
             }
             catch (Exception ex)
@@ -243,6 +272,18 @@ namespace matrimonial_project.View
             }
         }
 
-       
+        protected void Btn_btnYes_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                NO_Block.Visible = false;
+                Yes_Block.Visible = false;
+                Updateblock.Visible = true;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
     }
     }

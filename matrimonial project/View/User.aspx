@@ -1,6 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Matrimonial.Master" AutoEventWireup="true" CodeBehind="User.aspx.cs" Inherits="matrimonial_project.View.User" EnableEventValidation="false" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="../Content/matrimonial/css/ScrollIndicator.css" rel="stylesheet" />
 <style>
     .zoom{
          transition: transform .2s; /* Animation */
@@ -18,9 +17,7 @@
     <asp:ScriptManager ID="adminScriptManager" runat="server" EnablePageMethods="true"></asp:ScriptManager>
         <asp:UpdatePanel ID="updatePanel" runat="server">
             <ContentTemplate>
-    <div class="progress-container header">
-            <div class="progress-bar" id="myBar"></div>
-    </div>
+    
     	<!-- breadcrumbs -->
 	<div class="w3layouts-breadcrumbs text-center">
 		<div class="container">
