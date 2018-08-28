@@ -110,7 +110,7 @@ $(document).ready(function(){
 		<div class="assisted_Services-agileits">
 		<h2>Assisted Services</h2>
 			<h4>Interested in Assisted Service?</h4>
-			<p>Leave your details below, we'll call you back.</p>
+			<b><p style="color:red;">Leave your details below, we'll call you back.</p></b>
 			  <form id="form1" runat="server">
                   <asp:Label runat="server" ID="message" Text=""></asp:Label>
 				<label>Name:</label>
@@ -119,7 +119,7 @@ $(document).ready(function(){
 				<input type="tel" placeholder="Phone Number" runat="server" id="tel" required="required"/>
 				<label>Email:</label>
 				<input type="email" placeholder="Email" runat="server" id="email" required="required"/>
-				<br />
+				<br /><br />
 				<asp:Button runat="server" ID="Submit" Text="Submit" OnClick="Submit_Click" />
 		      </form>	
 		</div>

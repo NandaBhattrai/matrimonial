@@ -107,7 +107,7 @@ namespace matrimonial_project.View
         private DataTable getPartner()
         {
             DataTable dt = new DataTable();
-            string strQuery = "SELECT * FROM dbo.Partner where RegisterId=@RegisterId";
+            string strQuery = "SELECT * FROM dbo.Partner where RegisterId=@RegisterId AND PartnerStatus=1";
             SqlCommand cmd = new SqlCommand(strQuery);
             cmd.Parameters.Add("@RegisterId", SqlDbType.Int).Value = Convert.ToInt32(Session["UserId"]);
             DBconnection conn_ = new DBconnection();
@@ -118,7 +118,7 @@ namespace matrimonial_project.View
         private DataTable getValue()
         {
             DataTable dt = new DataTable();           
-            string strQuery = "SELECT * FROM dbo.UserProfile where RegisterId=@RegisterId";
+            string strQuery = "SELECT * FROM dbo.UserProfile where RegisterId=@RegisterId AND ProfileStatus=1";
             SqlCommand cmd = new SqlCommand(strQuery);
             cmd.Parameters.Add("@RegisterId", SqlDbType.Int).Value = Convert.ToInt32(Session["UserId"]);           
             DBconnection conn_ = new DBconnection();

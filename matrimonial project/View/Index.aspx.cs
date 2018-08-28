@@ -46,6 +46,10 @@ namespace matrimonial_project.View
                             rad_male.Checked = false;
                         }
                     }
+                    else
+                    {
+                        Response.Redirect("Home.aspx", false);
+                    }
                 }
             }
             catch (Exception ex)
@@ -57,7 +61,7 @@ namespace matrimonial_project.View
         private DataTable getValue()
         {
             DataTable dt = new DataTable();
-            string strQuery = "SELECT * FROM dbo.Register where UserId=@UserId";
+            string strQuery = "SELECT * FROM dbo.Register where UserId=@UserId AND UserStatus=1";
             SqlCommand cmd = new SqlCommand(strQuery);
             cmd.Parameters.Add("@UserId", SqlDbType.Int).Value = Convert.ToInt32(Session["UserId"].ToString());
             DBconnection conn_ = new DBconnection();
@@ -80,8 +84,8 @@ namespace matrimonial_project.View
             try
             {
                    string Religious = Religion.SelectedItem.ToString();
-                string Blood = BloodGroup.Value.ToString();
-                bool male = rad_male.Checked;
+                    string Blood = BloodGroup.Value.ToString();
+                    bool male = rad_male.Checked;
                     bool female = rad_female.Checked;
                     string Gender;
                     if (male)

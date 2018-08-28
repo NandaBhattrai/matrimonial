@@ -3,6 +3,9 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:ScriptManager ID="adminScriptManager" runat="server" EnablePageMethods="true"></asp:ScriptManager>
+        <asp:UpdatePanel ID="updatePanel" runat="server">
+            <ContentTemplate>
     <!-- page content -->
         <div class="right_col" role="main">
           <div class="">
@@ -10,7 +13,6 @@
               <div class="title_left">
                 <h3>Admin Profile</h3>
               </div>
-
               <div class="title_right">
                 <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
                   <div class="input-group">
@@ -61,13 +63,13 @@
                        <asp:Button text="Update" ID="Update" CssClass="btn btn-success" OnClick="Update_Click" runat="server"/>
                     </div>
                        <asp:Label runat="server" ID="message" Text=""></asp:Label>
-              </div>
-                                        
-                  
-                </div>
+              </div>                                    
+               </div>
               </div>
             </div>
           </div>
         </div>
         <!-- /page content -->
+                </ContentTemplate>
+            </asp:UpdatePanel>
 </asp:Content>

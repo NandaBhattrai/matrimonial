@@ -13,6 +13,24 @@ namespace matrimonial_project.View {
     public partial class SearchProfile {
         
         /// <summary>
+        /// Profile_Block control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Profile_Block;
+        
+        /// <summary>
+        /// message control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label message;
+        
+        /// <summary>
         /// UserImage control.
         /// </summary>
         /// <remarks>
@@ -40,24 +58,6 @@ namespace matrimonial_project.View {
         protected global::System.Web.UI.WebControls.Label UserName;
         
         /// <summary>
-        /// AboutMe control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label AboutMe;
-        
-        /// <summary>
-        /// AboutFamily control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label AboutFamily;
-        
-        /// <summary>
         /// UserDateOfBirth control.
         /// </summary>
         /// <remarks>
@@ -67,13 +67,13 @@ namespace matrimonial_project.View {
         protected global::System.Web.UI.WebControls.Label UserDateOfBirth;
         
         /// <summary>
-        /// Age control.
+        /// UserAge control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Age;
+        protected global::System.Web.UI.WebControls.Label UserAge;
         
         /// <summary>
         /// UserHeight control.
@@ -92,6 +92,24 @@ namespace matrimonial_project.View {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label UserWeight;
+        
+        /// <summary>
+        /// AboutMe control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label AboutMe;
+        
+        /// <summary>
+        /// AboutFamily control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label AboutFamily;
         
         /// <summary>
         /// UserEducation control.
@@ -247,21 +265,138 @@ namespace matrimonial_project.View {
         protected global::System.Web.UI.WebControls.Label Blood;
         
         /// <summary>
-        /// username control.
+        /// PartnerGender control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText username;
+        protected global::System.Web.UI.WebControls.Label PartnerGender;
         
         /// <summary>
-        /// brand control.
+        /// PartnerAgeFrom control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox brand;
+        protected global::System.Web.UI.WebControls.Label PartnerAgeFrom;
+        
+        /// <summary>
+        /// PartnerAgeTo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label PartnerAgeTo;
+        
+        /// <summary>
+        /// PartnerHeightFrom control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label PartnerHeightFrom;
+        
+        /// <summary>
+        /// PartnerHeightTo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label PartnerHeightTo;
+        
+        /// <summary>
+        /// PartnerMarital control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label PartnerMarital;
+        
+        /// <summary>
+        /// PartnerReligion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label PartnerReligion;
+        
+        /// <summary>
+        /// PartnerCaste control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label PartnerCaste;
+        
+        /// <summary>
+        /// PartnerCountry control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label PartnerCountry;
+        
+        /// <summary>
+        /// PartnerEducation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label PartnerEducation;
+        
+        /// <summary>
+        /// PartnerOccupation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label PartnerOccupation;
+        
+        /// <summary>
+        /// PartnerComplexion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label PartnerComplexion;
+        
+        /// <summary>
+        /// PartnerDiet control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label PartnerDiet;
+        
+        /// <summary>
+        /// PartnerDrink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label PartnerDrink;
+        
+        /// <summary>
+        /// PartnerSmoke control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label PartnerSmoke;
     }
 }

@@ -103,6 +103,7 @@ namespace matrimonial_project.View
             }
             else
             {
+                message_block.Visible = true;
                 message.Text = "Sorry Try Again Username and Password does not match";
                 message.ForeColor = System.Drawing.Color.Red;
             }
@@ -143,18 +144,21 @@ namespace matrimonial_project.View
                     bool result = conn_.ExecuteData(cmd);
                     if (result)
                     {
+                        message_block.Visible = true;
                         message.Text = "successfully changed";
                         message.ForeColor = System.Drawing.Color.Green;
                     }
 
                     else
                     {
+                        message_block.Visible = true;
                         message.Text = "something went wrong ";
                         message.ForeColor = System.Drawing.Color.Red;
                     }
                 }
                 else
                 {
+                    message_block.Visible = true;
                     message.Text = "password does not match";
                     message.ForeColor = System.Drawing.Color.Red;
                 }

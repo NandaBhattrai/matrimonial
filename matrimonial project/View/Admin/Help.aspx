@@ -3,6 +3,9 @@
      <link href="../../Content/admin/GridviewPaging.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:ScriptManager ID="adminScriptManager" runat="server" EnablePageMethods="true"></asp:ScriptManager>
+        <asp:UpdatePanel ID="updatePanel" runat="server">
+            <ContentTemplate>
      <!-- page content -->
         <div class="right_col" role="main">
           <!-- top tiles -->
@@ -56,7 +59,7 @@
                                    </asp:BoundField>
                              <asp:TemplateField ShowHeader="False">
                                 <ItemTemplate>
-                                    <asp:Button ID="Button1" runat="server" CausesValidation="false" CommandName="Show"
+                                    <asp:Button ID="Button1" runat="server" CssClass="btn btn-primary" CausesValidation="false" CommandName="Show"
                                         Text="Detail" CommandArgument='<%# Eval("Id") %>' />
                                 </ItemTemplate>
                             </asp:TemplateField>                                
@@ -69,11 +72,9 @@
         </i> 
          </div>
          </div>
-         </div>
-          </div>      
-            <!-- /top tiles --> 
+         </div>          
             
-                         <div class="col-md-12 col-sm-12 col-xs-12" id="Message" runat="server" visible="false">
+              <div class="col-md-12 col-sm-12 col-xs-12" id="Message" runat="server" visible="false">
               <div class="x_panel">
                 <div class="x_title">
                   <h2><asp:Label runat="server" Text="" ID="Name"></asp:Label> <small>Help Message</small></h2>
@@ -99,7 +100,7 @@
                             </div>
                             <p class="excerpt"><asp:Label runat="server" ID="HelpMessage" Text=""></asp:Label>
                             </p>
-                            <asp:Button ID="Read" runat="server" Text="Read" OnClick="Read_Click"/>
+                            <asp:Button ID="Read" runat="server" Text="Read" CssClass="btn btn-success" OnClick="Read_Click"/>
                           </div>
                         </div>
                       </li>                      
@@ -107,7 +108,11 @@
                   </div>
                 </div>
               </div>
-            </div>   
+            </div>
+              </div>      
+            <!-- /top tiles -->   
         </div>                
         <!-- /page content -->
+                </ContentTemplate>
+            </asp:UpdatePanel>
 </asp:Content>

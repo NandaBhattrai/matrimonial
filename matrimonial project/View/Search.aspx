@@ -1,19 +1,23 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Matrimonial.Master" AutoEventWireup="true" CodeBehind="Search.aspx.cs" Inherits="matrimonial_project.View.Search" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link href="../Content/matrimonial/css/ScrollIndicator.css" rel="stylesheet" />
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="progress-container header">
+            <div class="progress-bar" id="myBar"></div>
+    </div>
     <!-- breadcrumbs -->
 	<div class="w3layouts-breadcrumbs text-center">
 		<div class="container">
-			<span class="agile-breadcrumbs"><a href="Home.html">Home</a> > <span>Search</span></span>
+			<span class="agile-breadcrumbs"><a href="UserHome.aspx">Home</a> > <span>Search</span></span>
 		</div>
 	</div>
 	<!-- //breadcrumbs -->
     
     	<!-- Search form -->
-	<div class="w3ls-list">
+	<div class="w3ls-list" runat="server" id="Search_block">
 		<div class="container">
 		<h2>Search your Match</h2>
 		<div class="col-md-9 profiles-list-agileits">
@@ -59,80 +63,25 @@
 							  </div>
 							  <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Country : </label>
-								<div class="col-sm-7 form_radios">
-								    <input runat="server" id="Country" type="text" />
+								<div class="col-sm-7 form_radios">								      
+                                     <asp:DropDownList ID="Country_list" runat="server">                                                            
+                                     </asp:DropDownList>								      
 								</div>
 								<div class="clearfix"> </div>
 							  </div>
 							  <div class="form_but1">
-								<label class="col-sm-5 control-label1" for="sex">District / City : </label>
+								<label class="col-sm-5 control-label1" for="sex">Profession : </label>
 								<div class="col-sm-7 form_radios">
-								  <div class="select-block1">
-									<select>
-										<option value="">District / City</option>
-										<option value="">City1</option>
-										<option value="">City2</option>
-										<option value="">City3</option>
-										<option value="">City4</option>
-										<option value="">City5</option> 
-										<option value="">City6</option> 
-										<option value="">City7</option> 
-										<option value="">City8</option> 
-										<option value="">City9</option> 
-										<option value="">City10</option> 
-										<option value="">City11</option> 
-										<option value="">City12</option> 
-										<option value="">City13</option>
-										<option value="">City14</option>  
-										<option value="">City15</option> 
-										<option value="">City16</option>
-										<option value="">City17</option> 
-										<option value="">City18</option>
-										<option value="">City19</option>  
-										<option value="">City20</option> 
-										<option value="">City21</option>  
-										<option value="">City22</option>
-										<option value="">City23</option>  
-										<option value="">City24</option> 
-										<option value="">City25</option> 
-									</select>
-								  </div>
+								    <asp:DropDownList ID="Profession" runat="server">                                                            
+                                     </asp:DropDownList>
 								</div>
 								<div class="clearfix"> </div>
 							  </div>
 							  <div class="form_but1">
-								<label class="col-sm-5 control-label1" for="sex">State : </label>
+								<label class="col-sm-5 control-label1" for="sex">Stay Address : </label>
 								<div class="col-sm-7 form_radios">
-								  <div class="select-block1">
-									<select>
-										<option value="">State1</option>
-										<option value="">State2</option>
-										<option value="">State3</option>
-										<option value="">State4</option>
-										<option value="">State5</option>
-										<option value="">State6</option> 
-										<option value="">State7</option> 
-										<option value="">State8</option> 
-										<option value="">State9</option> 
-										<option value="">State10</option> 
-										<option value="">State11</option> 
-										<option value="">State12</option> 
-										<option value="">State13</option> 
-										<option value="">State14</option>
-										<option value="">State15</option>  
-										<option value="">State16</option> 
-										<option value="">State17</option>
-										<option value="">State18</option> 
-										<option value="">State19</option>
-										<option value="">State20</option>  
-										<option value="">State21</option> 
-										<option value="">State22</option>  
-										<option value="">State23</option>
-										<option value="">State24</option>  
-										<option value="">State25</option> 
-										<option value="">State26</option> 
-									</select>
-								  </div>
+								    <asp:DropDownList ID="Stay" runat="server">                                                            
+                                     </asp:DropDownList>
 								</div>
 								<div class="clearfix"> </div>
 							  </div>
@@ -145,23 +94,10 @@
 								<div class="clearfix"> </div>
 							  </div>
 							  <div class="form_but1">
-								<label class="col-sm-5 control-label1" for="sex">Mother Tongue : </label>
+								<label class="col-sm-5 control-label1" for="sex">Caste : </label>
 								<div class="col-sm-7 form_radios">
-								  <div class="select-block1">
-									<select>
-										<option value="">English</option>
-										<option value="">French</option>
-										<option value="">Telugu</option>
-										<option value="">Bengali</option>
-										<option value="">Bihari</option>
-										<option value="">Hindi</option> 
-										<option value="">Koshali</option> 
-										<option value="">Khasi</option> 
-										<option value="">Tamil</option> 
-										<option value="">Urdu</option> 
-										<option value="">Manipuri</option> 
-									</select>
-								  </div>
+								  <asp:DropDownList ID="Caste" runat="server">                                                            
+                                     </asp:DropDownList>
 								</div>
 								<div class="clearfix"> </div>
 							  </div>			 
@@ -172,55 +108,59 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-md-3 w3ls-aside">
-			<h3>Search by UserName:</h3>			
-				<input class="form-control" type="text" runat="server" id="username" placeholder="Enter Username"/>
-				<asp:Button runat="server" Text="Submit" ID="submit" OnClick="submit_Click"/>
-				<div class="clearfix"></div>			
-			<h4>Filter Profiles by</h4>
-			<div class="fltr-w3ls">
-				<h5>Country</h5>
-				<ul>
-					<li><a href="#">Country1</a></li>
-					<li><a href="#">Country2</a></li>
-					<li><a href="#">Country3</a></li>
-					<li><a href="#">Country4</a></li>
-					<li><a href="#">Country5</a></li>
-					<li><a href="#">Country6</a></li>
-					<li><a href="#">Country7</a></li>
-					<li><a href="#">Country8</a></li>
-				</ul>
-			</div>
-			<div class="fltr-w3ls">
-				<h5>Religion</h5>
-				<ul>
-					<li><a href="#">Religion1</a></li>
-					<li><a href="#">Religion2</a></li>
-					<li><a href="#">Religion3</a></li>
-					<li><a href="#">Religion4</a></li>
-					<li><a href="#">Religion5</a></li>
-					<li><a href="#">Religion6</a></li>
-					<li><a href="#">Religion7</a></li>
-				</ul>
-			</div>
-			<div class="fltr-w3ls">
-				<h5>Profession</h5>
-				<ul>
-					<li><a href="#">Profession1</a></li>
-					<li><a href="#">Profession2</a></li>
-					<li><a href="#">Profession3</a></li>
-					<li><a href="#">Profession4</a></li>
-					<li><a href="#">Profession5</a></li>
-					<li><a href="#">Profession6</a></li>
-				</ul>
-			</div>
-		</div>
+		
 	<div class="clearfix"></div>
 	</div>
 	</div>
 	<script src="js/easyResponsiveTabs.js"></script>	
 	<!-- //Search form -->
 	
+    <!-- featured profiles -->			
+			<div class="w3layouts_featured-profiles" style="padding-top:20px;" runat="server" visible="false" id="Result_block">
+				<div class="container">
+				<!-- slider -->
+				<div class="agile_featured-profiles">
+					<h2>Featured Profiles</h2>
+							<ul id="flexiselDemo3">
+								<li>
+									<asp:PlaceHolder runat="server" ID="test"></asp:PlaceHolder>					
+								</li>								
+							</ul>
+					</div>   
+			</div>
+			<!-- //slider -->
+                			
+			</div>
+			<script type="text/javascript" src="js/jquery.flexisel.js"></script><!-- flexisel-js -->	
+					<script type="text/javascript">
+						 $(window).load(function() {
+							$("#flexiselDemo3").flexisel({
+								visibleItems:1,
+								animationSpeed: 1000,
+								autoPlay: false,
+								autoPlaySpeed: 5000,    		
+								pauseOnHover: true,
+								enableResponsiveBreakpoints: true,
+								responsiveBreakpoints: { 
+									portrait: { 
+										changePoint:480,
+										visibleItems:1
+									}, 
+									landscape: { 
+										changePoint:640,
+										visibleItems:1
+									},
+									tablet: { 
+										changePoint:768,
+										visibleItems:1
+									}
+								}
+							});
+							
+						});
+					   </script>
+				<!-- //featured profiles -->
+
 	<!-- browse profiles -->
 	<div class="w3layouts-browse text-center">
 		<div class="container">
@@ -278,4 +218,16 @@
 		</div>
 	</div>
 	<!-- //browse profiles -->
+
+<script>
+// When the user scrolls the page, execute myFunction 
+window.onscroll = function() {myFunction()};
+
+function myFunction() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("myBar").style.width = scrolled + "%";
+}
+</script>
 </asp:Content>

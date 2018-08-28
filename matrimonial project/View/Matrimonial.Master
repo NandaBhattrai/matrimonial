@@ -95,32 +95,15 @@ $(document).ready(function(){
 						<nav class="cd-dropdown"> 
 							<a href="#0" class="cd-close">Close</a>
 							<ul class="cd-dropdown-content"> 
-								<li><a href="matches.html">All Profiles</a></li>
-								<li class="has-children">
-									<a href="#">Mother Tongue</a> 
-									<ul class="cd-secondary-dropdown is-hidden">
-										<li class="go-back"><a href="#">Menu</a></li>
-												<li><a href="l_list.html">Language 1</a></li>
-												<li><a href="l_list.html">Language 2</a> </li>
-												<li><a href="l_list.html">Language 3</a></li>
-												<li><a href="l_list.html">Language 4</a></li>
-												<li><a href="l_list.html">Language 5</a></li> 
-												<li><a href="l_list.html">Language 6</a></li> 
-												<li><a href="l_list.html">Language 7</a></li> 
-												<li><a href="l_list.html">Language 8</a></li> 
-																							
-									</ul> <!-- .cd-secondary-dropdown --> 
-								</li> <!-- .has-children -->
+								<li><a href="matches.html" runat="server">All Profiles</a></li>
+                                
+                                <asp:Label runat="server" ID="countrylist" Text=""></asp:Label>
+								<!-- here ends country -->
 								<li class="has-children">
 									<a href="#">Caste</a> 
 									<ul class="cd-secondary-dropdown is-hidden">
 										<li class="go-back"><a href="#">Menu</a></li>
-												<li><a href="c_list.html">Caste 1</a></li>
-												<li><a href="c_list.html">Caste 2</a></li>  
-												<li><a href="c_list.html">Caste 3</a></li> 
-												<li><a href="c_list.html">Caste 4</a></li> 
-												<li><a href="c_list.html">Caste 5</a></li> 
-												<li><a href="c_list.html">Caste 6</a></li> 
+												
 												
 									</ul> <!-- .cd-secondary-dropdown --> 
 								</li> <!-- .has-children -->
@@ -128,11 +111,7 @@ $(document).ready(function(){
 									<a href="products2.html">Religion</a> 
 									<ul class="cd-secondary-dropdown is-hidden"> 
 										<li class="go-back"><a href="#">Menu</a></li>
-												<li><a href="r_list.html">Religion 1</a></li> 
-												<li><a href="r_list.html">Religion 2</a></li> 
-												<li><a href="r_list.html">Religion 3</a></li> 
-												<li><a href="r_list.html">Religion 4</a></li> 
-												<li><a href="r_list.html">Religion 5</a></li> 
+											
 												 
 									</ul><!-- .cd-secondary-dropdown --> 
 								</li> <!-- .has-children --> 
@@ -140,8 +119,7 @@ $(document).ready(function(){
 									<a href="#">City</a> 
 									<ul class="cd-secondary-dropdown is-hidden">
 										<li class="go-back"><a href="#">Menu</a></li>
-												<li><a href="city_list.html">City 1</a></li> 
-												<li><a href="city_list.html">City 2</a></li> 
+												 
 											 
 									</ul><!-- .cd-secondary-dropdown --> 
 								</li> <!-- .has-children -->  
@@ -149,42 +127,17 @@ $(document).ready(function(){
 									<a href="#">Occupation</a>
 									<ul class="cd-secondary-dropdown is-hidden">
 										<li class="go-back"><a href="#">Menu</a></li>
-												<li><a href="o_list.html">IT Software </a></li> 
-												<li><a href="o_list.html">Teacher  </a></li>
-												<li><a href="o_list.html">Business man </a></li>
-												<li><a href="o_list.html">Lawyers</a></li>
-												<li><a href="o_list.html">Defence </a></li>
-												<li><a href="o_list.html">IAS </a></li>
-												<li><a href="o_list.html">Govt.Services </a></li>
-												<li><a href="o_list.html">Doctors </a></li>
+												
 									</ul><!-- .cd-secondary-dropdown --> 
 								</li> <!-- .has-children -->  
 								<li class="has-children">
 									<a href="#">State</a>
 									<ul class="cd-secondary-dropdown is-hidden">
 										<li class="go-back"><a href="#">Menu</a></li>
-												<li><a href="s_list.html">State 1</a></li> 
-												<li><a href="s_list.html">State 2</a></li> 
-												<li><a href="s_list.html">State 3</a></li> 
-												<li><a href="s_list.html">State 4</a></li> 
-												<li><a href="s_list.html">State 5</a></li> 
-												<li><a href="s_list.html">State 6</a></li> 
-												<li><a href="s_list.html">State 7</a></li> 
+												
 												
 									</ul><!-- .cd-secondary-dropdown --> 
-								</li> <!-- .has-children -->  
-								<li class="has-children">
-									<a href="#">NRI</a>
-									<ul class="cd-secondary-dropdown is-hidden">
-										<li class="go-back"><a href="#">Menu</a></li>
-												<li><a href="nri_list.html">Country 1</a></li> 
-												<li><a href="nri_list.html">Country 2</a></li> 
-												<li><a href="nri_list.html">Country 3</a></li> 
-												<li><a href="nri_list.html">Country 4</a></li> 
-												<li><a href="nri_list.html">Country 5</a></li>
-
-									</ul><!-- .cd-secondary-dropdown --> 
-								</li>  
+								</li> <!-- .has-children -->
 							</ul> <!-- .cd-dropdown-content -->
 						</nav> <!-- .cd-dropdown -->
 					</div> <!-- .cd-dropdown-wrapper -->	 
@@ -214,9 +167,10 @@ $(document).ready(function(){
 				                        <div class="w3agile__text w3agile_banner_btom_login_left">
 					                        <h4>I'm looking for a</h4>
 					                        <select runat="server" id="Gender" class="frm-field required">
-						                        <option value="null">Bride</option>
-						                        <option value="null">Groom</option>   
+						                        <option value="Female">Bride</option>
+						                        <option value="Male">Groom</option>   
 					                        </select>
+                                            <asp:TextBox ID="ids" runat="server" Visible="false"></asp:TextBox>
 				                        </div>
 				                        <div class="w3agile__text w3agile_banner_btom_login_left2">
 					                        <h4>Religion :</h4>
@@ -225,11 +179,12 @@ $(document).ready(function(){
 				                        </div>
                                        <div class="w3agile__text w3agile_banner_btom_login_left1">
 					                        <h4>Aged :</h4>
+                                           <input type="number" id="age" runat="server" visible="false" />
 					                        <input type="number" id="AgeFrom" runat="server" /><span>To</span>
                                             <input type="number" id="AgeTo" runat="server" />
 				                        </div>
 				                        <div class="w3agile_banner_btom_login_left3">
-					                        <asp:Button runat="server" ID="Search" Text="Search"/>
+					                        <asp:Button runat="server" ID="Search" Text="Search" OnClick="Search_Click"/>
 				                        </div>
 				                        <div class="clearfix"> </div>
 			
@@ -238,6 +193,9 @@ $(document).ready(function(){
 		              </ul>
 		            </li> 	            
 		            <li><a href="Contact.aspx">Contacts</a></li>
+                     <li runat="server" id="Stories" visible="false"><a href="Stories.aspx"><i class="fa  fa-bell-o"></i><span>Story</span>
+                            <span class="badge bg-red"><asp:Label runat="server" Text="" ID="Count"></asp:Label></span></a>                     
+                    </li>
                      <li class="">
                     <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                         <i class="fa fa-user"></i>
@@ -321,7 +279,7 @@ $(document).ready(function(){
 	</div>	
 	<div class="copy-right"> 
 		<div class="container">
-			<p>© 2017 Match. All rights reserved | Design by <a href="http://w3layouts.com"> W3layouts.</a></p>
+			<p>© 2017 Match. All rights reserved | Design by <a href="#">CatchYourMatch</a></p>
 		</div>
 	</div> 
 </footer>

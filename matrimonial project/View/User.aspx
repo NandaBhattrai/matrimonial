@@ -1,12 +1,30 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Matrimonial.Master" AutoEventWireup="true" CodeBehind="User.aspx.cs" Inherits="matrimonial_project.View.User" EnableEventValidation="false" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-
+    <link href="../Content/matrimonial/css/ScrollIndicator.css" rel="stylesheet" />
+<style>
+    .zoom{
+         transition: transform .2s; /* Animation */
+    }
+.zoom:hover {
+    margin:20px 20px 65px 20px;
+     background-color: transparent;
+    -ms-transform: scale(1.5); /* IE 9 */
+    -webkit-transform: scale(1.5); /* Safari 3-8 */
+    transform: scale(1.5); 
+}
+</style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:ScriptManager ID="adminScriptManager" runat="server" EnablePageMethods="true"></asp:ScriptManager>
+        <asp:UpdatePanel ID="updatePanel" runat="server">
+            <ContentTemplate>
+    <div class="progress-container header">
+            <div class="progress-bar" id="myBar"></div>
+    </div>
     	<!-- breadcrumbs -->
 	<div class="w3layouts-breadcrumbs text-center">
 		<div class="container">
-			<span class="agile-breadcrumbs"><a href="Home.aspx">Home</a> > <span>Profile Details</span></span>
+			<span class="agile-breadcrumbs"><a href="UserHome.aspx">Home</a> > <span>Profile Details</span></span>
 		</div>
 	</div>
 	<!-- //breadcrumbs -->
@@ -18,7 +36,10 @@
 		<div class="col-md-12 profiles-list-agileits">
 			<div class="single_w3_profile">
 				<div class="col-md-6 agileits_profile_image">
+                    <div class="zoom">
 					<asp:Label Text="" runat="server"  ID="UserImage"/>
+                     </div>
+                    <div class="clearfix"></div>
 				</div>
 				<div class="col-md-6 w3layouts_details">
 					<h4>Profile ID :<asp:Label Text="" runat="server"  ID="ProfileId"/> </h4>					
@@ -684,4 +705,18 @@
 	 
 		});
 	</script>
+
+<script>
+// When the user scrolls the page, execute myFunction 
+window.onscroll = function() {myFunction()};
+
+function myFunction() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("myBar").style.width = scrolled + "%";
+}
+</script>
+        </ContentTemplate>
+            </asp:UpdatePanel>
 </asp:Content>

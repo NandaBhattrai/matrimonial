@@ -31,6 +31,15 @@ namespace matrimonial_project.view {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// countrylist control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label countrylist;
+        
+        /// <summary>
         /// Gender control.
         /// </summary>
         /// <remarks>
@@ -40,6 +49,15 @@ namespace matrimonial_project.view {
         protected global::System.Web.UI.HtmlControls.HtmlSelect Gender;
         
         /// <summary>
+        /// ids control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox ids;
+        
+        /// <summary>
         /// religion control.
         /// </summary>
         /// <remarks>
@@ -47,6 +65,15 @@ namespace matrimonial_project.view {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList religion;
+        
+        /// <summary>
+        /// age control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl age;
         
         /// <summary>
         /// AgeFrom control.
@@ -74,6 +101,24 @@ namespace matrimonial_project.view {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Search;
+        
+        /// <summary>
+        /// Stories control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Stories;
+        
+        /// <summary>
+        /// Count control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Count;
         
         /// <summary>
         /// UserName control.

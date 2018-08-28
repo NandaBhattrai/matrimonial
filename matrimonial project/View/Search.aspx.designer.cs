@@ -13,6 +13,15 @@ namespace matrimonial_project.View {
     public partial class Search {
         
         /// <summary>
+        /// Search_block control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Search_block;
+        
+        /// <summary>
         /// RegisterId control.
         /// </summary>
         /// <remarks>
@@ -112,13 +121,31 @@ namespace matrimonial_project.View {
         protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton rad_married;
         
         /// <summary>
-        /// Country control.
+        /// Country_list control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Country;
+        protected global::System.Web.UI.WebControls.DropDownList Country_list;
+        
+        /// <summary>
+        /// Profession control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList Profession;
+        
+        /// <summary>
+        /// Stay control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList Stay;
         
         /// <summary>
         /// Religion control.
@@ -128,6 +155,15 @@ namespace matrimonial_project.View {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList Religion;
+        
+        /// <summary>
+        /// Caste control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList Caste;
         
         /// <summary>
         /// ContentPlaceHolder1_Submit control.
@@ -148,21 +184,21 @@ namespace matrimonial_project.View {
         protected global::System.Web.UI.WebControls.Button ContentPlaceHolder1_Cancel;
         
         /// <summary>
-        /// username control.
+        /// Result_block control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText username;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Result_block;
         
         /// <summary>
-        /// submit control.
+        /// test control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button submit;
+        protected global::System.Web.UI.WebControls.PlaceHolder test;
     }
 }

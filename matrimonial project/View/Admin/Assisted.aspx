@@ -3,6 +3,9 @@
      <link href="../../Content/admin/GridviewPaging.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:ScriptManager ID="adminScriptManager" runat="server" EnablePageMethods="true"></asp:ScriptManager>
+        <asp:UpdatePanel ID="updatePanel" runat="server">
+            <ContentTemplate>
      <!-- page content -->
         <div class="right_col" role="main">
           <!-- top tiles -->
@@ -66,7 +69,7 @@
                                    </asp:BoundField>  
                              <asp:TemplateField ShowHeader="False">
                                 <ItemTemplate>
-                                    <asp:Button ID="Button1" runat="server" CausesValidation="false" CommandName="Show"
+                                    <asp:Button ID="Button1" runat="server" CssClass="btn btn-primary" CausesValidation="false" CommandName="Show"
                                         Text="Detail" CommandArgument='<%# Eval("UId") %>' />
                                 </ItemTemplate>
                             </asp:TemplateField>                              
@@ -108,7 +111,7 @@
                             </div>
                             <p class="excerpt">Mobile :<asp:Label runat="server" ID="Phone" Text=""></asp:Label>
                             </p>
-                            <asp:Button ID="Read" runat="server" Text="Read" OnClick="Read_Click"/>
+                            <asp:Button ID="Read" runat="server" Text="Read" CssClass="btn btn-success" OnClick="Read_Click"/>
                           </div>
                         </div>
                       </li>                      
@@ -119,4 +122,6 @@
             </div>   
         </div>                
         <!-- /page content -->
+                </ContentTemplate>
+            </asp:UpdatePanel>
 </asp:Content>

@@ -1,7 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Matrimonial.Master" AutoEventWireup="true" CodeBehind="Settings.aspx.cs" Inherits="matrimonial_project.View.Settings" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:ScriptManager ID="adminScriptManager" runat="server" EnablePageMethods="true"></asp:ScriptManager>
+        <asp:UpdatePanel ID="updatePanel" runat="server">
+            <ContentTemplate>
     <div class="w3ls-list">
 		<div class="container">
 		<div class="col-md-12 profiles-list-agileits">
@@ -11,10 +15,14 @@
 					<div>	
 						<div class="w3_regular_search">
                             <div class="form_but1">
-								<label class="col-sm-5 control-label1" for="sex"><h3>Registration Details</h3> </label>                                
+								<label class="col-sm-5 control-label1" for="sex"><h3>Registration Details Setting</h3> </label>                                
                                 <div class="clearfix"></div>
 							</div>
-                             <asp:Label Text="" runat="server"  ID="message" CssClass="alert" />
+                            <div class="alert alert-info alert-dismissable" runat="server" visible="false" id="message_block">
+							  <button aria-hidden="true" data-dismiss="alert" class="close" type="button"> × </button>
+                                <h4><asp:Label Text="" runat="server"  ID="message"/></h4>
+						     </div>
+                            
                             <input type="text" id="Id" runat="server" hidden="hidden"/>
 							<div class="form_but1">                            
 								<label class="col-sm-5 control-label1" for="sex">Name : </label>
@@ -89,7 +97,7 @@
 								<div class="clearfix"> </div>
 							  </div>
                             <span id="Check" runat="server">			
-								<asp:Button style="width:auto;"  ID="ContentPlaceHolder1_Submit" runat="server" Text="Check" OnClick="ContentPlaceHolder1_Submit_Click"/>
+								<asp:Button style="width:auto;" ID="ContentPlaceHolder1_Submit" runat="server" Text="Check" OnClick="ContentPlaceHolder1_Submit_Click"/>
                             </span>
                             <span id="Update" runat="server" visible="false">								
                               <asp:Button style="width:auto;"  ID="ContentPlaceHolder1_Update" runat="server" Text="Update" OnClick="ContentPlaceHolder1_Update_Click1"/>
@@ -103,5 +111,6 @@
 	<div class="clearfix"></div>
 	</div>
 	</div>
-
+   </ContentTemplate>
+   </asp:UpdatePanel>
 </asp:Content>

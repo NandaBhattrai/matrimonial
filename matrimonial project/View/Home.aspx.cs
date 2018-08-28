@@ -30,7 +30,7 @@ namespace matrimonial_project.View
             }
             catch (Exception ex)
             {
-                message.Text = Convert.ToString(ex);
+                warning.Text = Convert.ToString(ex);
             }
         }
 
@@ -86,8 +86,9 @@ namespace matrimonial_project.View
                             Response.Redirect("Admin/Home.aspx", false);
                         }
                         else
-                        {                            
-                            message.Text = "Username and Password mismatch";
+                        {
+                            message.Visible = true;
+                            warning.Text = "Username and Password mismatch";
                         }
 
                     }
@@ -96,7 +97,7 @@ namespace matrimonial_project.View
             catch (Exception ex)
             {
                 message.Visible = true;
-                message.Text = ex.ToString();
+                warning.Text = ex.ToString();
             }
         }
 
@@ -105,7 +106,7 @@ namespace matrimonial_project.View
             try
             {
                 DataTable dt = new DataTable();
-                string strQuery = "SELECT ProfileId FROM dbo.UserProfile WHERE RegisterId=@RegisterId";
+                string strQuery = "SELECT ProfileId FROM dbo.UserProfile WHERE RegisterId=@RegisterId AND ProfileStatus=1";
                 SqlCommand cmd = new SqlCommand(strQuery);
                 cmd.Parameters.Add("@RegisterId", SqlDbType.Int).Value = Convert.ToInt32(Session["UserId"].ToString());
                 DBconnection conn_ = new DBconnection();
@@ -123,7 +124,7 @@ namespace matrimonial_project.View
             }
             catch (Exception ex)
             {
-                message.Text = Convert.ToString(ex);
+                warning.Text = Convert.ToString(ex);
             }
         }
 
@@ -159,19 +160,20 @@ namespace matrimonial_project.View
                 bool result = conn_.ExecuteData(cmd);
                 if (result)
                 {
+                    warning.Visible = true;
+                    warning.Text = "Successfully Registered!!Now LogIn";
                     Response.Redirect("home.aspx", false);
-                    message.Visible = true;
-                    message.Text = "Successfully Registered";                   
                 }
                 else
                 {
-                    message.Visible = true;
-                    message.Text = "Sorry Something Went Wrong";
+                    warning.Visible = true;
+                   
+                    warning.Text = "Sorry Something Went Wrong";
                 }
             }
             catch (Exception ex)
             {
-                message.Text = Convert.ToString(ex);
+                warning.Text = Convert.ToString(ex);
             }
         }
     }

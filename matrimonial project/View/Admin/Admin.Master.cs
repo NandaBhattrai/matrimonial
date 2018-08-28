@@ -11,15 +11,18 @@ namespace matrimonial_project.View.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(Session["UserName"].ToString()))
+            if (!IsPostBack)
             {
-                string UserName_ = (string)(Session["UserName"]);
-                UserName.Text = UserName_.ToString();
-                AdminName.Text = UserName_.ToString();
-                AdminName.ForeColor = System.Drawing.Color.White;
+                if (!string.IsNullOrEmpty(Session["UserName"].ToString()))
+                {
+                    string UserName_ = (string)(Session["UserName"]);
+                    UserName.Text = UserName_.ToString();
+                    AdminName.Text = UserName_.ToString();
+                    AdminName.ForeColor = System.Drawing.Color.White;
+                }
+                else
+                    Response.Redirect("../Home.aspx", false);
             }
-            else
-                Response.Redirect("../Home.aspx", false);
         }
     }
 }

@@ -3482,6 +3482,33 @@
     <Content Include="Content\admin\vendors\validator\index.html" />
     <Content Include="Content\admin\vendors\validator\multifield.js" />
     <Content Include="Content\admin\vendors\validator\validator.js" />
+    <Content Include="Content\matrimonial\css\ScrollIndicator.css" />
+    <Content Include="Content\matrimonial\data1\images\slide1.jpg" />
+    <Content Include="Content\matrimonial\data1\images\slide2.jpg" />
+    <Content Include="Content\matrimonial\data1\images\slide3.jpg" />
+    <Content Include="Content\matrimonial\data1\images\slide4.jpg" />
+    <Content Include="Content\matrimonial\data1\images\slide5.jpg" />
+    <Content Include="Content\matrimonial\data1\images\slide6.jpg" />
+    <Content Include="Content\matrimonial\data1\tooltips\slide1.jpg" />
+    <Content Include="Content\matrimonial\data1\tooltips\slide2.jpg" />
+    <Content Include="Content\matrimonial\data1\tooltips\slide3.jpg" />
+    <Content Include="Content\matrimonial\data1\tooltips\slide4.jpg" />
+    <Content Include="Content\matrimonial\data1\tooltips\slide5.jpg" />
+    <Content Include="Content\matrimonial\data1\tooltips\slide6.jpg" />
+    <Content Include="Content\matrimonial\engine1\jquery.js" />
+    <Content Include="Content\matrimonial\engine1\script.js" />
+    <Content Include="Content\matrimonial\engine1\style.css" />
+    <Content Include="Content\matrimonial\engine1\style.mod.css" />
+    <Content Include="Content\matrimonial\engine1\wowslider.js" />
+    <Content Include="Content\matrimonial\engine1\wowslider.mod.js" />
+    <Content Include="Content\matrimonial\images\bgprint10.jpg" />
+    <Content Include="Content\matrimonial\images\bgprint11.jpg" />
+    <Content Include="Content\matrimonial\images\bgprint12.jpg" />
+    <Content Include="Content\matrimonial\images\bgprint2.jpg" />
+    <Content Include="Content\matrimonial\images\bgprint6.jpg" />
+    <Content Include="Content\matrimonial\images\bgprint7.jpg" />
+    <Content Include="Content\matrimonial\images\bgprint9.jpg" />
+    <Content Include="Content\matrimonial\images\brideNgroom21.jpg" />
     <Content Include="Content\matrimonial\images\Preloader_2.gif" />
     <Content Include="packages.config" />
     <Content Include="Content\matrimonial\fonts\fontawesome-webfont.eot" />
@@ -3496,13 +3523,17 @@
     <Content Include="Content\matrimonial\fonts\OpenSans-Regular.ttf" />
     <Content Include="Content\matrimonial\fonts\Poppins-Regular.ttf" />
     <Content Include="View\About.aspx" />
+    <Content Include="View\Admin\AdminList.aspx" />
     <Content Include="View\Admin\Assisted.aspx" />
     <Content Include="View\Admin\Feedback.aspx" />
     <Content Include="View\Admin\Help.aspx" />
     <Content Include="View\Admin\Home.aspx" />
     <Content Include="View\Admin\Profile.aspx" />
     <Content Include="View\Admin\RegisterList.aspx" />
+    <Content Include="View\Admin\Report.aspx" />
     <Content Include="View\Admin\Settings.aspx" />
+    <Content Include="View\Admin\SuccessStory.aspx" />
+    <Content Include="View\Admin\UserDetail.aspx" />
     <Content Include="View\Admin\UserList.aspx" />
     <Content Include="View\Assisted_Services.aspx" />
     <Content Include="View\Contact.aspx" />
@@ -4416,10 +4447,12 @@
     <Content Include="Content\matrimonial\js\main.js" />
     <Content Include="Content\matrimonial\js\move-top.js" />
     <Content Include="Content\matrimonial\js\utils.js" />
+    <Content Include="View\Process.aspx" />
     <Content Include="View\Search.aspx" />
     <Content Include="View\SearchProfile.aspx" />
     <Content Include="View\SearchResult.aspx" />
     <Content Include="View\Settings.aspx" />
+    <Content Include="View\Stories.aspx" />
     <Content Include="View\User.aspx" />
     <Content Include="View\UserHome.aspx" />
     <Content Include="Web.config">
@@ -4442,6 +4475,13 @@
     </Compile>
     <Compile Include="View\Admin\Admin.Master.designer.cs">
       <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\AdminList.aspx.cs">
+      <DependentUpon>AdminList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Admin\AdminList.aspx.designer.cs">
+      <DependentUpon>AdminList.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Admin\Assisted.aspx.cs">
       <DependentUpon>Assisted.aspx</DependentUpon>
@@ -4485,12 +4525,33 @@
     <Compile Include="View\Admin\RegisterList.aspx.designer.cs">
       <DependentUpon>RegisterList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\Admin\Report.aspx.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Admin\Report.aspx.designer.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\Admin\Settings.aspx.cs">
       <DependentUpon>Settings.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="View\Admin\Settings.aspx.designer.cs">
       <DependentUpon>Settings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\SuccessStory.aspx.cs">
+      <DependentUpon>SuccessStory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Admin\SuccessStory.aspx.designer.cs">
+      <DependentUpon>SuccessStory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\UserDetail.aspx.cs">
+      <DependentUpon>UserDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Admin\UserDetail.aspx.designer.cs">
+      <DependentUpon>UserDetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Admin\UserList.aspx.cs">
       <DependentUpon>UserList.aspx</DependentUpon>
@@ -4555,6 +4616,13 @@
     <Compile Include="View\Matrimonial.Master.designer.cs">
       <DependentUpon>Matrimonial.Master</DependentUpon>
     </Compile>
+    <Compile Include="View\Process.aspx.cs">
+      <DependentUpon>Process.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Process.aspx.designer.cs">
+      <DependentUpon>Process.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\Search.aspx.cs">
       <DependentUpon>Search.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -4582,6 +4650,13 @@
     </Compile>
     <Compile Include="View\Settings.aspx.designer.cs">
       <DependentUpon>Settings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Stories.aspx.cs">
+      <DependentUpon>Stories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Stories.aspx.designer.cs">
+      <DependentUpon>Stories.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\User.aspx.cs">
       <DependentUpon>User.aspx</DependentUpon>

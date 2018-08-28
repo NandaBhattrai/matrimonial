@@ -31,7 +31,11 @@
             $(".se-pre-con").fadeOut("slow");;
         });
     </script>
+    <!-- Start WOWSlider.com HEAD section -->
+    <script src="../Content/matrimonial/engine1/jquery.js"></script>
+    <link href="../Content/matrimonial/engine1/style.css" rel="stylesheet" />
 
+<!-- End WOWSlider.com HEAD section -->
 <title>Match a Matrimonial Category Bootstrap Responsive Web Template | index :: w3layouts</title>
 <link href="../content/matrimonial/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" /><!-- bootstrap-CSS -->
 <link href="../content/matrimonial/css/font-awesome.css" rel="stylesheet" type="text/css" media="all" /><!-- Fontawesome-CSS -->
@@ -47,7 +51,7 @@
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!--//meta data-->
 <!-- online fonts -->
-<link href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&amp;subset=devanagari,latin-ext" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&amp;subset=devanagari,latin-ext" rel="stylesheet"/>
 <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet"/>
 <!-- /online fonts -->
 <!-- nav smooth scroll -->
@@ -87,8 +91,16 @@ $(document).ready(function(){
  <div class="navbar navbar-inverse-blue navbar">
     <!--<div class="navbar navbar-inverse-blue navbar-fixed-top">-->
       <div class="navbar-inner">
-        <div class="container">
-           
+        <div style="padding-left:100px;">
+            <div class="menu">
+					<div class="cd-dropdown-wrapper">						
+						<div class="logo" style="margin-top:-6px;">
+						<%--<h1><a class="cd-logo link link--takiri">Catch Your Match <span><i class="fa fa-heart" aria-hidden="true"></i>Made in heaven.</span></a></h1>--%>
+                            <img src="../Content/matrimonial/images/logo.PNG" class="img-responsive" alt="" style="height:70px; width:80px;" />
+						</div>
+			            </div> 
+					</div> 	 
+		</div><!-- end container -->
            <div class="pull-right">
           	<nav class="navbar nav_bottom" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -106,132 +118,21 @@ $(document).ready(function(){
                 <ul class="nav navbar-nav nav_1">
 		            <li class="active"><a href="Home.aspx">Home</a></li>
 		           <li><a href="#" data-toggle="modal" data-target="#myModal">Login</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#registerModal">Register</a></li>
 		        </ul>
 		     </div><!-- /.navbar-collapse -->
 		    </nav>
 		   </div> <!-- end pull-right -->
           <div class="clearfix"> </div>
-        </div> <!-- end container -->
+         
       </div> <!-- end navbar-inner -->
     </div> <!-- end navbar-inverse-blue -->
 <!-- ============================  Navigation End ============================ -->
 </header>
 <!-- /header -->
 
-    <div class="clearfix"></div>
-    <div class="w3layouts-banner" id="home">
-<div class="container">
-		 <div class="logo">
-		            <h1><a class="cd-logo link link--takiri" href="Home.aspx">Match <span><i class="fa fa-heart" aria-hidden="true"></i>Made in heaven.</span></a></h1>
-	          </div>
-    <form id="form1" runat="server" novalidate="novalidate">
-	<div class="agileits-register">
-		<h3>Register NOW!</h3>		
-				<div class="w3_modal_body_grid w3_modal_body_grid1">
-					<span>Name:</span>
-					<input id="name" runat="server" type="text" name="Name" placeholder="Enter Name"/>
-                    <small id="namevalidate" style="display:none;">Name is Required</small>
-                     <asp:RegularExpressionValidator ID="rev_bname" runat="server"
-                            ControlToValidate="Name" 
-                            ForeColor="Red" 
-                            ErrorMessage="Invalid name!" 
-                            SetFocusOnError="true" 
-                            ValidationExpression="^[a-zA-Z'.\s]{2,50}">
-                     </asp:RegularExpressionValidator>
-				</div>
-                <div class="clearfix"></div>
-                <div class="w3_modal_body_grid w3_modal_body_grid1">
-					<span>UserName:</span>
-					<input id="username" runat="server" type="text" name="Username" placeholder="Enter UserName"/>
-                    
-                     
-				</div>
-                <div class="clearfix"></div>
-				<div class="w3_modal_body_grid">
-					<span>Gender:</span>
-					<div class="w3_gender">
-						<div class="colr ert">
-							<label class="radio"><input runat="server" id="rad_male" type="radio" name="radio" checked=""/><i></i>Male</label>
-						</div>
-						<div class="colr">
-							<label class="radio"><input runat="server" id="rad_female" type="radio" name="radio"/><i></i>Female</label>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-                <div class="clearfix"></div>
-				<div class="w3_modal_body_grid w3_modal_body_grid1">
-					<span>Date Of Birth:</span>
-					<input runat="server" class="date" id="datepick" name="Text" type="date"/>
-                    <small id="datevalidate" style="display:none;">Date is Required</small>
-				</div>
-                <div class="clearfix"></div>
-				<div class="w3_modal_body_grid w3_modal_body_grid1">
-					<span>religion:</span>
-  					     <asp:DropDownList ID="religion" runat="server">                                                            
-                         </asp:DropDownList>
-                    <small id="religionvalidate" style="display:none;"> is Required</small>
-				</div>
-                <div class="clearfix"></div>
-				<div class="w3_modal_body_grid w3_modal_body_grid1">
-				<span>Mobile No:</span>
-				<!-- country codes (ISO 3166) and Dial codes. -->
-					<input runat="server" id="phone" type="tel"/>
-                    <asp:RegularExpressionValidator ID="rev_phone" runat="server" ControlToValidate="phone" 
-                        SetFocusOnError="true" 
-                        ForeColor="Red" 
-                        ErrorMessage="Invalid Phone Number" ValidationExpression="^[0-9]{10}">
-                    </asp:RegularExpressionValidator>
-                    <small id="phonevalidate" style="display:none;">Phone Number is Required</small>
-				  <!-- Load jQuery from CDN so can run demo immediately -->
-				  <script src="../content/matrimonial/js/intlTelInput.js"></script>
-				  <script>
-					$("#phone").intlTelInput({
-					   allowDropdown: false,
-					   autoHideDialCode: false,
-					   autoPlaceholder: "off",
-					   dropdownContainer: "body",
-					   excludeCountries: ["us"],
-					   formatOnDisplay: false,
-					   geoIpLookup: function(callback) {
-					     $.get("http://ipinfo.io", function() {}, "jsonp").always(function(resp) {
-					       var countryCode = (resp && resp.country) ? resp.country : "";
-					       callback(countryCode);
-					     });
-					   },
-					   initialCountry: "auto",
-					   nationalMode: false,
-					   onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
-					   placeholderNumberType: "MOBILE",
-					   preferredCountries: ['cn', 'jp'],
-					   separateDialCode: true,
-					  utilsScript: "js/utils.js"
-					});
-				  </script>
-				</div>
-                <div class="clearfix"></div>
-				<div class="w3_modal_body_grid">
-					<span>Email:</span>
-					<input id="email" runat="server" type="email" name="Email" placeholder="abc@xyz.com "/>
-				</div>
-                <div class="clearfix"></div>
-				<div class="w3_modal_body_grid w3_modal_body_grid1">
-					<span>Password:</span>
-					<input id="password" runat="server" type="password" name="Password"/>
-				</div>
-                <div class="clearfix"></div>
-				<div class="w3-agree">
-					<input runat="server" type="checkbox" id="c1" name="cc"/>
-					<label class="agileits-agree">I have read & agree to the <a href="terms.html">Terms and Conditions</a></label>
-				</div>
-             
-                <asp:Button runat="server" Text="Register" OnClientClick="return validate()" ID="register" OnClick="register_Click"/>
-                <asp:Label Text="" runat="server"  ID="message" />
-
-				<div class="clearfix"></div>
-				<p class="w3ls-login">Already a member? <a href="#" data-toggle="modal" data-target="#myModal">Login</a></p>			
-		</div>
+    
+    <form id="form1" runat="server" novalidate="novalidate">	
 		<!-- Modal -->
 				<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
 				  <div class="modal-dialog">
@@ -263,56 +164,216 @@ $(document).ready(function(){
 										<li class="twt"><a href="www.twitter.com"><span class="icons"><i class="fa fa-twitter" aria-hidden="true"></i></span><span class="text">Twitter</span></a></li>  
 									</ul> 
 									<div class="clearfix"> </div>
-								</div>	
-						
+								</div>				
 						</div>
 					  </div>
 					</div>
 				  </div>
 				</div>
 				<!-- //Modal -->
+        <!-- Register Modal -->
+				<div id="registerModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+				  <div class="modal-dialog">
+					<!-- Modal content-->
+					<div class="modal-content">
+					  <div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>		
+						<h4 class="modal-title">Register</h4>
+					  </div>
+					  <div class="modal-body">
+						<div class="login-w3ls">
+							<div>				
+				                    <div class="w3_modal_body_grid w3_modal_body_grid1">
+					                    <span>Name:</span>
+					                    <input id="name" runat="server" type="text" name="Name" placeholder="Enter Name"/>
+                                        <small id="namevalidate" style="display:none;">Name is Required</small>
+                                         <asp:RegularExpressionValidator ID="rev_bname" runat="server"
+                                                ControlToValidate="Name" 
+                                                ForeColor="Red" 
+                                                ErrorMessage="Invalid name!" 
+                                                SetFocusOnError="true" 
+                                                ValidationExpression="^[a-zA-Z'.\s]{2,50}">
+                                         </asp:RegularExpressionValidator>
+				                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="w3_modal_body_grid w3_modal_body_grid1">
+					                    <span>UserName:</span>
+					                    <input id="username" runat="server" type="text" name="Username" placeholder="Enter UserName"/>
+                                     </div>
+                                    <div class="clearfix"></div>
+				                    <div class="w3_modal_body_grid">
+					                    <span>Gender:</span>
+					                    <div class="w3_gender">
+						                    <div class="colr ert">
+							                    <label class="radio"><input runat="server" id="rad_male" type="radio" name="radio" checked=""/><i></i>Male</label>
+						                    </div>
+						                    <div class="colr">
+							                    <label class="radio"><input runat="server" id="rad_female" type="radio" name="radio"/><i></i>Female</label>
+						                    </div>
+						                    <div class="clearfix"> </div>
+					                    </div>
+					                    <div class="clearfix"> </div>
+				                    </div>
+                                    <div class="clearfix"></div>
+				                    <div class="w3_modal_body_grid w3_modal_body_grid1">
+					                    <span>Date Of Birth:</span>
+					                    <input runat="server" class="date" id="datepick" name="Text" type="date"/>
+                                        <small id="datevalidate" style="display:none;">Date is Required</small>
+				                    </div>
+                                    <div class="clearfix"></div>
+				                    <div class="w3_modal_body_grid w3_modal_body_grid1">
+					                    <span>religion:</span>
+  					                         <asp:DropDownList ID="religion" runat="server">                                                            
+                                             </asp:DropDownList>
+                                        <small id="religionvalidate" style="display:none;"> is Required</small>
+				                    </div>
+                                    <div class="clearfix"></div>
+				                    <div class="w3_modal_body_grid w3_modal_body_grid1">
+				                    <span>Mobile No:</span>
+				                    <!-- country codes (ISO 3166) and Dial codes. -->
+					                    <input runat="server" id="phone" type="tel"/>
+                                        <asp:RegularExpressionValidator ID="rev_phone" runat="server" ControlToValidate="phone" 
+                                            SetFocusOnError="true" 
+                                            ForeColor="Red" 
+                                            ErrorMessage="Invalid Phone Number" ValidationExpression="^[0-9]{10}">
+                                        </asp:RegularExpressionValidator>
+                                        <small id="phonevalidate" style="display:none;">Phone Number is Required</small>
+				                      <!-- Load jQuery from CDN so can run demo immediately -->
+				                      <script src="../content/matrimonial/js/intlTelInput.js"></script>
+				                      <script>
+					                    $("#phone").intlTelInput({
+					                       allowDropdown: false,
+					                       autoHideDialCode: false,
+					                       autoPlaceholder: "off",
+					                       dropdownContainer: "body",
+					                       excludeCountries: ["us"],
+					                       formatOnDisplay: false,
+					                       geoIpLookup: function(callback) {
+					                         $.get("http://ipinfo.io", function() {}, "jsonp").always(function(resp) {
+					                           var countryCode = (resp && resp.country) ? resp.country : "";
+					                           callback(countryCode);
+					                         });
+					                       },
+					                       initialCountry: "auto",
+					                       nationalMode: false,
+					                       onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
+					                       placeholderNumberType: "MOBILE",
+					                       preferredCountries: ['cn', 'jp'],
+					                       separateDialCode: true,
+					                      utilsScript: "js/utils.js"
+					                    });
+				                      </script>
+				                    </div>
+                                    <div class="clearfix"></div>
+				                    <div class="w3_modal_body_grid">
+					                    <span>Email:</span>
+					                    <input id="email" runat="server" type="email" name="Email" placeholder="abc@xyz.com "/>
+				                    </div>
+                                    <div class="clearfix"></div>
+				                    <div class="w3_modal_body_grid w3_modal_body_grid1">
+					                    <span>Password:</span>
+					                    <input id="password" runat="server" type="password" name="Password"/>
+				                    </div>
+                                    <div class="clearfix"></div>
+				                    <asp:Button runat="server" Text="Register" OnClientClick="return validate()" ID="register" OnClick="register_Click"/>
+                             </div>
+					    </div>
+					  </div>
+					</div>
+				  </div>
+				</div>
+				<!-- Register Modal -->
+        <!-- Message -->
+				<div id="message" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" runat="server" visible="false">
+				  <div class="modal-dialog">
+					<!-- Modal content-->
+					<div class="modal-content">
+					  <div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>		
+						<h4 class="modal-title">Message</h4>
+					  </div>
+					  <div class="modal-body">
+						<div class="login-w3ls">
+							<asp:Label runat="server" ID="warning" Text=""></asp:Label>
+                            <div runat="server" id="Success_icon" visible="false">
+                                <span class="glyphicon glyphicon-ok"></span>
+                            </div>
+						</div>
+					  </div>
+					</div>
+				  </div>
+				</div>
+				<!-- //Message -->
 	    </form>
-</div>
-</div>
-    <div class="clearfix"></div>
+    
+   <!-- Start WOWSlider.com BODY section -->
+<div id="wowslider-container1">
+<div class="ws_images"><ul>
+		<li><img src="../Content/matrimonial/data1/images/slide1.jpg" alt="slide1" title="A happy marriage is a long conversation which always seems too short " id="wows1_0"/></li>
+		<li><img src="../Content/matrimonial/data1/images/slide2.jpg" alt="slide2" title="A successful marriage requires falling in love many times, always with the same person" id="wows1_1"/></li>
+		<li><img src="../Content/matrimonial/data1/images/slide3.jpg" alt="slide3" title="Grow old with me! The best is yet to be" id="wows1_2"/></li>
+		<li><img src="../Content/matrimonial/data1/images/slide4.jpg" alt="slide4" title="There is no more lovely, friendly, and charming relationship, communion or company than a good marriage " id="wows1_3"/></li>
+		<li><a href="http://wowslider.net"><img src="../Content/matrimonial/data1/images/slide5.jpg" alt="wow slider" title="When marrying, ask yourself this question Do you believe that you will be able to converse well with this person into your old age Everything else in marriage is transitory " id="wows1_4"/></a></li>
+		<li><img src="../Content/matrimonial/data1/images/slide6.jpg" alt="slide6" title="When you realize you want to spend the rest of your life with somebody, you want the rest of your life to start as soon as possible" id="wows1_5"/></li>
+	</ul></div>
+	<div class="ws_bullets"><div>
+		<a href="#" title="slide1"><span><img src="../Content/matrimonial/data1/tooltips/slide1.jpg" alt="slide1"/>1</span></a>
+		<a href="#" title="slide2"><span><img src="../Content/matrimonial/data1/tooltips/slide2.jpg" alt="slide2"/>2</span></a>
+		<a href="#" title="slide3"><span><img src="../Content/matrimonial/data1/tooltips/slide3.jpg" alt="slide3"/>3</span></a>
+		<a href="#" title="slide4"><span><img src="../Content/matrimonial/data1/tooltips/slide4.jpg" alt="slide4"/>4</span></a>
+		<a href="#" title="slide5"><span><img src="../Content/matrimonial/data1/tooltips/slide5.jpg" alt="slide5"/>5</span></a>
+		<a href="#" title="slide6"><span><img src="../Content/matrimonial/data1/tooltips/slide6.jpg" alt="slide6"/>6</span></a>
+	</div></div><div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.net">bootstrap slider</a> by WOWSlider.com v8.8</div>
+<div class="ws_shadow"></div>
+</div>	
+<script type="text/javascript" src="../Content/matrimonial/engine1/wowslider.js"></script>
+<script type="text/javascript" src="../Content/matrimonial/engine1/script.js"></script>
+<!-- End WOWSlider.com BODY section -->
 
+<div class="clearfix"></div>
 <!-- Find your soulmate -->
-	<div class="w3l_find-soulmate text-center">
+	<div class="w3l_find-soulmate text-center" style="padding:15px 0px 15px 0px;">
 		<h3>Find Your Soulmate</h3>
-			<div class="container">
-				<a class="scroll" href="#home">
+			<div class="container">				
 					<div class="col-md-3 w3_soulgrid">
 						<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
 						<h3>Sign Up</h3>
 						<p>Signup for free and Upload your profile</p>
-					</div>
-				</a>
-				<a class="scroll" href="#home">
+					</div>				
 					<div class="col-md-3 w3_soulgrid">
 						<i class="fa fa-search" aria-hidden="true"></i>
 						<h3>Search</h3>
 						<p>Search for your right partner</p>
-					</div>
-				</a>
-				<a class="scroll" href="#home">
+					</div>			
 					<div class="col-md-3 w3_soulgrid">
 						<i class="fa fa-users" aria-hidden="true"></i>
 						<h3>Connect</h3>
 						<p>Connect with your perfect Match</p>
-					</div>
-				</a>
-				<a class="scroll" href="#home">
+					</div>	
 					<div class="col-md-3 w3_soulgrid">
 						<i class="fa fa-comments-o" aria-hidden="true"></i>
 						<h3>Interact</h3>
 						<p>Become a member and start Conversation</p>
-					</div>
-				</a>
+					</div>				
 				<div class="clearfix"> </div>
 			</div>
 	</div>
 	<!-- //Find your soulmate --> 
-   
+   <div class="w3_success-stories text-center" style="padding:25px 0px 25px 0px; background-image:url(../Content/matrimonial/images/bgprint6.jpg)">
+       <h2 style="color:floralwhite;"><b>Happy Marriages</b></h2>
+		<div class="container" style="padding:20px 10px 20px 10px;">
+            <div class="col-md-5" style="border:dotted; background-color:aliceblue; padding:7px 5px 5px 7px;">
+					<img src="../Content/matrimonial/images/client_1.jpg" class="img-responsive" alt="Agileits W3layouts" style="float:left"/>				
+					<p style="font-style:italic; color:black;">A happy marriage is a long conversation which always seems too short. A successful marriage requires falling in love many times, always with the same person. Grow old with me! The best is yet to be.</p>	
+			</div>
+            <div class="col-md-1"></div>
+           <div class="col-md-6" style="border:dotted; background-color:aliceblue; padding:7px 5px 5px 7px;">
+				<img src="../Content/matrimonial/images/client_3.jpg" class="img-responsive" alt="Agileits W3layouts" style="float:left" />
+						<p style="font-style:italic; color:black;">There is no more lovely, friendly, and charming relationship, communion or company than a good marriage. When marrying, ask yourself this question Do you believe that you will be able to converse well with this person into your old age Everything else in marriage is transitory. </p>
+		    </div>
+			<div class="clearfix"></div>			
+		</div>
+	</div>
     
     <div class="clearfix"></div>
 <!-- Assisted Service -->
@@ -326,7 +387,7 @@ $(document).ready(function(){
 	<!-- Get started -->
 	<div class="w3layous-story text-center">
 		<div class="container">
-			<h4>Your story is waiting to happen!  <a class="scroll" href="#home">Get started</a></h4>
+			<h4>Your story is waiting to happen!  <a class="scroll" href="#" data-toggle="modal" data-target="#registerModal">Get started</a></h4>
 		</div>
 	</div>
 	<!-- //Get started -->

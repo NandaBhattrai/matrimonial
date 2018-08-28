@@ -30,6 +30,8 @@
             $(".se-pre-con").fadeOut("slow");;
         });
     </script>
+
+    
     <title></title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <!-- Meta, title, CSS, favicons, etc. -->
@@ -55,7 +57,7 @@
     <!-- Custom Theme Style -->
     <link href="../../Content/admin/build/css/custom.min.css" rel="stylesheet"/>
     <asp:ContentPlaceHolder ID="head" runat="server">
-
+     
     </asp:ContentPlaceHolder>
 </head>
 
@@ -89,55 +91,52 @@
 
             <!-- sidebar menu -->
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
-              <div class="menu_section">
+                <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
-                  <li><a href="Home.aspx"><i class="fa fa-home"></i>Home<span class="fa fa-chevron-down"></span></a>                    
-                  </li>
-                  <li><a><i class="fa fa-edit"></i> Users <span class="fa fa-chevron-down"></span></a>
+                    <li><a href="Home.aspx"><i class="fa fa-home"></i>Home</a>                    
+                    </li>
+                    <li><a><i class="fa fa-edit"></i> Users <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="UserList.aspx">User List</a></li>                     
+                        <li><a href="UserList.aspx">User List</a></li>                     
                     </ul>
-                  </li>
-                  <li><a><i class="fa fa-desktop"></i> Admin <span class="fa fa-chevron-down"></span></a>
+                    </li>
+                    <li><a><i class="fa fa-desktop"></i> Admin <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="AdminList.aspx">Admin List</a></li>
+                        <li><a href="AdminList.aspx">Admin List</a></li>
                     </ul>
-                  </li>  
+                    </li>  
                   
                 </ul>
-              </div>
-              <div class="menu_section">
-                <h3>Search</h3>
+                </div>
+               
+                <div class="menu_section">
+                <h3>Stories</h3>
                 <ul class="nav side-menu">
-                  <li><a><i class="fa fa-bug"></i> User List <span class="fa fa-chevron-down"></span></a>
+                    <li><a><i class="fa fa-windows"></i>Stories<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="e_commerce.html">Age</a></li>
-                      <li><a href="projects.html">Religion</a></li>
-                      <li><a href="project_detail.html">Gender</a></li>
-                      <li><a href="contacts.html">Professional</a></li>
-                      <li><a href="profile.html">City</a></li>
+                        <li><a href="SuccessStory.aspx">Successful Stories</a></li>                      
                     </ul>
-                  </li>
-                  <li><a><i class="fa fa-windows"></i>Stories<span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="Stories.aspx">Successful Stories</a></li>                      
+                    </li>
                     </ul>
-                  </li>  
-                     <li><a><i class="fa fa-windows"></i>Notification<span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="Help.aspx">Help</a></li> 
-                       <li><a href="Feedback.aspx">Feedback</a></li>
-                       <li><a href="Assisted.aspx">Assisted</a></li>                     
+                    </div>
+                <div class="menu_section">
+                <h3>Notifications</h3>
+                <ul class="nav side-menu">  
+                            <li><a><i class="fa fa-windows"></i>Messages<span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                            <li><a href="Help.aspx">Help</a></li> 
+                            <li><a href="Feedback.aspx">Feedback</a></li>
+                            <li><a href="Assisted.aspx">Assisted</a></li>                     
+                        </ul>
+                        </li>                        
                     </ul>
-                  </li>                        
-                </ul>
-              </div>
-
+                </div>                 
             </div>
             <!-- /sidebar menu -->
-
-            <!-- /menu footer buttons -->
+            </div>
+        </div>
+           <%-- <!-- /menu footer buttons -->
             <div class="sidebar-footer hidden-small">
               <a data-toggle="tooltip" data-placement="top" title="Settings">
                 <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
@@ -152,9 +151,8 @@
                 <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
               </a>
             </div>
-            <!-- /menu footer buttons -->
-          </div>
-        </div>
+            <!-- /menu footer buttons -->--%>
+          
 
         <!-- top navigation -->
         <div class="top_nav">
@@ -198,8 +196,8 @@
        
 
         <!-- footer content -->
-        <footer>
-          <div class="pull-right">
+        <footer style="position:fixed; bottom:0; width:100%;">
+          <div>
             Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
           </div>
           <div class="clearfix"></div>

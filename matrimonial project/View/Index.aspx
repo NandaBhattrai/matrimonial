@@ -1,20 +1,23 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Matrimonial.Master" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="matrimonial_project.View.Index" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    
+    <link href="../Content/matrimonial/css/ScrollIndicator.css" rel="stylesheet" />
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="progress-container header">
+            <div class="progress-bar" id="myBar"></div>
+    </div>
     <div class="w3layouts-breadcrumbs text-center">
 		<div class="container">
-			<span class="agile-breadcrumbs"><a href="Index.aspx">Home</a> > <span>Make your Profile</span></span>
+			<span class="agile-breadcrumbs"><a href="Home.aspx">Home</a> > <span>Make your Profile</span></span>
 		</div>
 	</div>
 
     	<!-- Search form -->
 	<div class="w3ls-list">
 		<div class="container">
-		<h2>Make Your Profile</h2>
+		<h2>Make Your Profile</h2>            
 		<div class="col-md-12 profiles-list-agileits">
 		<!--Horizontal Tab-->
 			<div id="parentHorizontalTab">
@@ -22,7 +25,8 @@
 					<div>	
 						<div class="w3_regular_search">
                             <div class="form_but1">
-								<label class="col-sm-5 control-label1" for="sex"><h3>Profile Details</h3> </label>                                
+								<label class="col-sm-5 control-label1" for="sex"><h3>Profile Details</h3> </label>
+                                                                
                                 <div class="clearfix"></div>
 							</div>
                              <asp:Label Text="" runat="server"  ID="message" CssClass="alert" />
@@ -60,7 +64,7 @@
                             <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Nationality : </label>
 								<div class="col-sm-7 form_radios">
-								  <input runat="server" id="Nationality" type="text" required="required" />
+								  <input runat="server" id="Nationality" type="text" required="required"/>
 								</div>
 								<div class="clearfix"> </div>
 							  </div>                    		
@@ -321,5 +325,16 @@
 	                                    });
                                     </script>
     <!--Checkbox-->
-	
+	<script>
+// When the user scrolls the page, execute myFunction 
+window.onscroll = function() {myFunction()};
+
+function myFunction() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("myBar").style.width = scrolled + "%";
+}
+</script>
+                
 </asp:Content>

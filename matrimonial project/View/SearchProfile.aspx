@@ -1,36 +1,67 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Matrimonial.Master" AutoEventWireup="true" CodeBehind="SearchProfile.aspx.cs" Inherits="matrimonial_project.View.SearchProfile" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    	<!-- breadcrumbs -->
+    	<!-- inner banner -->	
+	<div class="w3layouts-inner-banner">
+		<div class="container">
+			<div class="logo">
+				<h1><a class="cd-logo link link--takiri" href="index.html">Match <span><i class="fa fa-heart" aria-hidden="true"></i>Made in heaven.</span></a></h1>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<!-- //inner banner -->	
+	
+	<!-- breadcrumbs -->
 	<div class="w3layouts-breadcrumbs text-center">
 		<div class="container">
-			<span class="agile-breadcrumbs"><a href="UserHome.html">Home</a> > <a href="Search.html">Search</a> > <span>Profile Details</span></span>
+			<span class="agile-breadcrumbs"><a href="index.html">Home</a> > <a href="matches.html">Matches</a> > <span>Bride Profile Details</span></span>
 		</div>
 	</div>
 	<!-- //breadcrumbs -->
 
 
-	<!-- Profile Details -->
-	<div class="w3ls-list">
+	<!--  Profile Details -->	
+		<div class="w3ls-list"  runat="server" id="Profile_Block">
 		<div class="container">
-		<h2>Profile Details</h2>
-		<div class="col-md-9 profiles-list-agileits">
+		<h2> Profile Details</h2>
+		<div class="col-md-12 profiles-list-agileits">
 			<div class="single_w3_profile">
-				<div class="agileits_profile_image">
+                <asp:Label runat="server" ID="message" Text=""></asp:Label>
+				<div class="col-md-6 agileits_profile_image">
+                    <div class="zoom">
 					<asp:Label Text="" runat="server"  ID="UserImage"/>
+                     </div>
+                    <div class="clearfix"></div>
 				</div>
-				<div class="w3layouts_details">
-					<h4>Profile ID :<asp:Label Text="" runat="server"  ID="ProfileId"/> </h4>					
+				<div class="col-md-6 w3layouts_details">
+					<asp:Label Text="" runat="server"  ID="ProfileId" Visible="false"/>					
 					<h4>Name :<asp:Label Text="" runat="server"  ID="UserName"/> </h4>                    
-                    <a href="#" data-toggle="modal" data-target="#myModal">View Contact</a>
-					<a href="#" data-toggle="modal" data-target="#myModal">Send interest</a>
-					<a href="#" data-toggle="modal" data-target="#myModal">Report Profile</a>
-					<a href="#" data-toggle="modal" data-target="#myModal">Block Profile</a>
+                    <h4>DateOfBirth :<asp:Label Text="" runat="server"  ID="UserDateOfBirth"/> </h4>
+                    <h4>Age :<asp:Label Text="" runat="server"  ID="UserAge"/> </h4>
+                    <h4>Height :<asp:Label Text="" runat="server"  ID="UserHeight"/> </h4>
+                    <h4>Weight :<asp:Label Text="" runat="server"  ID="UserWeight"/> </h4>
+                    <!--<a href="process.aspx?type=interest&target=<% if (Session["target"] != null) { Response.Write(Session["target"]); }   %>">View Contact</a>-->
+  					<a href="process.aspx?type=interest&target=<% if (Session["target"] != null) { Response.Write(Session["target"]); }   %>">Send interest</a>
+					<a href="process.aspx?type=report&target=<% if (Session["target"] != null) { Response.Write(Session["target"]); }   %>">Report Profile</a>
+					<!--<a href="process.aspx?type=interest&target=<% if (Session["target"] != null) { Response.Write(Session["target"]); }   %>">Block Profile</a>-->
 				</div>
 				<div class="clearfix"></div>
 			</div>
-			<div class="profile_w3layouts_details">
+            </div>
+<div class="col-md-12 profiles-list-agileits">
+    <!--Horizontal Tab-->
+<div id="parentHorizontalTab">
+		<ul class="resp-tabs-list hor_1">
+			<li>About Me</li>
+			<li>Partner Detail</li>
+		</ul>
+		<div class="resp-tabs-container hor_1">
+			<div>	
+				<div class="w3_regular_search">
+	        <div class="profile_w3layouts_details">
 				<div class="agileits_aboutme">
 					<h4>About me</h4>
 					<h5>Brief about me:</h5>
@@ -40,24 +71,8 @@
 					<h5>Family Details:</h5>		
 					<div class="form_but1">
 						<asp:Label Text="" runat="server"  ID="AboutFamily"/>
-					</div>
-                    <h5>Date Of Birth :</h5>
-                    <div class="form_but1">
-						<asp:Label Text="" runat="server"  ID="UserDateOfBirth"/>
-					</div>
-                    <h5>Age :</h5>
-                    <div class="form_but1">
-						<asp:Label Text="" runat="server"  ID="Age"/>
-					</div>
-                    <h5>Height :</h5>
-                    <div class="form_but1">
-						<asp:Label Text="" runat="server"  ID="UserHeight"/>
-					</div>
-                    <h5>Weight :</h5>
-                    <div class="form_but1">
-						<asp:Label Text="" runat="server"  ID="UserWeight"/>
-					</div>
-                    <h5>Education Details:</h5>
+					</div>                    			
+					<h5>Education Details:</h5>
 					<div class="form_but1">
 						<label class="col-sm-3 control-label1"> Education : </label>
 						<div class="col-sm-9 w3_details">
@@ -165,173 +180,105 @@
 							<asp:Label Text="" runat="server"  ID="Blood"/>
 						</div>
 						<div class="clearfix"> </div>
-					</div>
-               </div>
-			</div>
-		</div>
-		<div class="col-md-3 w3ls-aside">
-			<h3>Search by UserName:</h3>			 
-				<input class="col-md-12" type="text" id="username" placeholder="Enter Username" runat="server"/>
-				<input type="submit" value="Search" runat="server"/>
-				<div class="clearfix"></div>
-			<div class="view_profile">
-        	<h3>Similar Profiles</h3>
-        	<ul class="profile_item">
-        	  <a href="#">
-        	   <li class="profile_item-img">
-        	   	  <img src="images/p1.jpg" class="img-responsive" alt="">
-        	   </li>
-        	   <li class="profile_item-desc">
-        	   	  <h6>ID : 2458741</h6>
-        	   	  <p>29 Yrs, 5Ft 5in Christian
-				  MBA/PGDM,
-				  Rs 10 - 15 lac Mark...</p>
-        	   </li>
-        	   <div class="clearfix"> </div>
-        	  </a>
-           </ul>
-        	<ul class="profile_item">
-        	  <a href="#">
-        	   <li class="profile_item-img">
-        	   	  <img src="images/p2.jpg" class="img-responsive" alt="">
-        	   </li>
-        	   <li class="profile_item-desc">
-        	   	  <h6>ID : 2458741</h6>
-        	   	  <p>29 Yrs, 5Ft 5in Christian
-				  MBA/PGDM,
-				  Rs 10 - 15 lac Mark...</p>
-        	   </li>
-        	   <div class="clearfix"> </div>
-        	  </a>
-           </ul>
-        	<ul class="profile_item">
-        	  <a href="#">
-        	   <li class="profile_item-img">
-        	   	  <img src="images/p3.jpg" class="img-responsive" alt="">
-        	   </li>
-        	   <li class="profile_item-desc">
-        	   	  <h6>ID : 2458741</h6>
-        	   	  <p>29 Yrs, 5Ft 5in Christian
-				  MBA/PGDM,
-				  Rs 10 - 15 lac Mark...</p>
-        	   </li>
-        	   <div class="clearfix"> </div>
-        	  </a>
-           </ul>
-        	<ul class="profile_item">
-        	  <a href="#">
-        	   <li class="profile_item-img">
-        	   	  <img src="images/p4.jpg" class="img-responsive" alt="">
-        	   </li>
-        	   <li class="profile_item-desc">
-        	   	  <h6>ID : 2458741</h6>
-        	   	  <p>29 Yrs, 5Ft 5in Christian
-				  MBA/PGDM,
-				  Rs 10 - 15 lac Mark...</p>
-        	   </li>
-        	   <div class="clearfix"> </div>
-        	  </a>
-           </ul>
-        	<ul class="profile_item">
-        	  <a href="#">
-        	   <li class="profile_item-img">
-        	   	  <img src="images/p5.jpg" class="img-responsive" alt="">
-        	   </li>
-        	   <li class="profile_item-desc">
-        	   	  <h6>ID : 2458741</h6>
-        	   	  <p>29 Yrs, 5Ft 5in Christian
-				  MBA/PGDM,
-				  Rs 10 - 15 lac Mark...</p>
-        	   </li>
-        	   <div class="clearfix"> </div>
-        	  </a>
-           </ul>
-           <ul class="profile_item">
-        	  <a href="#">
-        	   <li class="profile_item-img">
-        	   	  <img src="images/p6.jpg" class="img-responsive" alt="">
-        	   </li>
-        	   <li class="profile_item-desc">
-        	   	  <h6>ID : 2458741</h6>
-        	   	  <p>29 Yrs, 5Ft 5in Christian
-				  MBA/PGDM,
-				  Rs 10 - 15 lac Mark...</p>
-        	   </li>
-        	   <div class="clearfix"> </div>
-        	  </a>
-           </ul>
-           <ul class="profile_item">
-        	  <a href="#">
-        	   <li class="profile_item-img">
-        	   	  <img src="images/p7.jpg" class="img-responsive" alt="">
-        	   </li>
-        	   <li class="profile_item-desc">
-        	   	  <h6>ID : 2458741</h6>
-        	   	  <p>29 Yrs, 5Ft 5in Christian
-				  MBA/PGDM,
-				  Rs 10 - 15 lac Mark...</p>
-        	   </li>
-        	   <div class="clearfix"> </div>
-        	  </a>
-           </ul>
-           <ul class="profile_item">
-        	  <a href="#">
-        	   <li class="profile_item-img">
-        	   	  <img src="images/p8.jpg" class="img-responsive" alt="">
-        	   </li>
-        	   <li class="profile_item-desc">
-        	   	  <h6>ID : 2458741</h6>
-        	   	  <p>29 Yrs, 5Ft 5in Christian
-				  MBA/PGDM,
-				  Rs 10 - 15 lac Mark...</p>
-        	   </li>
-        	   <div class="clearfix"> </div>
-        	  </a>
-           </ul>
-       </div>
-		</div>
-	<div class="clearfix"></div>
-	</div>
-	<!-- Modal -->
-				<div id="myModal" class="modal fade" tabindex="-1" role="dialog">
-				  <div class="modal-dialog">
-
-					<!-- Modal content-->
-					<div class="modal-content">
-					  <div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal">&times;</button>
-						<h4 class="modal-title">Login to Continue</h4>
-					  </div>
-					  <div class="modal-body">
-						<div class="login-w3ls">
-						<label>User Name </label>
-								<input type="text" name="User Name" placeholder="Username" required="" runat="server"/>
-								<label>Password</label>
-								<input type="password" name="Password" placeholder="Password" required="" runat="server"/>	
-								<div class="w3ls-loginr"> 
-									<input type="checkbox" id="brand" name="checkbox" value="" runat="server"/>
-									<span> Remember me ?</span> 
-									<a href="#">Forgot password ?</a>
-								</div>
-								<div class="clearfix"> </div>
-								<input type="submit" name="submit" value="Login" runat="server"/>
-								<div class="clearfix"> </div>
-								<div class="social-icons">
-									<ul>  
-										<li><a href="www.facebook.com"><span class="icons"><i class="fa fa-facebook" aria-hidden="true"></i></span><span class="text">Facebook</span></a></li> 
-										<li class="twt"><a href="www.twitter.com"><span class="icons"><i class="fa fa-twitter" aria-hidden="true"></i></span><span class="text">Twitter</span></a></li>  
-									</ul> 
-									<div class="clearfix"> </div>
-								</div>	
-				            </div>
-					  </div>
-					</div>
-
-				  </div>
+					</div>                   
 				</div>
-				<!-- //Modal -->
+	    </div>           
+		        </div>
+            </div>
+                <div class="w3_regular_search">
+		<div class="profile_w3layouts_details">
+				 <div class="agileits_aboutme">
+		            <h4> Partner Details</h4>
+                    <div class="form_but1">
+						<label class="col-sm-3 control-label1">Looking For : </label>
+						<div class="col-sm-9 w3_details">
+							<asp:Label Text="" runat="server"  ID="PartnerGender"/>
+						</div>
+						<div class="clearfix"> </div>
+					</div>	
+					<div class="form_but1">
+						<label class="col-sm-3 control-label1">Age : </label>
+						<div class="col-sm-9 w3_details">
+							<asp:Label Text="" runat="server"  ID="PartnerAgeFrom"/> To <asp:Label Text="" runat="server"  ID="PartnerAgeTo"/>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<div class="form_but1">
+						<label class="col-sm-3 control-label1">Height : </label>
+						<div class="col-sm-9 w3_details">
+							 <asp:Label Text="" runat="server"  ID="PartnerHeightFrom"/> To <asp:Label Text="" runat="server"  ID="PartnerHeightTo"/>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<div class="form_but1">
+						<label class="col-sm-3 control-label1">Marital : </label>
+						<div class="col-sm-9 w3_details">
+							<asp:Label Text="" runat="server"  ID="PartnerMarital"/>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<div class="form_but1">
+						<label class="col-sm-3 control-label1">Religion : </label>
+						<div class="col-sm-9 w3_details">
+							<asp:Label Text="" runat="server"  ID="PartnerReligion"/>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<div class="form_but1">
+						<label class="col-sm-3 control-label1">Caste : </label>
+						<div class="col-sm-9 w3_details">
+							<asp:Label Text="" runat="server"  ID="PartnerCaste"/>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+            		<div class="form_but1">
+						<label class="col-sm-3 control-label1">Country : </label>
+						<div class="col-sm-9 w3_details">
+							<asp:Label Text="" runat="server"  ID="PartnerCountry"/>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<div class="form_but1">
+						<label class="col-sm-3 control-label1">Education : </label>
+						<div class="col-sm-9 w3_details">
+							<asp:Label Text="" runat="server"  ID="PartnerEducation"/>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<div class="form_but1">
+						<label class="col-sm-3 control-label1">Occupation : </label>
+						<div class="col-sm-9 w3_details">
+							<asp:Label Text="" runat="server"  ID="PartnerOccupation"/>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+                    <div class="form_but1">
+						<label class="col-sm-3 control-label1">Appearance : </label>
+						<div class="col-sm-9 w3_details">
+							<asp:Label Text="" runat="server"  ID="PartnerComplexion"/>
+						</div>
+						<div class="clearfix"> </div>
+					</div>	
+                    <div class="form_but1">
+						<label class="col-sm-3 control-label1">Habits : </label>
+						<div class="col-sm-9 w3_details">
+							<asp:Label Text="" runat="server"  ID="PartnerDiet"/>,<asp:Label Text="" runat="server"  ID="PartnerDrink"/>,<asp:Label Text="" runat="server"  ID="PartnerSmoke"/>
+						</div>
+						<div class="clearfix"> </div>
+					</div>                    
+		</div>
+        </div>
+                </div>
+	<div class="clearfix"></div>
+    </div>
+    </div>
 	</div>
-	<script src="js/easyResponsiveTabs.js"></script>
+</div>
+</div>
+	
+	
+	<!-- // Profile Details -->
+    <script src="../Content/matrimonial/js/easyResponsiveTabs.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function () {
 
@@ -354,5 +301,4 @@
 	 
 		});
 	</script>
-	<!-- //Bridegroom Profile Details -->
 </asp:Content>

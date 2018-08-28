@@ -5,7 +5,7 @@
     <!-- breadcrumbs -->
 	<div class="w3layouts-breadcrumbs text-center">
 		<div class="container">
-			<span class="agile-breadcrumbs"><a href="index.html">Home</a> > <span>Contact Us</span></span>
+			<span class="agile-breadcrumbs"><a href="UserHome.aspx">Home</a> > <span>Contact Us</span></span>
 		</div>
 	</div>
 	<!-- //breadcrumbs -->
@@ -18,7 +18,7 @@
 				<div class="agileits_address">
 					<div class="col-md-4 agile_address">
 						<i class="fa fa-home" aria-hidden="true"></i>
-						<p>28-4, 5th Cross, USA-5842123</p>
+						<p>Golpark, Butwal City Nepal.</p>
 					</div>
 					<div class="col-md-4 agile_address">
 						<i class="fa fa-phone" aria-hidden="true"></i>
@@ -26,7 +26,7 @@
 					</div>
 					<div class="col-md-4 agile_address">
 						<i class="fa fa-envelope-o" aria-hidden="true"></i>
-						<a href="mailto:mail@matchmadeinheaven.com">mail@matchmadeinheaven.com</a>
+						<a href="mailto:mail@matchmadeinheaven.com">mail@catchyourmatch.com</a>
 					</div>
 					<div class="clearfix"></div>
 				</div>
@@ -47,9 +47,9 @@
 								<div>
 									<section class="w3_g_address">
 										<h3>Contact information:</h3>
-										<b>Office name</b>
+										<b>Catch Your Match</b>
 										<ul>
-											<li><span>Address</span>:  5801 8th cross road, Ipsum, D015 Lorem.</li>
+											<li><span>Address</span>: Divertol, Tillotama City Nepal. </li>
 											<li><span>Phone</span>: 088 555 1545 25</li>
 											<li><span>Customercare</span>: <a href="writeus.html">Click here</a> </li>
 										</ul>
@@ -59,9 +59,9 @@
 								</div><div>
 									<section class="w3_g_address">
 										<h3>Contact information:</h3>
-										<b>Office name</b>
+										<b>Catch Your Match</b>
 										<ul>
-											<li><span>Address</span>:  8901 Nulla Pariatur, Ipsum, D05 87GR.</li>
+											<li><span>Address</span>: Bhairahawa, Siddhartha City Nepal.  </li>
 											<li><span>Phone</span>: 548 542 121 0000</li>
 											<li><span>Customercare</span>: <a href="writeus.html">Click here</a> </li>
 										</ul>
@@ -69,11 +69,6 @@
 										<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d556620.8307728033!2d-2.9834769476888003!3d54.73441396875619!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x25a3b1142c791a9%3A0xc4f8a0433288257a!2sUnited+Kingdom!5e0!3m2!1sen!2sin!4v1495440798217" allowfullscreen></iframe>
 									</section>
 								</div>
-								
-								
-
-								
-								
 							</div>
 							<div class="clearfix"></div>
 						</div>

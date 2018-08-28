@@ -1,0 +1,23 @@
+﻿.header {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  background-image: url(../images/footer-bg.jpg);
+}
+
+.header h2 {
+  text-align: center;
+}
+
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background-image: url(../images/footer-bg.jpg);
+}
+
+.progress-bar {
+  height: 8px;
+  background: #4caf50;
+  width: 0%;
+}
