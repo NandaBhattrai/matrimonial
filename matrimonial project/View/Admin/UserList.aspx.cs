@@ -1,11 +1,7 @@
 ﻿using matrimonial_project.model;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace matrimonial_project.View.Admin
@@ -24,7 +20,7 @@ namespace matrimonial_project.View.Admin
         {
             try
             {
-                string strquery = "SELECT ProfileId,Name,Email,Mobile,Country,ProfileStatus,RegisterId from dbo.UserProfile order by RegisterId";
+                string strquery = "SELECT ProfileId,Name,Email,Mobile,Country,ProfileStatus,RegisterId,VerifiedStatus from dbo.UserProfile order by RegisterId";
                 SqlCommand cmd = new SqlCommand(strquery);
                 DBconnection conn_ = new DBconnection();
                 DataTable dt = conn_.SelectData(cmd);

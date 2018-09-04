@@ -445,6 +445,33 @@ namespace matrimonial_project.View.Admin {
         protected global::System.Web.UI.WebControls.Label PartnerCaste;
         
         /// <summary>
+        /// FrontImage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label FrontImage;
+        
+        /// <summary>
+        /// BackImage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label BackImage;
+        
+        /// <summary>
+        /// Verified control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Verified;
+        
+        /// <summary>
         /// Read control.
         /// </summary>
         /// <remarks>

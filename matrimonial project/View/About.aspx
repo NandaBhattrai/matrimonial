@@ -13,8 +13,19 @@
 	<!-- about us -->
 	<div class="w3l_about">
 		<div class="container">
-			<h3>About Us</h3>
-			<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+			<h1 style="text-align: center; margin-bottom: 45px">About Us</h1>
+			<p>CatchYourMatch.com is a leader when it comes to matchmaking services online.This fact is evident from our track record over the years.
+               Join our friendly website and browse through the millions of profiles of different religion, state, countries and community. 
+               We take immense pride in serving our valuable members and have never disappointed.CatchYourMatch logo little CatchYourMatch.com was created in Butwal County of New York in the year 2018.
+               We began as a small service to match individuals of Nepal origin located in Butwal, and now we have become the world's leading Nepali matrimonial brand.
+               Our ultimate goal for CatchYourMatch.com is to facilitate the making of happy relationships and strong marriages for the long term.
+               Providing matchmaking service for a years and we understand the importance of selecting the best partner for your life. 
+               We aim to provide a secure environment for your matchmaking journey. CatchYourMatch.com is a highly trusted matchmaking and matrimonial service. 
+               Our members are thoroughly screened with the aid of features such as email verification, phone confirmation and photo validation. 
+               CatchYourMatch.com is the website parents turn to when they are looking for online matrimonial services.We have a vast number of members from around the world of all ages and religions.
+               So, whether you are single, divorced, or getting married for the second time, we have someone for you. We encourage you to join us with confidence.
+               Your personal information is secure with us.CatchYourMatch.com is a registered and trademarked corporation based in the Nepal and we specialize in our brand of matchmaking and matrimonial services.
+               We have a hard-working team ready to help with your matchmaking journey. Come and join us at CatchYourMatch.com where we make Dreams into Reality.</p>
 		</div>
 	</div>
 	
@@ -22,144 +33,17 @@
 	<div class="w3_success-stories">
 		<div class="container">
 			<h4>Our Successful Stories</h4>
-			<div class="w3l_about_left col-md-6 text-center">
-				<a href="#" data-toggle="modal" data-target="#myModal1"><img src="images/s1.png" alt=" " class="img-responsive" /></a>
-				<div class="w3l_about_left_pos">
-					<h3>Groom <span>& </span>Bride</h3>
-				</div>
-			</div>
-			<div class="w3l_about_left col-md-6 text-center">
-				<a href="#" data-toggle="modal" data-target="#myModal2"><img src="images/s2.png" alt=" " class="img-responsive" /></a>
-				<div class="w3l_about_left_pos1">
-					<h3>Groom <span>& </span>Bride</h3>
-				</div>
-			</div>
-			<div class="w3l_about_left col-md-6 text-center">
-				<a href="#" data-toggle="modal" data-target="#myModal3"><img src="images/s3.png" alt=" " class="img-responsive" /></a>
-				<div class="w3l_about_left_pos">
-					<h3>Groom <span>& </span>Bride</h3>
-				</div>
-			</div>
-			<div class="w3l_about_left col-md-6 text-center">
-				<a href="#" data-toggle="modal" data-target="#myModal4"><img src="images/s4.png" alt=" " class="img-responsive" /></a>
-				<div class="w3l_about_left_pos1">
-					<h3>Groom <span>& </span>Bride</h3>
-				</div>
-			</div>
+                <asp:PlaceHolder runat="server" ID="StoryPalace"></asp:PlaceHolder>
 			<div class="clearfix"> </div>
 		</div>
 	</div>
-			<!-- Success_Story Modal1 -->
-				<div id="myModal1" class="modal fade" tabindex="-1" role="dialog">
-				  <div class="modal-dialog">
-					<!-- Modal content-->
-					<div class="modal-content">
-					  <div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal">&times;</button>
-						<h4 class="modal-title">Bride and Groom</h4>
-					  </div>
-					  <div class="modal-body">
-					  <div class="success_w3_story">
-							<img src="images/s1.png" alt=" " class="img-responsive" />
-							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-							Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-							when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-							It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
-							It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
-							and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-						</div>
-					  </div>
-					</div>
-
-				  </div>
-				</div>
-			<!-- //Success_Story Modal1 -->
-			<!-- Success_Story Modal2 -->
-				<div id="myModal2" class="modal fade" tabindex="-1" role="dialog">
-				  <div class="modal-dialog">
-					<!-- Modal content-->
-					<div class="modal-content">
-					  <div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal">&times;</button>
-						<h4 class="modal-title">Bride and Groom</h4>
-					  </div>
-					  <div class="modal-body">
-					  <div class="success_w3_story">
-							<img src="images/s2.png" alt=" " class="img-responsive" />
-							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-							Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-							when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-							It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
-							It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
-							and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-						</div>
-					  </div>
-					</div>
-
-				  </div>
-				</div>
-			<!-- //Success_Story Modal2 -->
-			<!-- Success_Story Modal3 -->
-				<div id="myModal3" class="modal fade" tabindex="-1" role="dialog">
-				  <div class="modal-dialog">
-					<!-- Modal content-->
-					<div class="modal-content">
-					  <div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal">&times;</button>
-						<h4 class="modal-title">Bride and Groom</h4>
-					  </div>
-					  <div class="modal-body">
-					  <div class="success_w3_story">
-							<img src="images/s3.png" alt=" " class="img-responsive" />
-							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-							Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-							when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-							It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
-							It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
-							and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-						</div>
-					  </div>
-					</div>
-
-				  </div>
-				</div>
-			<!-- //Success_Story Modal3 -->
-			<!-- Success_Story Modal4 -->
-				<div id="myModal4" class="modal fade" tabindex="-1" role="dialog">
-				  <div class="modal-dialog">
-					<!-- Modal content-->
-					<div class="modal-content">
-					  <div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal">&times;</button>
-						<h4 class="modal-title">Bride and Groom</h4>
-					  </div>
-					  <div class="modal-body">
-					  <div class="success_w3_story">
-							<img src="images/s4.png" alt=" " class="img-responsive" />
-							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-							Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-							when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-							It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
-							It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
-							and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-						</div>
-					  </div>
-					</div>
-
-				  </div>
-				</div>
-			<!-- //Success_Story Modal4 -->
-		<!-- //Success Stories  -->
+<!-- //Success Stories  -->
     <!-- services -->
 	<div class="agileits_services">
 		<div class="container">
 			<h2>We are no. 1...<span>WHY?</span></h2>
-			<div class="col-md-6 w3ls_services-grids">
-				<ul class="w3_servicesgrid_info">
-					<li class="tick">genuine Profiles in our website.</li>
-					<li class="tick">Lorem Ipsum is simply dummy text.</li>
-					<li class="tick">It is a long established fact that be distracted.</li>
-				</ul>
+			<div class="col-md-6">
+
 			</div>
 			<div class="col-md-6 w3ls_services-grids">
 				<ul class="w3_servicesgrid_info">
@@ -176,3 +60,9 @@
 	<!-- //services -->
 	<!-- //about us -->
 </asp:Content>
+             
+				
+				
+					
+				
+			

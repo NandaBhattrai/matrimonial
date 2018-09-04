@@ -292,6 +292,24 @@ namespace matrimonial_project.View {
         protected global::System.Web.UI.WebControls.Label Blood;
         
         /// <summary>
+        /// frontImage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label frontImage;
+        
+        /// <summary>
+        /// backImage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label backImage;
+        
+        /// <summary>
         /// Edit control.
         /// </summary>
         /// <remarks>
@@ -506,15 +524,6 @@ namespace matrimonial_project.View {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox Single;
-        
-        /// <summary>
-        /// Married control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox Married;
         
         /// <summary>
         /// Divorced control.
@@ -866,15 +875,6 @@ namespace matrimonial_project.View {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton rad_divorced;
-        
-        /// <summary>
-        /// rad_married control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton rad_married;
         
         /// <summary>
         /// PartReligion control.

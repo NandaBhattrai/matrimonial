@@ -28,7 +28,8 @@ body a{
 	margin: 0;
 }
 h1,h2,h3,h4,h5,h6{
-	margin:0;	
+	margin:0;
+    color:#F6107E;	
 }
 p {
 	margin:0;
@@ -724,7 +725,7 @@ p.w3ls-login a:hover {
 
 /*-- get started --*/
 .w3layous-story {
-     //background-image: url(../images/bgprint12.jpg);
+     background-image: url(../images/bgprint12.jpg);
     padding: 40px 0;
 }
 .w3layous-story h4 {
@@ -807,7 +808,9 @@ p.w3ls-login a:hover {
 
 /*-- List of brides and grooms --*/
 .w3ls-list {
-	padding: 50px 0;    
+	padding: 50px 0;   
+    margin-left:-100px;
+    margin-right:-100px; 
 }
 .w3ls-aside {
     background: #fff;
@@ -815,7 +818,7 @@ p.w3ls-login a:hover {
 .w3ls-list h2 {
     font-size: 30px;
     letter-spacing: 1px;
-    color: #000;
+    color: #F6107E;
     margin-bottom: 45px;
 	text-align:center;
 }
@@ -831,7 +834,7 @@ h3.w3_special {
     margin: 15px 0;
 }
 .profile-details h5 {
-    background: #ff2929;
+    background: #F6107E;
     padding: 10px;
     color: #fff;
     font-size: 12px;
@@ -839,16 +842,17 @@ h3.w3_special {
     text-transform: uppercase;
 }
 img.prf-img {
+      height:245px !important;
     float: left;
     width: 48%;
-	margin-right:2%;
-}
+	margin-right:2%;  
+        }
 .w3-prfr {
 	float:right;
 	width:50%
 }
 .w3-prfr p {
-    font-size: 12px;
+    font-size: 20px;
     line-height: 25px;
     color: #000;
     margin-top: 15px;
@@ -885,7 +889,7 @@ p.light {
     padding: 10px;
 }
 p.light a {
-	color: red;
+	color: #F6107E;
 }
 .w3ls-aside h4 {
     color: #000;
@@ -1086,9 +1090,10 @@ ul#flexiselDemo3.nbs-flexisel-nav-left, ul#flexiselDemo3.nbs-flexisel-nav-right 
 .agile_featured-profiles h2 {
     font-size: 35px;
     letter-spacing: 1px;
-    color: #000;
+    color: #F6107E;
     margin-bottom: 45px;
     text-align: center;
+    padding-top:30px;
 }
 /*--//flexisel--*/
 /*-- //featured profiles --*/
@@ -1096,7 +1101,7 @@ ul#flexiselDemo3.nbs-flexisel-nav-left, ul#flexiselDemo3.nbs-flexisel-nav-right 
 
 /*-- mobile app --*/
 .wthree-mobilaapp.main-grid-border {
-    background: #efefef;
+    background-image: url('../images/couple4.jpg');
 }
 .app {
     padding: 70px 0px 0 0;
@@ -2136,6 +2141,7 @@ a.hvr-bounce-to-bottom:hover:before,a.hvr-bounce-to-bottom:focus:before,a.hvr-bo
 }
 .w3l_about_left img {
     margin: 0 auto;
+    float:right;
 }
 /*--services--*/
 .agileits_services {
@@ -2194,7 +2200,7 @@ li.tick {
 /*-- assisted_Services-page --*/
 .w3ls-assisted_Services {
     padding: 50px 0 0 0;
-    background: url(../images/bgprint9.jpg);
+   
 }
 .assisted_agile_advantages {
     padding: 60px 0;
@@ -2408,8 +2414,7 @@ h2.last-updated {
 
 /*-- terms-section-starts --*/
 section.terms-of-use {
-    padding: 50px 0;
-    background: #f7f7f7;
+    padding: 30px 0;
 }
 .terms h2 {
     font-size: 30px;
@@ -2633,7 +2638,7 @@ h3.w3-head {
 }
 .shortcodes {
 
-   background: url(../images/bgprint10.jpg);
+  
 }
 .mb-60 {
     padding-left: 0;
@@ -3428,8 +3433,8 @@ ul.profile_item li.profile_item-desc p {
 	font-size: 22px;
 }
 .w3layouts_details span {
-    color: #afafaf;
-    font-size: 12px;
+    color: #656565;
+    font-size: 15px;
     letter-spacing: 1px;
 }
 .w3layouts_details p {

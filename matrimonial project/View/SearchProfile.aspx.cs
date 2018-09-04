@@ -1,12 +1,7 @@
 ﻿using matrimonial_project.model;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace matrimonial_project.View
 {
@@ -123,7 +118,7 @@ namespace matrimonial_project.View
         {
             int id = Convert.ToInt16(Request.QueryString["id"]);
             DataTable dt = new DataTable();
-            string strQuery = "SELECT * FROM dbo.UserProfile where ProfileId=@ProfileId AND ProfileStatus=1";
+            string strQuery = "SELECT * FROM dbo.UserProfile where ProfileId=@ProfileId AND ProfileStatus=1 AND VerifiedStatus=1";
             SqlCommand cmd = new SqlCommand(strQuery);
             cmd.Parameters.Add("@ProfileId", SqlDbType.Int).Value = id;
             DBconnection conn_ = new DBconnection();

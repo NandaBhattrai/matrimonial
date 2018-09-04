@@ -24,6 +24,14 @@
                     <div class="count"><span  style="color:red; font-size:20px;">Today:&nbsp;<asp:Label ID="TodayProfile" runat="server" Text=""></asp:Label></span></div>
                 </div>
               </div></a>
+              <a href="SuccessStory.aspx"><div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="tile-stats">
+                  <div class="icon"><i class="fa fa-check-square-o"></i></div>
+                  <div class="count"><asp:Label ID="StoryCount" runat="server" Text=""></asp:Label></div>
+                  <h3>Success Story</h3>
+                  <div class="count"><span  style="color:red; font-size:20px;">Today:&nbsp;<asp:Label ID="TodayStory" runat="server" Text=""></asp:Label></span></div>
+                </div>
+              </div></a>
              <a href="Help.aspx"><div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <div class="tile-stats">
                   <div class="icon"><i class="fa fa-check-square-o"></i></div>

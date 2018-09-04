@@ -108,8 +108,16 @@ namespace matrimonial_project.View.Admin
                     UserStay.Text = row["Stay"].ToString();
                     string Image = row["ProfileImage"].ToString();
                     Image = "../../Upload/" + Image;
-                    Image = "<img src='" + Image + "'/>";
+                    Image = "<img src='" + Image + "' height='250px' />";
                     UserImage.Text = Image;
+                    string Front = row["Front"].ToString();
+                    Front = "../../Upload/" + Front;
+                    Front = "<img src='" + Front + "' height='350px' />";
+                    FrontImage.Text = Front;
+                    string Back = row["Back"].ToString();
+                    Back = "../../Upload/" + Back;
+                    Back = "<img src='" + Back + "' height='350px' />";
+                    BackImage.Text = Back;
                 }
             }
             catch (Exception ex)
@@ -157,6 +165,26 @@ namespace matrimonial_project.View.Admin
             cmd.Parameters.Add("@RegisterId", SqlDbType.Int).Value = Convert.ToInt32(Session["Id"]);
             DBconnection conn_ = new DBconnection();
             bool result = conn_.ExecuteData(cmd);
+        }
+
+        protected void Verified_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string strQuery = "update UserProfile set VerifiedStatus=1 where RegisterId = @RegisterId ";
+                SqlCommand cmd = new SqlCommand(strQuery);
+                cmd.Parameters.Add("@RegisterId", SqlDbType.Int).Value = Convert.ToInt32(Session["Id"]);
+                DBconnection conn_ = new DBconnection();
+                bool result = conn_.ExecuteData(cmd);
+                if (result)
+                {
+                    Response.Redirect("UserList.aspx", false);
+                }
+            }
+            catch (Exception ex)
+            {
+                mes.Text = Convert.ToString(ex);
+            }
         }
     }
 }

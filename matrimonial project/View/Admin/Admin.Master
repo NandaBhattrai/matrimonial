@@ -114,25 +114,23 @@
                 <div class="menu_section">
                 <h3>Stories</h3>
                 <ul class="nav side-menu">
-                    <li><a><i class="fa fa-windows"></i>Stories<span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                        <li><a href="SuccessStory.aspx">Successful Stories</a></li>                      
-                    </ul>
+                    <li><a href="SuccessStory.aspx"><i class="fa fa-windows"></i>Successful Stories<span class="fa fa-chevron-down"></span></a>                    
                     </li>
-                    </ul>
-                    </div>
+                 </ul>
+                 </div>
                 <div class="menu_section">
                 <h3>Notifications</h3>
-                <ul class="nav side-menu">  
-                            <li><a><i class="fa fa-windows"></i>Messages<span class="fa fa-chevron-down"></span></a>
-                        <ul class="nav child_menu">
-                            <li><a href="Help.aspx">Help</a></li> 
-                            <li><a href="Feedback.aspx">Feedback</a></li>
-                            <li><a href="Assisted.aspx">Assisted</a></li>                     
-                        </ul>
-                        </li>
-                    <li><a href="Report.aspx"><i class="fa fa-windows"></i>Report</a></li>                        
-                    </ul>
+                <ul class="nav side-menu">             
+                    <li><a href="Help.aspx">Help</a></li> 
+                    <li><a href="Feedback.aspx">Feedback</a></li>
+                    <li><a href="Assisted.aspx">Assisted</a></li>              
+                    <li><a href="Report.aspx">Report</a></li>                        
+                </ul>
+                </div>
+                <div class="menu_section">
+                <ul class="nav side-menu">             
+                    <li><a href="Religion.aspx">Religion</a></li>                                           
+                </ul>
                 </div>                 
             </div>
             <!-- /sidebar menu -->

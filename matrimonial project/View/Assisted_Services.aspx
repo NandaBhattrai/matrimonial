@@ -74,7 +74,16 @@ $(document).ready(function(){
  <div class="navbar navbar-inverse-blue navbar">
     <!--<div class="navbar navbar-inverse-blue navbar-fixed-top">-->
       <div class="navbar-inner">
-        <div class="container">
+                       <div style="padding-left:100px;">
+          <div class="menu">
+					<div class="cd-dropdown-wrapper">						
+						<div class="logo" style="margin-top:-6px;">
+						<%--<h1><a class="cd-logo link link--takiri">Catch Your Match <span><i class="fa fa-heart" aria-hidden="true"></i>Made in heaven.</span></a></h1>--%>
+                            <img src="../Content/matrimonial/images/logo.PNG" class="img-responsive" alt="" style="height:70px; width:80px;" />
+						</div>
+			            </div> 
+              </div>
+					</div>
            
            <div class="pull-right">
           	<nav class="navbar nav_bottom" role="navigation">
@@ -91,13 +100,14 @@ $(document).ready(function(){
 		    <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 		        
                 <ul class="nav navbar-nav nav_1">
-		            <li class="active"><a href="Home.aspx">Home</a></li>		           
+		            <li><a href="Home.aspx">Home</a></li>
+                     <li><a href="Pages.aspx">About Us</a></li>	           
 		        </ul>
 		     </div><!-- /.navbar-collapse -->
 		    </nav>
 		   </div> <!-- end pull-right -->
           <div class="clearfix"> </div>
-        </div> <!-- end container -->
+        
       </div> <!-- end navbar-inner -->
     </div> <!-- end navbar-inverse-blue -->
 <!-- ============================  Navigation End ============================ -->
@@ -193,6 +203,18 @@ $(document).ready(function(){
 						</ul>
 						</section>
 					</div>
+                     <div class="col-md-4 footer-grids">
+						<h3>Quick Links</h3>
+						<section>
+                        <ul>
+							<li><a href="Pages.aspx">About Us</a></li>
+							<li><a href="Pages.aspx">FAQ</a></li>	
+							<li><a href="Pages.aspx">Privacy Policy</a></li>
+                            <li><a href="Pages.aspx">Terms and Conditions</a></li>
+                            <li><a href="Pages.aspx">Contact Us</a></li>
+						</ul>
+						</section>
+					</div>
 					<div class="clearfix"></div>
 				</div>
 				<div class="clearfix"></div>
@@ -201,7 +223,7 @@ $(document).ready(function(){
 	</div>	
 	<div class="copy-right"> 
 		<div class="container">
-			<p>© 2017 Match. All rights reserved | Design by <a href="http://w3layouts.com"> W3layouts.</a></p>
+			<p>© 2018 Match. All rights reserved | Design by <a href="#">CatchYourMatch</a></p>
 		</div>
 	</div> 
 </footer>

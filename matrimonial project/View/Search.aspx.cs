@@ -16,6 +16,7 @@ namespace matrimonial_project.View
             {
                 if (!Page.IsPostBack)
                 {
+                   
                     DataTable data = this.getreligion();
                     if (data.Rows.Count > 0)
                     {
@@ -76,12 +77,12 @@ namespace matrimonial_project.View
 
             }
         }
-
         private DataTable getstay()
         {
             DataTable dt = new DataTable();
-            string strQuery = "SELECT DISTINCT Stay FROM dbo.UserProfile";
+            string strQuery = "SELECT DISTINCT Stay FROM dbo.UserProfile where VerifiedStatus=1 AND ProfileStatus=1";
             SqlCommand cmd = new SqlCommand(strQuery);
+            cmd.Parameters.Add("@Gender", SqlDbType.VarChar).Value = gender.Value;
             DBconnection conn_ = new DBconnection();
             dt = conn_.SelectData(cmd);
             return dt;
@@ -90,7 +91,7 @@ namespace matrimonial_project.View
         private DataTable getprofession()
         {
             DataTable dt = new DataTable();
-            string strQuery = "SELECT DISTINCT Profession FROM dbo.UserProfile";
+            string strQuery = "SELECT DISTINCT Profession FROM dbo.UserProfile where VerifiedStatus=1 AND ProfileStatus=1";
             SqlCommand cmd = new SqlCommand(strQuery);
             DBconnection conn_ = new DBconnection();
             dt = conn_.SelectData(cmd);
@@ -100,7 +101,7 @@ namespace matrimonial_project.View
         private DataTable getcaste()
         {
             DataTable dt = new DataTable();
-            string strQuery = "SELECT DISTINCT Caste FROM dbo.UserProfile";
+            string strQuery = "SELECT DISTINCT Caste FROM dbo.UserProfile  where VerifiedStatus=1 AND ProfileStatus=1";
             SqlCommand cmd = new SqlCommand(strQuery);
             DBconnection conn_ = new DBconnection();
             dt = conn_.SelectData(cmd);
@@ -110,7 +111,7 @@ namespace matrimonial_project.View
         private DataTable getvalue()
         {
             DataTable dt = new DataTable();
-            string strQuery = "SELECT DISTINCT Country FROM dbo.UserProfile";
+            string strQuery = "SELECT DISTINCT Country FROM dbo.UserProfile  where VerifiedStatus=1 AND ProfileStatus=1";
             SqlCommand cmd = new SqlCommand(strQuery);
             DBconnection conn_ = new DBconnection();
             dt = conn_.SelectData(cmd);
@@ -159,8 +160,8 @@ namespace matrimonial_project.View
                 string Marital;
                 if (rad_single.Checked == true)
                     Marital = "Single";
-                else if (rad_married.Checked == true)
-                    Marital = "Married";
+                else if (rad_Widow.Checked == true)
+                    Marital = "Widow";
                 else
                     Marital = "Divorced";
                 int ageto = Convert.ToInt16(AgeTo.Value)+1;
@@ -168,7 +169,7 @@ namespace matrimonial_project.View
                 double heightto = Convert.ToDouble(HeightTo.Value)+1.0;
                 double heightfrom = Convert.ToDouble(HeightFrom.Value)-1.0;
                 DataTable data = new DataTable();
-                string Query = "SELECT * FROM dbo.UserProfile Where Gender=@Gender AND Country=@Country AND Caste=@Caste AND Profession=@Profession AND Stay=@Stay AND MaritalStatus=@MaritalStatus AND Religion=@Religion AND ProfileStatus=1 AND Age BETWEEN @minage AND @maxage AND Height BETWEEN @minheight AND @maxheight";
+                string Query = "SELECT * FROM dbo.UserProfile Where Gender=@Gender AND Country=@Country AND Caste=@Caste AND Profession=@Profession AND Stay=@Stay AND MaritalStatus=@MaritalStatus AND Religion=@Religion AND ProfileStatus=1 AND Age BETWEEN @minage AND @maxage AND Height BETWEEN @minheight AND @maxheight AND VerifiedStatus=1 AND ProfileStatus=1";
                 SqlCommand cmmd = new SqlCommand(Query);
                 cmmd.Parameters.Add("@Stay", SqlDbType.VarChar).Value = Stay_Address;
                 cmmd.Parameters.Add("@Country", SqlDbType.VarChar).Value = SearchCountry;
@@ -205,8 +206,6 @@ namespace matrimonial_project.View
                         html.Append("<img src = '../Upload/" + dr["ProfileImage"] + "' class='prf-img img-responsive' alt='profile image' height=20 />");
                         html.Append("<div class='w3-prfr'>");
                         html.Append("<p>" + dr["Age"] + ", " + dr["Religion"] + ", " + dr["Caste"] + ", " + dr["Education"] + ", " + dr["Profession"] + "</p>");
-                        // html.Append("<h4>Contact Now:</h4>");
-                        //html.Append("<a href ='#' data-toggle='modal' data-target='#myModal'>Login</a><span>or</span><a href = 'index.html' > Register </a>");
                         html.Append("</div>");
                         html.Append("<div class='clearfix'></div>");
                         html.Append("<p class='light'>" + yourself + "<a href = 'SearchProfile.aspx?id=" + dr["ProfileID"] + "'> read more</a></p>");
@@ -229,11 +228,6 @@ namespace matrimonial_project.View
             {
              
             }
-        }
-
-        protected void submit_Click(object sender, EventArgs e)
-        {
-
-        }
+        }       
     }
 }

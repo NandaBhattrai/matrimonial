@@ -3482,6 +3482,14 @@
     <Content Include="Content\admin\vendors\validator\index.html" />
     <Content Include="Content\admin\vendors\validator\multifield.js" />
     <Content Include="Content\admin\vendors\validator\validator.js" />
+    <Content Include="Content\matrimonial\Chat\css\bootstrap.min.css" />
+    <Content Include="Content\matrimonial\Chat\css\bootstrap.min.js" />
+    <Content Include="Content\matrimonial\Chat\css\jquery.js" />
+    <Content Include="Content\matrimonial\Chat\css\messsages.css" />
+    <Content Include="Content\matrimonial\Chat\fonts\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Content\matrimonial\Chat\fonts\font-awesome\fonts\fontawesome-webfont1fc6.svg" />
+    <Content Include="Content\matrimonial\Chat\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\matrimonial\Chat\jQuery-2.1.4.min.js" />
     <Content Include="Content\matrimonial\css\ScrollIndicator.css" />
     <Content Include="Content\matrimonial\data1\images\slide1.jpg" />
     <Content Include="Content\matrimonial\data1\images\slide2.jpg" />
@@ -3530,17 +3538,21 @@
     <Content Include="View\Admin\Home.aspx" />
     <Content Include="View\Admin\Profile.aspx" />
     <Content Include="View\Admin\RegisterList.aspx" />
+    <Content Include="View\Admin\Religion.aspx" />
     <Content Include="View\Admin\Report.aspx" />
     <Content Include="View\Admin\Settings.aspx" />
     <Content Include="View\Admin\SuccessStory.aspx" />
     <Content Include="View\Admin\UserDetail.aspx" />
     <Content Include="View\Admin\UserList.aspx" />
     <Content Include="View\Assisted_Services.aspx" />
+    <Content Include="View\Chat.aspx" />
     <Content Include="View\Contact.aspx" />
+    <Content Include="View\CountryList.aspx" />
     <Content Include="View\DesiredPart.aspx" />
     <Content Include="View\Feedback.aspx" />
     <Content Include="View\Help.aspx" />
     <Content Include="View\Home.aspx" />
+    <Content Include="View\Interest.aspx" />
     <Content Include="View\Matrimonial.Master" />
     <Content Include="Content\admin\documentation\fonts\fonts\fontawesome-webfont.eot" />
     <Content Include="Content\admin\documentation\fonts\fonts\fontawesome-webfont.ttf" />
@@ -4377,6 +4389,14 @@
     <Content Include="Content\admin\vendors\validator\validator.jquery.json" />
     <Content Include="View\Admin\Admin.Master" />
     <Content Include="View\Matrimonialhome.Master" />
+    <Content Include="Content\matrimonial\Chat\fonts\font-awesome\fonts\fontawesome-webfont1fc6.eot" />
+    <Content Include="Content\matrimonial\Chat\fonts\font-awesome\fonts\fontawesome-webfont1fc6.ttf" />
+    <Content Include="Content\matrimonial\Chat\fonts\font-awesome\fonts\fontawesome-webfont1fc6.woff" />
+    <Content Include="Content\matrimonial\Chat\fonts\font-awesome\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="Content\matrimonial\Chat\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\matrimonial\Chat\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\matrimonial\Chat\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\matrimonial\Chat\fonts\glyphicons-halflings-regulard41d.eot" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -4447,13 +4467,15 @@
     <Content Include="Content\matrimonial\js\main.js" />
     <Content Include="Content\matrimonial\js\move-top.js" />
     <Content Include="Content\matrimonial\js\utils.js" />
+    <Content Include="View\Pages.aspx" />
     <Content Include="View\Process.aspx" />
     <Content Include="View\ProfileMaking.aspx" />
     <Content Include="View\Search.aspx" />
     <Content Include="View\SearchProfile.aspx" />
     <Content Include="View\SearchResult.aspx" />
     <Content Include="View\Settings.aspx" />
-    <Content Include="View\Stories.aspx" />
+    <Content Include="View\Story.aspx" />
+    <Content Include="View\StoryView.aspx" />
     <Content Include="View\User.aspx" />
     <Content Include="View\UserHome.aspx" />
     <Content Include="Web.config">
@@ -4526,6 +4548,13 @@
     <Compile Include="View\Admin\RegisterList.aspx.designer.cs">
       <DependentUpon>RegisterList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\Admin\Religion.aspx.cs">
+      <DependentUpon>Religion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Admin\Religion.aspx.designer.cs">
+      <DependentUpon>Religion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\Admin\Report.aspx.cs">
       <DependentUpon>Report.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -4568,12 +4597,26 @@
     <Compile Include="View\Assisted_Services.aspx.designer.cs">
       <DependentUpon>Assisted_Services.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\Chat.aspx.cs">
+      <DependentUpon>Chat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Chat.aspx.designer.cs">
+      <DependentUpon>Chat.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="View\Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\CountryList.aspx.cs">
+      <DependentUpon>CountryList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\CountryList.aspx.designer.cs">
+      <DependentUpon>CountryList.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\DesiredPart.aspx.cs">
       <DependentUpon>DesiredPart.aspx</DependentUpon>
@@ -4603,6 +4646,13 @@
     <Compile Include="View\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\Interest.aspx.cs">
+      <DependentUpon>Interest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Interest.aspx.designer.cs">
+      <DependentUpon>Interest.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\Matrimonial.Master.cs">
       <DependentUpon>Matrimonial.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -4616,6 +4666,13 @@
     </Compile>
     <Compile Include="View\Matrimonialhome.Master.designer.cs">
       <DependentUpon>Matrimonialhome.Master</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages.aspx.cs">
+      <DependentUpon>Pages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Pages.aspx.designer.cs">
+      <DependentUpon>Pages.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Process.aspx.cs">
       <DependentUpon>Process.aspx</DependentUpon>
@@ -4659,12 +4716,19 @@
     <Compile Include="View\Settings.aspx.designer.cs">
       <DependentUpon>Settings.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\Stories.aspx.cs">
-      <DependentUpon>Stories.aspx</DependentUpon>
+    <Compile Include="View\Story.aspx.cs">
+      <DependentUpon>Story.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\Stories.aspx.designer.cs">
-      <DependentUpon>Stories.aspx</DependentUpon>
+    <Compile Include="View\Story.aspx.designer.cs">
+      <DependentUpon>Story.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\StoryView.aspx.cs">
+      <DependentUpon>StoryView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\StoryView.aspx.designer.cs">
+      <DependentUpon>StoryView.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\User.aspx.cs">
       <DependentUpon>User.aspx</DependentUpon>

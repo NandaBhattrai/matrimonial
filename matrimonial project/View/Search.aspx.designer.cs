@@ -112,13 +112,13 @@ namespace matrimonial_project.View {
         protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton rad_divorced;
         
         /// <summary>
-        /// rad_married control.
+        /// rad_Widow control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton rad_married;
+        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton rad_Widow;
         
         /// <summary>
         /// Country_list control.
@@ -182,6 +182,15 @@ namespace matrimonial_project.View {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button ContentPlaceHolder1_Cancel;
+        
+        /// <summary>
+        /// gender control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText gender;
         
         /// <summary>
         /// Result_block control.

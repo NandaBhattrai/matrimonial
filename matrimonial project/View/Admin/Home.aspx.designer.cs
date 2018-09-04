@@ -49,6 +49,24 @@ namespace matrimonial_project.View.Admin {
         protected global::System.Web.UI.WebControls.Label TodayProfile;
         
         /// <summary>
+        /// StoryCount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label StoryCount;
+        
+        /// <summary>
+        /// TodayStory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label TodayStory;
+        
+        /// <summary>
         /// HelpCount control.
         /// </summary>
         /// <remarks>

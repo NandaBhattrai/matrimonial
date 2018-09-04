@@ -61,15 +61,20 @@
                                        DataField="Mobile"
                                         HeaderText="Phone">
                                         <ItemStyle VerticalAlign="Top" />
-                                   </asp:BoundField> 
+                                   </asp:BoundField>
                                     <asp:BoundField 
                                        DataField="Country"
-                                        HeaderText="country">
+                                        HeaderText="Country">
                                         <ItemStyle VerticalAlign="Top" />
-                                   </asp:BoundField>                                                               
+                                   </asp:BoundField>                                                                                                   
                                   <asp:BoundField 
                                        DataField="ProfileStatus"
                                         HeaderText="Status">
+                                        <ItemStyle VerticalAlign="Top" />
+                                   </asp:BoundField>
+                                 <asp:BoundField 
+                                       DataField="VerifiedStatus"
+                                        HeaderText="Verified Status">
                                         <ItemStyle VerticalAlign="Top" />
                                    </asp:BoundField>  
                             <asp:TemplateField ShowHeader="False">

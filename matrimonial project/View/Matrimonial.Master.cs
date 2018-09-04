@@ -14,7 +14,7 @@ namespace matrimonial_project.view
         {
             if (!Page.IsPostBack)
             {
-               // this.getDistinct();
+                this.browsedata();
                 DataTable data = this.getreligion();
                 if(data.Rows.Count > 0)
                 {
@@ -25,14 +25,12 @@ namespace matrimonial_project.view
                     religion.DataBind();
                 }
             }
-            else
-            {
 
-            }
-            if (!string.IsNullOrEmpty(Session["UserName"].ToString()))
+            if ((Session["UserName"]!=null)&&(!string.IsNullOrEmpty(Session["UserName"].ToString())))
             {
                 this.getStory();
                 this.checkResponse();
+                this.getInterest();
                 string UserName_ = (string)(Session["UserName"]);
                 UserName.Text = UserName_.ToString();               
             }
@@ -40,55 +38,124 @@ namespace matrimonial_project.view
                 Response.Redirect("../Home.aspx", false);
         }
 
-        //private void getDistinct()
-        //{
-        //    DataTable dt = new DataTable();
-        //    string strQuery = "SELECT DISTINCT Country FROM UserProfile";
-        //    SqlCommand cmd = new SqlCommand(strQuery);
-        //    DBconnection conn_ = new DBconnection();
-        //    dt = conn_.SelectData(cmd);
-        //    if (dt.Rows.Count > 0)
-        //    {
-        //        countrylist.Text = "</span><li class='has-children'><a href='#'>Country</a><ul class='cd-secondary-dropdown is-hidden'><li class='go-back'><a href='#'>Menu</a></li>";
-        //        int countrow = dt.Rows.Count;                
-        //        foreach (DataRow dr in dt.Rows)
-        //        {
+        private void browsedata()
+        {
+            DataTable data = new DataTable();
+            string StrQuery = "select Gender from UserProfile where RegisterId=@RegisterId AND VerifiedStatus=1 AND ProfileStatus=1";
+            SqlCommand cmmd = new SqlCommand(StrQuery);
+            cmmd.Parameters.Add("@RegisterId", SqlDbType.Int).Value = Convert.ToInt16(Session["UserId"].ToString());
+            DBconnection conn = new DBconnection();
+            StringBuilder html = new StringBuilder();
+            data = conn.SelectData(cmmd);
+            if (data.Rows.Count > 0)
+            {
+                DataRow row = data.Rows[0];
+                sex.Value = row["Gender"].ToString();
+                this.Country_Browse();
+                this.Profession_list();
+                this.Caste_list();
+            }
+        }
 
-        //            var sb = new StringBuilder();                    
-        //            var htw = new HtmlTextWriter(new System.IO.StringWriter(sb, System.Globalization.CultureInfo.InvariantCulture));
-        //            LinkButton lb = new LinkButton();
-        //            lb.ID = dr["Country"].ToString();
-        //            lb.Text = dr["Country"].ToString();
-        //            lb.CommandName = "country";
-        //            lb.CommandArgument = dr["Country"].ToString();
-        //            lb.Command += new CommandEventHandler(ViewList);
-        //            lb.RenderControl(htw);                  
-        //            countrylist.Text = countrylist.Text + "<li> <a href='searchresult?param1=Female&param2=Hindu&param3=10&param4=100&country="+lb.ID+"'>" + lb.Text+"</a></li>";
-        //        }
-        //        countrylist.Text = countrylist.Text + "</ul></li><span>";                
-        //    }
-        //}
+        private void Caste_list()
+        {
+            DataTable data = new DataTable();
+            string StrQuery = "select distinct(Caste) from UserProfile where Gender<>@Gender AND VerifiedStatus=1 AND ProfileStatus=1";
+            SqlCommand cmmd = new SqlCommand(StrQuery);
+            cmmd.Parameters.Add("@Gender", SqlDbType.VarChar).Value = sex.Value;
+            DBconnection conn = new DBconnection();
+            StringBuilder html = new StringBuilder();
+            data = conn.SelectData(cmmd);
+            if (data.Rows.Count > 0)
+            {
+                foreach (DataRow dr in data.Rows)
+                {
+                    html.Append("<li><a href ='CountryList.aspx?param1=&param2=&param3=" + dr["Caste"] + "'>" + dr["Caste"] + "</a></li>");
+                }
+                string dynaDiv = html.ToString();
+                CasteTest.Controls.Add(new Literal { Text = html.ToString() });
+            }
+            else
+            {
+                html.Append("<h2>No Result Found.</h2>");
+                string dynaDiv = html.ToString();
+                CasteTest.Controls.Add(new Literal { Text = html.ToString() });
+            }
+        }
 
-        //private void ViewList(object sender, EventArgs e)
-        //{
-        //    if (sender is LinkButton)
-        //    {
-        //        LinkButton linkButton = (LinkButton)sender;
-        //        if (linkButton.CommandName == "country")
-        //        {
-        //            String country = linkButton.CommandArgument;
-        //            Session["country"] = country;
-        //            Response.Redirect("SearchResult.aspx", false);
-        //        }
+        private void Profession_list()
+        {
+            DataTable data = new DataTable();
+            string StrQuery = "select distinct(Profession) from UserProfile where Gender<>@Gender AND VerifiedStatus=1 AND ProfileStatus=1";
+            SqlCommand cmmd = new SqlCommand(StrQuery);
+            cmmd.Parameters.Add("@Gender", SqlDbType.VarChar).Value = sex.Value;
+            DBconnection conn = new DBconnection();
+            StringBuilder html = new StringBuilder();
+            data = conn.SelectData(cmmd);
+            if (data.Rows.Count > 0)
+            {
+                foreach (DataRow dr in data.Rows)
+                {
+                    html.Append("<li><a href ='CountryList.aspx?param1=&param2=" + dr["Profession"] + "&param3='>" + dr["Profession"] + "</a></li>");
+                }
+                string dynaDiv = html.ToString();
+                ProfessionTest.Controls.Add(new Literal { Text = html.ToString() });
+            }
+            else
+            {
+                html.Append("<h2>No Result Found.</h2>");
+                string dynaDiv = html.ToString();
+                ProfessionTest.Controls.Add(new Literal { Text = html.ToString() });
+            }
+        }
 
-        //    }
-        //}
+        private void Country_Browse()
+        {
+            DataTable data = new DataTable();
+            string StrQuery = "select distinct(Country) from UserProfile where Gender <> @Gender AND VerifiedStatus=1 AND ProfileStatus=1";
+            SqlCommand cmmd = new SqlCommand(StrQuery);
+            cmmd.Parameters.Add("@Gender", SqlDbType.VarChar).Value = sex.Value;
+            DBconnection conn = new DBconnection();
+            StringBuilder html = new StringBuilder();
+            data = conn.SelectData(cmmd);
+            if (data.Rows.Count > 0)
+            {
+                foreach (DataRow dr in data.Rows)
+                {
+                    html.Append("<li><a href ='CountryList.aspx?param1=" + dr["Country"] + "&param2=&param3='>" + dr["Country"] + "</a></li>");
+                }
+                string dynaDiv = html.ToString();
+                CountryTest.Controls.Add(new Literal { Text = html.ToString() });
+            }
+            else
+            {
+                html.Append("<h2>No Result Found.</h2>");
+                string dynaDiv = html.ToString();
+                CountryTest.Controls.Add(new Literal { Text = html.ToString() });
+            }
+
+        }
+
+        private void getInterest()
+        {
+            string id = Session["UserId"].ToString();                           
+                DataTable data = new DataTable();
+                string Query = "SELECT InterestId FROM dbo.Interest Where ReceiverId=@ReceiverId AND InterestStatus=1";
+                SqlCommand cmmd = new SqlCommand(Query);
+            cmmd.Parameters.Add("@ReceiverId", SqlDbType.Int).Value = Convert.ToInt32(Session["UserId"].ToString());
+            DBconnection conn = new DBconnection();
+                data = conn.SelectData(cmmd);
+                if (data.Rows.Count > 0)
+                {
+                    DataRow rw = data.Rows[0];
+                    Interest.Visible = true;
+                InterestCount.Text = data.Rows.Count.ToString();
+                }            
+        }       
 
         private void checkResponse()
         {
-            DataTable value = this.getValue();
-            if (value.Rows.Count > 0)
-            {
+           
                 DataTable da = new DataTable();
                 string strQuery = "SELECT Story FROM dbo.Story Where SUserName=@SUserName AND SRegisterId=@SRegisterId AND Status=2";
                 SqlCommand cmd = new SqlCommand(strQuery);
@@ -102,46 +169,27 @@ namespace matrimonial_project.view
                     Stories.Visible = true;
                     Count.Text = da.Rows.Count.ToString();
                 }               
-            }
+           
         }
 
         private void getStory()
         {
-            DataTable value = this.getValue();
-            if (value.Rows.Count > 0)
+         
+            DataTable data = new DataTable();
+            string Query = "SELECT Story FROM dbo.Story Where (RUserName=@RUserName OR SRegisterId=@SRegisterId) AND (Status=1 OR Status=2 OR Status=0)";
+            SqlCommand cmmd = new SqlCommand(Query);
+            cmmd.Parameters.Add("@RUserName", SqlDbType.VarChar).Value = Session["UserName"].ToString();
+            cmmd.Parameters.Add("@SRegisterId", SqlDbType.VarChar).Value = Convert.ToInt32(Session["UserId"].ToString());
+            DBconnection conn = new DBconnection();
+            data = conn.SelectData(cmmd);
+            if ((data != null) && (data.Rows.Count > 0))
             {
-                DataRow row = value.Rows[0];
-                string name = row["Name"].ToString();
-                string country = row["Country"].ToString();
-                string email = row["Email"].ToString();
-                string phone = row["Mobile"].ToString();
-                DataTable data = new DataTable();
-                string Query = "SELECT Story FROM dbo.Story Where ReceiverName=@ReceiverName AND RCountry=@RCountry AND REmail=@REmail AND RPhone=@RPhone AND Status=0";
-                SqlCommand cmmd = new SqlCommand(Query);
-                cmmd.Parameters.Add("@ReceiverName", SqlDbType.VarChar).Value = name;
-                cmmd.Parameters.Add("@RCountry", SqlDbType.VarChar).Value = country;
-                cmmd.Parameters.Add("@REmail", SqlDbType.VarChar).Value = email;
-                cmmd.Parameters.Add("@RPhone", SqlDbType.VarChar).Value = phone;
-                DBconnection conn = new DBconnection();
-                data = conn.SelectData(cmmd);
-                if (data.Rows.Count > 0)
-                {
-                    DataRow rw = data.Rows[0];
-                    Stories.Visible = true;
-                    Count.Text = data.Rows.Count.ToString();
-                }                                
+                DataRow rw = data.Rows[0];
+                Stories.Visible = true;
+                Count.Text = data.Rows.Count.ToString();
             }
         }
-        private DataTable getValue()
-        {
-            DataTable dt = new DataTable();
-            string strQuery = "SELECT Name,Country,Email,Mobile FROM UserProfile where RegisterId=@RegisterId";
-            SqlCommand cmd = new SqlCommand(strQuery);
-            cmd.Parameters.Add("RegisterId", SqlDbType.Int).Value = Convert.ToInt32(Session["UserId"]);
-            DBconnection conn_ = new DBconnection();
-            dt = conn_.SelectData(cmd);
-            return dt;
-        }
+     
 
         
 
@@ -161,9 +209,7 @@ namespace matrimonial_project.view
                 string gender = Gender.Value.ToString();
                 int from = Convert.ToInt16(AgeFrom.Value);
                 int to = Convert.ToInt16(AgeTo.Value);
-            Response.Redirect(string.Format("SearchResult.aspx?param1={0}&param2={1}&param3={2}&param4={3}", gender, Religious, from,to));
-           
-                        
-            }           
+            Response.Redirect(string.Format("SearchResult.aspx?param1={0}&param2={1}&param3={2}&param4={3}",gender,Religious,from,to));
+         }           
         }
     }

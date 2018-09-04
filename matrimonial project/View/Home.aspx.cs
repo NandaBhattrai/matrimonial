@@ -2,10 +2,9 @@
 using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.IO;
-using System.Security.Cryptography;
 using System.Text;
 using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace matrimonial_project.View
 {
@@ -17,6 +16,7 @@ namespace matrimonial_project.View
             {
                 if (!Page.IsPostBack)
                 {
+                    this.SuccessStory();
                     DataTable data = this.getreligion();
                     if (data.Rows.Count > 0)
                     {
@@ -31,6 +31,32 @@ namespace matrimonial_project.View
             catch (Exception ex)
             {
                 warning.Text = Convert.ToString(ex);
+            }
+        }
+
+        private void SuccessStory()
+        {
+            string Str = "select * from Story where Status=5";
+            SqlCommand cmd = new SqlCommand(Str);
+            DBconnection conn_ = new DBconnection();
+            DataTable dt = conn_.SelectData(cmd);
+            StringBuilder html = new StringBuilder();
+            if (dt.Rows.Count > 0)
+            {
+                foreach (DataRow data in dt.Rows)
+                {                 
+                    html.Append("<div class='col-md-4 biseller-column'>");
+                    html.Append("<div class='profile-image'>");
+                    html.Append("<img src='../Upload/"+data["SImage"]+"' class='img - responsive' alt='profile image'>");
+                    html.Append("<div class='agile-overlay'>");
+                    html.Append("<h3>" + data["ReceiverName"] + "<span> & </span>" + data["SUserName"] + "</h3>");
+                    html.Append("<p>"+data["Story"]+"</p>");
+                    html.Append("</div>");
+                    html.Append("</div>");
+                    html.Append("</div>");                                       
+                }
+                string dynaDiv = html.ToString();
+                StoryPalace.Controls.Add(new Literal { Text = html.ToString() });
             }
         }
 
@@ -87,7 +113,6 @@ namespace matrimonial_project.View
                         }
                         else
                         {
-                            message.Visible = true;
                             warning.Text = "Username and Password mismatch";
                         }
 
@@ -95,8 +120,7 @@ namespace matrimonial_project.View
                 }
             }
             catch (Exception ex)
-            {
-                message.Visible = true;
+            {                
                 warning.Text = ex.ToString();
             }
         }
@@ -114,13 +138,39 @@ namespace matrimonial_project.View
                 if (dt.Rows.Count > 0)
                 {
                     DataRow row = dt.Rows[0];
-                    Session["ProfileId"] = row["ProfileId"];
-                    Response.Redirect("UserHome.aspx", false);
+                    this.getVarifiedProfile();                    
                 }
                 else
                 {
                     Response.Redirect("ProfileMaking.aspx", false);
                 }
+            }
+            catch (Exception ex)
+            {
+                warning.Text = Convert.ToString(ex);
+            }
+        }
+
+        private void getVarifiedProfile()
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                string strQuery = "SELECT ProfileId FROM dbo.UserProfile WHERE RegisterId=@RegisterId AND ProfileStatus=1 AND VerifiedStatus=1";
+                SqlCommand cmd = new SqlCommand(strQuery);
+                cmd.Parameters.Add("@RegisterId", SqlDbType.Int).Value = Convert.ToInt32(Session["UserId"].ToString());
+                DBconnection conn_ = new DBconnection();
+                dt = conn_.SelectData(cmd);
+                if (dt.Rows.Count > 0)
+                {
+                    DataRow row = dt.Rows[0];
+                    Session["ProfileId"] = row["ProfileId"];
+                    Response.Redirect("UserHome.aspx", false);
+                }
+                else
+                {
+                    warning.Text = "Profile does not Verified Wait!!!!";
+                }             
             }
             catch (Exception ex)
             {
@@ -150,7 +200,7 @@ namespace matrimonial_project.View
                 cmd.Parameters.Add("@Name", SqlDbType.VarChar).Value = name.Value.Trim();
                 cmd.Parameters.Add("@UserName", SqlDbType.VarChar).Value = username.Value.Trim();
                 cmd.Parameters.Add("@Gender", SqlDbType.VarChar).Value = gender;
-                cmd.Parameters.Add("@DateOfBirth", SqlDbType.VarChar).Value = datepick.Value.Trim();
+                cmd.Parameters.Add("@DateOfBirth", SqlDbType.VarChar).Value = datebirth.Value.Trim();
                 cmd.Parameters.Add("@Religion", SqlDbType.VarChar).Value = religious.Trim();
                 cmd.Parameters.Add("@Mobile", SqlDbType.VarChar).Value = phone.Value.Trim();
                 cmd.Parameters.Add("@Email", SqlDbType.VarChar).Value = email.Value.Trim();
@@ -160,14 +210,11 @@ namespace matrimonial_project.View
                 bool result = conn_.ExecuteData(cmd);
                 if (result)
                 {
-                    warning.Visible = true;
-                    warning.Text = "Successfully Registered!!Now LogIn";
-                    Response.Redirect("home.aspx", false);
+                    popmsg.Text = "Successfully Registered!!Now LogIn";
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);                    
                 }
                 else
-                {
-                    warning.Visible = true;
-                   
+                {                   
                     warning.Text = "Sorry Something Went Wrong";
                 }
             }

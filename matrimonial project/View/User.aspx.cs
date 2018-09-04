@@ -96,6 +96,14 @@ namespace matrimonial_project.View
                     Image = "../Upload/" + Image;
                     Image = "<img src='" + Image + "'/>";
                     UserImage.Text = Image;
+                    string front = row["Front"].ToString();
+                    front = "../Upload/" + front;
+                    front = "<img src='" + front + "'/>";
+                    frontImage.Text = front;
+                    string back = row["Back"].ToString();
+                    back = "../Upload/" + back;
+                    back = "<img src='" + back + "'/>";
+                    backImage.Text = back;
                 }                
             }
             catch (Exception ex)
@@ -118,7 +126,7 @@ namespace matrimonial_project.View
         private DataTable getValue()
         {
             DataTable dt = new DataTable();           
-            string strQuery = "SELECT * FROM dbo.UserProfile where RegisterId=@RegisterId AND ProfileStatus=1";
+            string strQuery = "SELECT * FROM dbo.UserProfile where RegisterId=@RegisterId AND ProfileStatus=1 AND VerifiedStatus=1";
             SqlCommand cmd = new SqlCommand(strQuery);
             cmd.Parameters.Add("@RegisterId", SqlDbType.Int).Value = Convert.ToInt32(Session["UserId"]);           
             DBconnection conn_ = new DBconnection();
@@ -202,20 +210,13 @@ namespace matrimonial_project.View
                     {
                         Single.Checked = true;
                         Divorced.Checked = false;
-                        Married.Checked = false;
-                    }
-                    else if (row["MaritalStatus"].ToString() == "Divorced")
-                    {
-                        Single.Checked = false;
-                        Divorced.Checked = true;
-                        Married.Checked = false;
                     }
                     else
                     {
                         Single.Checked = false;
-                        Divorced.Checked = false;
-                        Married.Checked = true;
+                        Divorced.Checked = true;
                     }
+
                     Nationality.Value = row["Nationality"].ToString();
                     Religion.Items.FindByText(row["Religion"].ToString()).Selected = true;
                     Caste.Value = row["Caste"].ToString();
@@ -267,8 +268,6 @@ namespace matrimonial_project.View
                 string Marital;
                 if (Single.Checked == true)
                     Marital = "Single";
-                else if (Married.Checked == true)
-                    Marital = "Married";
                 else
                     Marital = "Divorced";
 
@@ -396,9 +395,7 @@ namespace matrimonial_project.View
 
                 string Marital;
                 if (rad_single.Checked == true)
-                    Marital = "Single";
-                else if (rad_married.Checked == true)
-                    Marital = "Married";
+                    Marital = "Single";               
                 else
                     Marital = "Divorced";
 
@@ -420,7 +417,7 @@ namespace matrimonial_project.View
                 else
                     Smoke = "Non Smoker";
 
-                string Query = "update dbo.Partner set Gender=@Gender,MaritalStatus=@MaritalStatus,Religion=@Religion,Caste=@Caste,Education=@Education,Profession=@Profession,Country=@Country,Agefrom=@Agefrom,AgeTo=@AgeTo,HeightFrom=@HeightFrom,HeightTo=@HeightTo,Complexion=@Complexion,Diet=@Diet,Drink=@Drink,Smoke=@Smoke where RegisterId=@RegisterId";
+                string Query = "update dbo.Partner set Gender=@Gender,MaritalStatus=@MaritalStatus,Religion=@Religion,Caste=@Caste,Education=@Education,Profession=@Profession,Country=@Country,Agefrom=@Agefrom,AgeTo=@AgeTo,HeightFrom=@HeightFrom,HeightTo=@HeightTo,Complexion=@Complexion,Diet=@Diet,Drink=@Drink,Smoke=@Smoke where RegisterId=@RegisterId AND VerifiedStatus=1";
                 SqlCommand cmmd = new SqlCommand(Query);
                 cmmd.Parameters.Add("@Gender", SqlDbType.VarChar).Value = Gender;
                 cmmd.Parameters.Add("@MaritalStatus", SqlDbType.VarChar).Value = Marital;
@@ -492,19 +489,16 @@ namespace matrimonial_project.View
                     {
                         rad_single.Checked = true;
                         rad_divorced.Checked = false;
-                        rad_married.Checked = false;
                     }
                     else if(row["MaritalStatus"].ToString() == "Divorced")
                     {
                         rad_single.Checked = false;
                         rad_divorced.Checked = true;
-                        rad_married.Checked = false;
                     }
                     else
                     {
                         rad_single.Checked = false;
                         rad_divorced.Checked = false;
-                        rad_married.Checked = true;
                     }
                     PartReligion.Items.FindByText(row["Religion"].ToString()).Selected = true;
                     PartCaste.Value = row["Caste"].ToString();

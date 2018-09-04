@@ -10,7 +10,7 @@
 namespace matrimonial_project.View {
     
     
-    public partial class Help {
+    public partial class Help1 {
         
         /// <summary>
         /// msg control.

@@ -1,13 +1,10 @@
 ﻿using matrimonial_project.model;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.IO;
-using System.Linq;
 using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace matrimonial_project.View
 {
@@ -37,6 +34,9 @@ namespace matrimonial_project.View
                         Phone.Value = row["Mobile"].ToString();
                         Email.Value = row["Email"].ToString();
                         Religion.Items.FindByText(row["Religion"].ToString()).Selected = true;
+                        DateTime datebday = Convert.ToDateTime(row["DateOfBirth"].ToString());
+                        int agee = DateTime.Now.Year - datebday.Year;
+                        Age.Value = agee.ToString();                      
                         if (row["Gender"].ToString() == "Male")
                         {
                             rad_male.Checked = true;
@@ -110,8 +110,8 @@ namespace matrimonial_project.View
                 string Marital;
                 if (Single.Checked == true)
                     Marital = "Single";
-                else if (Married.Checked == true)
-                    Marital = "Married";
+                else if (Widow.Checked == true)
+                    Marital = "Widow";
                 else
                     Marital = "Divorced";
 
@@ -159,8 +159,60 @@ namespace matrimonial_project.View
                         }
                     }
                 }
+                HttpPostedFile frontfile = Front.PostedFile;
+                string frontPhoto = "no image";
+                if (file != null)
+                {
+                    if (!Directory.Exists(Server.MapPath("~/Upload")))
+                    {
+                        Directory.CreateDirectory(Server.MapPath("~/Upload"));
+                    }
 
-                string Query = "INSERT INTO dbo.UserProfile (Name,Gender,DateOfBirth,MaritalStatus,Nationality,Religion,Caste,MotherTongue,KnownLanguage,BloodGroup,Education,Profession,Country,State,District,Stay,Mobile,Email,Age,Weight,Complexion,Diet,Drink,Smoker,ProfileImage,Family,Yourself,ProfileStatus,RegisterId,Height) VALUES (@Name,@Gender,@DateOfBirth,@MaritalStatus,@Nationality,@Religion,@Caste,@MotherTongue,@KnownLanguage,@BloodGroup,@Education,@Profession,@Country,@State,@District,@Stay,@Mobile,@Email,@Age,@Weight,@Complexion,@Diet,@Drink,@Smoker,@ProfileImage,@Family,@Yourself,@ProfileStatus,@RegisterId,@Height)";
+                    var extension = Path.GetExtension(frontfile.FileName).ToLower();
+                    if (extension == ".png" || extension == ".jpg" || extension == ".jpeg")
+                    {
+                        var filezize = frontfile.ContentLength;
+                        if (filezize <= 1024 * 1024 * 5)
+                        {
+                            var filename1 = Guid.NewGuid().ToString() + extension;
+                            frontfile.SaveAs(Server.MapPath($"~/Upload/{filename1}"));
+                            frontPhoto = $"{filename1}";
+                        }
+                        else
+                        {
+                            message.Visible = true;
+                            message.Text = "Image Size is large Please select small size image";
+                        }
+                    }
+                }
+                HttpPostedFile backfile = Back.PostedFile;
+                string backPhoto = "no image";
+                if (file != null)
+                {
+                    if (!Directory.Exists(Server.MapPath("~/Upload")))
+                    {
+                        Directory.CreateDirectory(Server.MapPath("~/Upload"));
+                    }
+
+                    var extension = Path.GetExtension(backfile.FileName).ToLower();
+                    if (extension == ".png" || extension == ".jpg" || extension == ".jpeg")
+                    {
+                        var filezize = backfile.ContentLength;
+                        if (filezize <= 1024 * 1024 * 5)
+                        {
+                            var filename2 = Guid.NewGuid().ToString() + extension;
+                            backfile.SaveAs(Server.MapPath($"~/Upload/{filename2}"));
+                            backPhoto = $"{filename2}";
+                        }
+                        else
+                        {
+                            message.Visible = true;
+                            message.Text = "Image Size is large Please select small size image";
+                        }
+                    }
+                }
+
+                string Query = "INSERT INTO dbo.UserProfile (Name,Gender,DateOfBirth,MaritalStatus,Nationality,Religion,Caste,MotherTongue,KnownLanguage,BloodGroup,Education,Profession,Country,State,District,Stay,Mobile,Email,Age,Weight,Complexion,Diet,Drink,Smoker,ProfileImage,Family,Yourself,ProfileStatus,RegisterId,Height,VerifiedStatus,Front,Back) VALUES (@Name,@Gender,@DateOfBirth,@MaritalStatus,@Nationality,@Religion,@Caste,@MotherTongue,@KnownLanguage,@BloodGroup,@Education,@Profession,@Country,@State,@District,@Stay,@Mobile,@Email,@Age,@Weight,@Complexion,@Diet,@Drink,@Smoker,@ProfileImage,@Family,@Yourself,@ProfileStatus,@RegisterId,@Height,@VerifiedStatus,@Front,@Back)";
                 SqlCommand cmmd = new SqlCommand(Query);
                 cmmd.Parameters.Add("@Name", SqlDbType.VarChar).Value = Name.Value.Trim();
                 cmmd.Parameters.Add("@Gender", SqlDbType.VarChar).Value = Gender;
@@ -192,7 +244,9 @@ namespace matrimonial_project.View
                 cmmd.Parameters.Add("@ProfileStatus", SqlDbType.VarChar).Value = "1";
                 cmmd.Parameters.Add("@RegisterId", SqlDbType.Int).Value = Convert.ToInt32(Session["UserId"]);
                 cmmd.Parameters.Add("@Height", SqlDbType.Float).Value = Convert.ToDouble(Height.Value);
-
+                cmmd.Parameters.Add("@VerifiedStatus", SqlDbType.VarChar).Value = "0";
+                cmmd.Parameters.Add("@Front", SqlDbType.VarChar).Value = frontPhoto;
+                cmmd.Parameters.Add("@Back", SqlDbType.VarChar).Value = backPhoto;
                 DBconnection conn = new DBconnection();
                 bool result = conn.ExecuteData(cmmd);
                 if (result)

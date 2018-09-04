@@ -67,15 +67,6 @@ namespace matrimonial_project.View {
         protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox Single;
         
         /// <summary>
-        /// Married control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox Married;
-        
-        /// <summary>
         /// Divorced control.
         /// </summary>
         /// <remarks>
@@ -83,6 +74,15 @@ namespace matrimonial_project.View {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox Divorced;
+        
+        /// <summary>
+        /// Widow control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox Widow;
         
         /// <summary>
         /// Nationality control.
@@ -139,24 +139,6 @@ namespace matrimonial_project.View {
         protected global::System.Web.UI.HtmlControls.HtmlSelect BloodGroup;
         
         /// <summary>
-        /// Education control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Education;
-        
-        /// <summary>
-        /// Profession control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Profession;
-        
-        /// <summary>
         /// Country control.
         /// </summary>
         /// <remarks>
@@ -209,6 +191,24 @@ namespace matrimonial_project.View {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl Email;
+        
+        /// <summary>
+        /// Education control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Education;
+        
+        /// <summary>
+        /// Profession control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Profession;
         
         /// <summary>
         /// Age control.
@@ -326,6 +326,24 @@ namespace matrimonial_project.View {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlTextArea MySelf;
+        
+        /// <summary>
+        /// Front control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputFile Front;
+        
+        /// <summary>
+        /// Back control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputFile Back;
         
         /// <summary>
         /// ContentPlaceHolder1_Submit control.

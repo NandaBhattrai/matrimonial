@@ -25,12 +25,9 @@
                   </div>
                   <div class="x_content">
                     <div class="col-md-6 col-sm-6 col-xs-12 profile_left">
-                      <div class="profile_img">
-                        <div id="crop-avatar">
-                          <!-- Current avatar -->
-                          <asp:Label Text="" runat="server"  ID="UserImage" Height="200px" Width="200px"/>                            
-                        </div>
-                      </div>
+                      <div class="profile_img">                        
+                          <asp:Label Text="" runat="server"  ID="UserImage"/>               
+                       </div>
                         <input id="Fid" runat="server" visible="false" type="text"/>
                       <h3><span><asp:Label runat="server" Text="" ID="Date"></asp:Label></span></h3>
                         <ul class="list-unstyled user_data">
@@ -67,11 +64,12 @@
                           <li role="presentation" class="active"><a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">About User</a>
                           </li>
                           <li role="presentation" class=""><a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">About Partner</a>
+                          </li>
+                            <li role="presentation" class=""><a href="#tab_content3" role="tab" id="Citizenship-tab" data-toggle="tab" aria-expanded="false">Citizenship Picture</a>
                           </li>                        
                        </ul>
                         <div id="myTabContent" class="tab-content">
                           <div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
-
                             <!-- start About user -->
                             <ul class="messages">
                               <li>                            
@@ -129,10 +127,8 @@
                               </li>
                             </ul>
                             <!-- end About user-->
-
                           </div>
                           <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
-
                             <!-- start Partner -->
                              <ul class="messages">
                                <li>                            
@@ -190,12 +186,29 @@
                               </li>
                             </ul>
                             <!-- end Partner -->
+                          </div>
+                            <div role="tabpanel" class="tab-pane fade" id="tab_content3" aria-labelledby="Citizenship-tab">
+                            <!-- start Citizenship user -->
+                            <ul class="messages">
+                              <li>                            
+                               <div class="message_wrapper">
+                                  <asp:Label runat="server" ID="FrontImage" Text=""></asp:Label>                                  
+                                </div>
+                              </li>
+                               <li>                            
+                               <div class="message_wrapper">
+                                   <asp:Label runat="server" ID="BackImage" Text=""></asp:Label>                                 
+                                </div>
+                              </li>                           
+                            </ul>
+                            <!-- end Citizenship user-->
                           </div>                          
                         </div>
                       </div>
                     </div>
                       
                   </div>
+                    <asp:Button ID="Verified" runat="server" Text="Verified" CssClass="btn btn-Success" OnClick="Verified_Click" />
                     <asp:Button ID="Read" runat="server" Text="Delete" CssClass="btn btn-danger" OnClick="Read_Click"/>
                 </div>
               </div>

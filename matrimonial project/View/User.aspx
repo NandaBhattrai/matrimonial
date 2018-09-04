@@ -195,6 +195,14 @@
 						<div class="clearfix"> </div>
 					</div>
                     <div class="form_but1">
+						<label class="col-sm-3 control-label1">Citizenship : </label>
+						<div class="col-sm-9 w3_details">
+							<asp:Label Text="" runat="server"  ID="frontImage"/>
+                            <asp:Label Text="" runat="server"  ID="backImage"/>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+                    <div class="form_but1">
 						<div class="col-sm-9 w3_details">
 							<asp:Button runat="server" ID="Edit" CssClass="btn btn-primary" Text="Edit Profile" OnClick="Edit_Click" />
 						</div>
@@ -335,7 +343,6 @@
 								<label class="col-sm-5 control-label1" for="sex">Marital Status : </label>
 								<div class="col-sm-7 form_radios">
 									<label><input type="checkbox" id="Single" class="chb" runat="server" /> Single</label>
-                                    <label><input type="checkbox" id="Married" class="chb" runat="server" /> Married</label>
                                     <label><input type="checkbox" id="Divorced" class="chb" runat="server" /> Divorced</label>                     
                               </div>
 								<div class="clearfix"> </div>
@@ -582,8 +589,7 @@
 								<div class="col-sm-7 form_radios">
 									<input runat="server" id="rad_single" type="radio" name="marital" value="Single"/> Single &nbsp;&nbsp;
 									<input runat="server" id="rad_divorced" type="radio" name="marital" value="Divorced"/> Divorced&nbsp;&nbsp;
-                                    <input runat="server" id="rad_married" type="radio" name="marital" value="Married"/> Married<br />
-								</div>
+                                   </div>
 								<div class="clearfix"> </div>
 							  </div>                                             		
 							  <div class="form_but1">

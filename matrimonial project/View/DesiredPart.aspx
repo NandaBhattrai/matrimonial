@@ -38,7 +38,7 @@
 								<div class="col-sm-7 form_radios">
 									<input runat="server" id="rad_single" type="radio" name="marital" value="Single" checked=""/> Single &nbsp;&nbsp;
 									<input runat="server" id="rad_divorced" type="radio" name="marital" value="Divorced"/> Divorced&nbsp;&nbsp;
-                                    <input runat="server" id="rad_married" type="radio" name="marital" value="Married"/> Married<br />
+                                   <input runat="server" id="rad_widow" type="radio"  name="marital" value="Widow"/>Widow
 								</div>
 								<div class="clearfix"> </div>
 							  </div>                                             		
@@ -53,7 +53,7 @@
                             <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Caste : </label>
 								<div class="col-sm-7 form_radios">
-								 <input runat="server" id="Caste" type="text" />
+								 <input runat="server" id="Caste" type="text" required="required" />
 								</div>
 								<div class="clearfix"> </div>
 							  </div>                           
@@ -67,14 +67,14 @@
                              <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Profession : </label>
 								<div class="col-sm-7 form_radios">
-								    <input type="text" id="Profession" runat="server" />
+								    <input type="text" id="Profession" runat="server" required="required" />
 								</div>
 								<div class="clearfix"> </div>
 							  </div>   
                              <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Country : </label>
 								<div class="col-sm-7 form_radios">
-								    <input runat="server" id="Country" type="text" />
+								    <input runat="server" id="Country" type="text" required="required" />
 								</div>
 								<div class="clearfix"> </div>
 							  </div>                           
@@ -97,7 +97,7 @@
                              <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Complexion : </label>
 								<div class="col-sm-7 form_radios">     
-                                <input type="text" id="complexion" runat="server" />
+                                <input type="text" id="complexion" runat="server" required="required" />
                                 </div>
 								<div class="clearfix"></div>
 							</div>

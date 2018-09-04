@@ -1,12 +1,7 @@
 ﻿using matrimonial_project.model;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
-using System.Linq;
 using System.Text;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace matrimonial_project.View
@@ -21,7 +16,7 @@ namespace matrimonial_project.View
                 string religion = Request.QueryString["param2"];
                 int from = Convert.ToInt16(Request.QueryString["param3"])-1;
                 int to = Convert.ToInt16(Request.QueryString["param4"]+1);
-                string str = "SELECT * FROM dbo.UserProfile where Religion LIKE @Religion AND Gender LIKE @Gender AND Age BETWEEN @min AND @max";
+                string str = "SELECT * FROM dbo.UserProfile where Religion LIKE @Religion AND Gender LIKE @Gender AND Age BETWEEN @min AND @max AND ProfileStatus=1 AND VerifiedStatus=1";
                 System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(str);
                 cmd.Parameters.Add("@Gender", SqlDbType.VarChar).Value = gender;
                 cmd.Parameters.Add("@Religion", SqlDbType.VarChar).Value = religion;
@@ -46,7 +41,7 @@ namespace matrimonial_project.View
                         html.Append("<div class='col-md-6 one-w3-profile'>");
                         html.Append("<div class='profile-details'>");
                         html.Append("<h5>Name:"+data["name"]+"</h5>");
-                        html.Append("<img src = '../Upload/"+data["ProfileImage"]+"' class='prf-img img-responsive' alt='profile image' height=20 />");
+                        html.Append("<img src = '../Upload/"+data["ProfileImage"]+ "' class='prf-img img-responsive' alt='profile image'/>");
                         html.Append("<div class='w3-prfr'>");
                         html.Append("<p>"+data["Age"]+", "+data["Religion"]+ ", " + data["Caste"] + ", "+data["Education"]+", " + data["Profession"] + "</p>");
                        // html.Append("<h4>Contact Now:</h4>");

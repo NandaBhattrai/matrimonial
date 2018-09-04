@@ -61,8 +61,8 @@ namespace matrimonial_project.View
                 string Marital;
                 if (rad_single.Checked == true)
                     Marital = "Single";
-                else if (rad_married.Checked == true)
-                    Marital = "Married";
+                else if (rad_widow.Checked == true)
+                    Marital = "Widow";
                 else
                     Marital = "Divorced";
 
@@ -106,7 +106,7 @@ namespace matrimonial_project.View
                 bool result = conn.ExecuteData(cmmd);
                 if (result)
                 {
-                    Response.Redirect("SearchResult.aspx", false);
+                    Response.Redirect("Home.aspx", false);
                 }
                 else
                 {
