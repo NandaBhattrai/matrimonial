@@ -36,7 +36,7 @@
                             <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Marital Status : </label>
 								<div class="col-sm-7 form_radios">
-									<select id="Marital" class="form-control select2" runat="server" multiple="true">
+									<select name="PartnerMarital[]" id="marital" class="form-control select2" runat="server" multiple="true">
                                         <option runat="server" value="Single">Single</option>
                                         <option runat="server" value="Divorced">Divorced</option>
                                         <option runat="server" value="Widow">Widow</option>                                                                                
@@ -55,14 +55,14 @@
                             <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Caste : </label>
 								<div class="col-sm-7 form_radios">
-								 <select id="Caste" class="form-control select2" runat="server" multiple="true">
+								 <select name="PartnerCaste[]" id="partcaste" class="form-control select2" runat="server" multiple="true">
                                         <option runat="server" value="Brahmin">Brahmin</option>
                                         <option runat="server" value="Chetri">Chetri</option>
                                         <option runat="server" value="Newar">Newar</option>                                                                                
                                         <option runat="server" value="Magar">Magar</option>
                                         <option runat="server" value="Rai">Rai</option>
                                         <option runat="server" value="Gurung">Gurung</option>
-                                     <option runat="server" value="Thakuri">Thakuri</option>
+                                        <option runat="server" value="Thakuri">Thakuri</option>
                                         <option runat="server" value="Sunar">Sunar</option>
                                         <option runat="server" value="Muslim">Muslim</option>                                                                                
                                         <option runat="server" value="Tharu">Tharu</option>
@@ -76,7 +76,7 @@
                             <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Education : </label>
 								<div class="col-sm-7 form_radios">
-								    <select id="Education" class="form-control select2" runat="server" multiple="true">
+								    <select name="PartnerEducation[]" id="education" class="form-control select2" runat="server" multiple="true">
                                         <option runat="server" value="Bachelor">Bachelor</option>
                                         <option runat="server" value="Illetrate">Illetrate</option>
                                         <option runat="server" value="Intermediate">Intermediate</option>                                                                                
@@ -94,7 +94,7 @@
                              <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Profession : </label>
 								<div class="col-sm-7 form_radios">
-								    <select id="Profession" class="form-control select2" runat="server" multiple="true">
+								    <select name="PartnerProfession[]" id="profession" class="form-control select2" runat="server" multiple="true">
                                         <option runat="server" value="Engineer">Engineer</option>
                                         <option runat="server" value="Teacher">Teacher</option>
                                         <option runat="server" value="Doctor">Doctor</option>                                                                                
@@ -108,7 +108,7 @@
                              <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Country : </label>
 								<div class="col-sm-7 form_radios">
-								    <select id="Country" class="form-control select2" runat="server" multiple="true">
+								    <select name="PartnerCountry[]" id="country" class="form-control select2" runat="server" multiple="true">
                                         <option runat="server" value="Nepal">Nepal</option>
                                         <option runat="server" value="India">India</option>
                                         <option runat="server" value="Pakistan">Pakistan</option>                                                                                                                        
@@ -141,7 +141,7 @@
                              <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Complexion : </label>
 								<div class="col-sm-7 form_radios">     
-                                     <select id="SkinComplexion" class="form-control select2" runat="server" multiple="true">
+                                     <select name="PartnerSkinComplexion[]" id="complexion" class="form-control select2" runat="server" multiple="true">
                                         <option runat="server" value="Fair">Fair</option>
                                         <option runat="server" value="Light">Light</option>
                                         <option runat="server" value="Medium">Medium</option>
@@ -155,7 +155,7 @@
                               <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Diet : </label>
 								<div class="col-sm-7 form_radios">
-									<select id="Diet" class="form-control select2" runat="server" multiple="true">
+									<select name="PartnerDiet[]" id="diet" class="form-control select2" runat="server" multiple="true">
                                         <option runat="server" value="Vegetarian">Vegetarian</option>
                                         <option runat="server" value="Non Vegetarian">Non Vegitarian</option>                                                                                                                      
 								  </select>
@@ -165,7 +165,7 @@
                             <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Drink : </label>
 								<div class="col-sm-7 form_radios">
-								<select id="Drink" class="form-control select2" runat="server" multiple="true">
+								<select name="PartnerDrink[]" id="drink" class="form-control select2" runat="server" multiple="true">
                                         <option runat="server" value="Drinker">Drinker</option>
                                         <option runat="server" value="Non Drinker">Non Drinker</option>                                                                                                                      
 								  </select>
@@ -175,7 +175,7 @@
                              <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Smoke : </label>
 								<div class="col-sm-7 form_radios">
-								<select id="Smoke" class="form-control select2" runat="server" multiple="true">
+								<select name="PartnerSmoke[]" id="smoke" class="form-control select2" runat="server" multiple="true">
                                         <option runat="server" value="Smoker">Smoker</option>
                                         <option runat="server" value="Non smoker">Non Smoker</option>                                                                                                                      
 								  </select>	
@@ -189,7 +189,12 @@
             </div>			
 	<div class="clearfix"></div>
 	</div>
-	</div>  
+	</div>
+    <%--<script> 
+    $(document).ready(function() {
+        $('.js-example-basic-multiple').select2();
+    }); 
+    </script>--%>
 <script>
 // When the user scrolls the page, execute myFunction 
     window.onscroll = function () { myFunction() };

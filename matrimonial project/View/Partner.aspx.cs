@@ -11,7 +11,8 @@ namespace matrimonial_project.View
 
         protected void btn_Submit_Click(object sender, EventArgs e)
         {
-            string caste_ = Caste.Value;
+            string @Partnercaste = Request.Form["PartnerCaste[]"];
+            string @caste = partcaste.Value;
         }
     }
 }
