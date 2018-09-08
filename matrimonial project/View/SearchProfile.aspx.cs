@@ -106,6 +106,9 @@ namespace matrimonial_project.View
                     Image = "../Upload/" + Image;
                     Image = "<img src='" + Image + "'/>";
                     UserImage.Text = Image;
+                    Father.Text = row["Father"].ToString();
+                    Mother.Text = row["Mother"].ToString();
+                    Foccupation.Text = row["FatherOccupation"].ToString();
                 }
             }
             catch (Exception ex)

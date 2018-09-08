@@ -79,7 +79,7 @@ $(document).ready(function(){
 					<div class="cd-dropdown-wrapper">						
 						<div class="logo" style="margin-top:-6px;">
 						<%--<h1><a class="cd-logo link link--takiri">Catch Your Match <span><i class="fa fa-heart" aria-hidden="true"></i>Made in heaven.</span></a></h1>--%>
-                            <img src="../Content/matrimonial/images/logo.PNG" class="img-responsive" alt="" style="height:70px; width:80px;" />
+                            <img src="../Content/matrimonial/images/logo copy.png" class="img-responsive" alt="" style="height:70px; width:80px;" />
 						</div>
 			            </div> 
               </div>

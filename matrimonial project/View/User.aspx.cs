@@ -104,6 +104,9 @@ namespace matrimonial_project.View
                     back = "../Upload/" + back;
                     back = "<img src='" + back + "'/>";
                     backImage.Text = back;
+                    Father.Text = row["Father"].ToString();
+                    Mother.Text = row["Mother"].ToString();
+                    Foccupation.Text = row["FatherOccupation"].ToString();
                 }                
             }
             catch (Exception ex)
@@ -417,7 +420,7 @@ namespace matrimonial_project.View
                 else
                     Smoke = "Non Smoker";
 
-                string Query = "update dbo.Partner set Gender=@Gender,MaritalStatus=@MaritalStatus,Religion=@Religion,Caste=@Caste,Education=@Education,Profession=@Profession,Country=@Country,Agefrom=@Agefrom,AgeTo=@AgeTo,HeightFrom=@HeightFrom,HeightTo=@HeightTo,Complexion=@Complexion,Diet=@Diet,Drink=@Drink,Smoke=@Smoke where RegisterId=@RegisterId AND VerifiedStatus=1";
+                string Query = "update dbo.Partner set Gender=@Gender,MaritalStatus=@MaritalStatus,Religion=@Religion,Caste=@Caste,Education=@Education,Profession=@Profession,Country=@Country,Agefrom=@Agefrom,AgeTo=@AgeTo,HeightFrom=@HeightFrom,HeightTo=@HeightTo,Complexion=@Complexion,Diet=@Diet,Drink=@Drink,Smoke=@Smoke where RegisterId=@RegisterId";
                 SqlCommand cmmd = new SqlCommand(Query);
                 cmmd.Parameters.Add("@Gender", SqlDbType.VarChar).Value = Gender;
                 cmmd.Parameters.Add("@MaritalStatus", SqlDbType.VarChar).Value = Marital;

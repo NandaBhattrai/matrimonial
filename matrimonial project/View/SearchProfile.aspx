@@ -71,6 +71,27 @@
 					<h5>Family Details:</h5>		
 					<div class="form_but1">
 						<asp:Label Text="" runat="server"  ID="AboutFamily"/>
+					</div>
+                    <div class="form_but1">
+						<label class="col-sm-3 control-label1"> Father : </label>
+						<div class="col-sm-9 w3_details">
+							<asp:Label Text="" runat="server"  ID="Father"/>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+                    <div class="form_but1">
+						<label class="col-sm-3 control-label1"> Mother : </label>
+						<div class="col-sm-9 w3_details">
+							<asp:Label Text="" runat="server"  ID="Mother"/>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+                    <div class="form_but1">
+						<label class="col-sm-3 control-label1"> Father Occupation : </label>
+						<div class="col-sm-9 w3_details">
+							<asp:Label Text="" runat="server"  ID="Foccupation"/>
+						</div>
+						<div class="clearfix"> </div>
 					</div>                    			
 					<h5>Education Details:</h5>
 					<div class="form_but1">

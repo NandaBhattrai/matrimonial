@@ -14,9 +14,9 @@
 </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:ScriptManager ID="adminScriptManager" runat="server" EnablePageMethods="true"></asp:ScriptManager>
+   <%-- <asp:ScriptManager ID="adminScriptManager" runat="server" EnablePageMethods="true"></asp:ScriptManager>
         <asp:UpdatePanel ID="updatePanel" runat="server">
-            <ContentTemplate>
+            <ContentTemplate>--%>
     
     	<!-- breadcrumbs -->
 	<div class="w3layouts-breadcrumbs text-center">
@@ -69,6 +69,27 @@
 					<h5>Family Details:</h5>		
 					<div class="form_but1">
 						<asp:Label Text="" runat="server"  ID="AboutFamily"/>
+					</div>
+                    <div class="form_but1">
+						<label class="col-sm-3 control-label1"> Father : </label>
+						<div class="col-sm-9 w3_details">
+							<asp:Label Text="" runat="server"  ID="Father"/>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+                    <div class="form_but1">
+						<label class="col-sm-3 control-label1"> Mother : </label>
+						<div class="col-sm-9 w3_details">
+							<asp:Label Text="" runat="server"  ID="Mother"/>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+                    <div class="form_but1">
+						<label class="col-sm-3 control-label1"> Father Occupation : </label>
+						<div class="col-sm-9 w3_details">
+							<asp:Label Text="" runat="server"  ID="Foccupation"/>
+						</div>
+						<div class="clearfix"> </div>
 					</div>
                     <h5>Contact:</h5>
                     <div class="form_but1">
@@ -720,6 +741,6 @@ function myFunction() {
   document.getElementById("myBar").style.width = scrolled + "%";
 }
 </script>
-        </ContentTemplate>
-            </asp:UpdatePanel>
+       <%-- </ContentTemplate>
+            </asp:UpdatePanel>--%>
 </asp:Content>

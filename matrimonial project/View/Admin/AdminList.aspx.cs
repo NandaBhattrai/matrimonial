@@ -24,7 +24,7 @@ namespace matrimonial_project.View.Admin
         {
             try
             {
-                string strquery = "SELECT AdminId,Name,Gender,Address,Email,Mobile,AdminStatus,AdminImage from dbo.Admin order by AdminId";
+                string strquery = "SELECT AdminId,Name,Gender,Address,Email,Mobile,AdminStatus,AdminImage from dbo.Admin order by AdminId DESC";
                 SqlCommand cmd = new SqlCommand(strquery);
                 DBconnection conn_ = new DBconnection();
                 DataTable dt = conn_.SelectData(cmd);

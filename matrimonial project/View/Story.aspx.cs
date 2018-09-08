@@ -161,15 +161,15 @@ namespace matrimonial_project.View
             bool result = conn_.ExecuteData(cmd);
             if (result)
             {
-                messg.Visible = true;
-                msge.Text = "successfully changed";
-                msge.ForeColor = System.Drawing.Color.Green;
+                Div2.Visible = true;
+                updatemsg.Text = "successfully changed";
+                updatemsg.ForeColor = System.Drawing.Color.Green;
             }
 
             else
             {
-                msge.Text = "something went wrong ";
-                msge.ForeColor = System.Drawing.Color.Red;
+                updatemsg.Text = "something went wrong ";
+                updatemsg.ForeColor = System.Drawing.Color.Red;
             }
         }
 

@@ -169,7 +169,7 @@ namespace matrimonial_project.View
                 double heightto = Convert.ToDouble(HeightTo.Value)+1.0;
                 double heightfrom = Convert.ToDouble(HeightFrom.Value)-1.0;
                 DataTable data = new DataTable();
-                string Query = "SELECT * FROM dbo.UserProfile Where Gender=@Gender AND Country=@Country AND Caste=@Caste AND Profession=@Profession AND Stay=@Stay AND MaritalStatus=@MaritalStatus AND Religion=@Religion AND ProfileStatus=1 AND Age BETWEEN @minage AND @maxage AND Height BETWEEN @minheight AND @maxheight AND VerifiedStatus=1 AND ProfileStatus=1";
+                string Query = "SELECT * FROM dbo.UserProfile Where Gender=@Gender AND Country=@Country AND Caste LIKE @Caste AND Profession LIKE @Profession AND Stay LIKE @Stay AND MaritalStatus=@MaritalStatus AND Religion=@Religion AND ProfileStatus=1 AND Age BETWEEN @minage AND @maxage AND Height BETWEEN @minheight AND @maxheight AND VerifiedStatus=1 AND ProfileStatus=1";
                 SqlCommand cmmd = new SqlCommand(Query);
                 cmmd.Parameters.Add("@Stay", SqlDbType.VarChar).Value = Stay_Address;
                 cmmd.Parameters.Add("@Country", SqlDbType.VarChar).Value = SearchCountry;

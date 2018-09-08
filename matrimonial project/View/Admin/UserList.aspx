@@ -25,7 +25,7 @@
                   <div class="x_content">
                               <asp:Label ID="success" Text="" runat="server"></asp:Label>
                       <asp:GridView ID="UserData" runat="server" AllowPaging="true" PageSize="5" OnPageIndexChanging="UserData_PageIndexChanging"
-                            AutoGenerateColumns="false" OnRowCommand="UserData_RowCommand"
+                            AutoGenerateColumns="false" OnRowCommand="UserData_RowCommand" AllowSorting="true"
                             Width="100%"
                             HeaderStyle-HorizontalAlign="Left"                                
                             AlternatingRowStyle-CssClass="even"

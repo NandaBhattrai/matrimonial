@@ -99,6 +99,7 @@ namespace matrimonial_project.View
             {
                 string Religious = Religion.SelectedItem.ToString();
                 string Blood = BloodGroup.Value.ToString();
+                string Skin = SkinComplexion.Value.ToString();
                 bool male = rad_male.Checked;
                 bool female = rad_female.Checked;
                 string Gender;
@@ -212,7 +213,7 @@ namespace matrimonial_project.View
                     }
                 }
 
-                string Query = "INSERT INTO dbo.UserProfile (Name,Gender,DateOfBirth,MaritalStatus,Nationality,Religion,Caste,MotherTongue,KnownLanguage,BloodGroup,Education,Profession,Country,State,District,Stay,Mobile,Email,Age,Weight,Complexion,Diet,Drink,Smoker,ProfileImage,Family,Yourself,ProfileStatus,RegisterId,Height,VerifiedStatus,Front,Back) VALUES (@Name,@Gender,@DateOfBirth,@MaritalStatus,@Nationality,@Religion,@Caste,@MotherTongue,@KnownLanguage,@BloodGroup,@Education,@Profession,@Country,@State,@District,@Stay,@Mobile,@Email,@Age,@Weight,@Complexion,@Diet,@Drink,@Smoker,@ProfileImage,@Family,@Yourself,@ProfileStatus,@RegisterId,@Height,@VerifiedStatus,@Front,@Back)";
+                string Query = "INSERT INTO dbo.UserProfile (Name,Gender,DateOfBirth,MaritalStatus,Nationality,Religion,Caste,MotherTongue,KnownLanguage,BloodGroup,Education,Profession,Country,State,District,Stay,Mobile,Email,Age,Weight,Complexion,Diet,Drink,Smoker,ProfileImage,Family,Yourself,ProfileStatus,RegisterId,Height,VerifiedStatus,Front,Back,Father,Mother,FatherOccupation) VALUES (@Name,@Gender,@DateOfBirth,@MaritalStatus,@Nationality,@Religion,@Caste,@MotherTongue,@KnownLanguage,@BloodGroup,@Education,@Profession,@Country,@State,@District,@Stay,@Mobile,@Email,@Age,@Weight,@Complexion,@Diet,@Drink,@Smoker,@ProfileImage,@Family,@Yourself,@ProfileStatus,@RegisterId,@Height,@VerifiedStatus,@Front,@Back,@Father,@Mother,@FatherOccupation)";
                 SqlCommand cmmd = new SqlCommand(Query);
                 cmmd.Parameters.Add("@Name", SqlDbType.VarChar).Value = Name.Value.Trim();
                 cmmd.Parameters.Add("@Gender", SqlDbType.VarChar).Value = Gender;
@@ -234,7 +235,7 @@ namespace matrimonial_project.View
                 cmmd.Parameters.Add("@Email", SqlDbType.VarChar).Value = Email.Value.Trim();
                 cmmd.Parameters.Add("@Age", SqlDbType.Int).Value = Convert.ToInt16(Age.Value.Trim());
                 cmmd.Parameters.Add("@Weight", SqlDbType.Int).Value = Convert.ToInt16(Weight.Value.Trim());
-                cmmd.Parameters.Add("@Complexion", SqlDbType.VarChar).Value = Complexion.Value.Trim();
+                cmmd.Parameters.Add("@Complexion", SqlDbType.VarChar).Value = Skin;
                 cmmd.Parameters.Add("@Diet", SqlDbType.VarChar).Value = Diet;
                 cmmd.Parameters.Add("@Drink", SqlDbType.VarChar).Value = Drink;
                 cmmd.Parameters.Add("@Smoker", SqlDbType.VarChar).Value = Smoke;
@@ -243,10 +244,13 @@ namespace matrimonial_project.View
                 cmmd.Parameters.Add("@Yourself", SqlDbType.VarChar).Value = MySelf.Value.Trim();
                 cmmd.Parameters.Add("@ProfileStatus", SqlDbType.VarChar).Value = "1";
                 cmmd.Parameters.Add("@RegisterId", SqlDbType.Int).Value = Convert.ToInt32(Session["UserId"]);
-                cmmd.Parameters.Add("@Height", SqlDbType.Float).Value = Convert.ToDouble(Height.Value);
+                cmmd.Parameters.Add("@Height", SqlDbType.Float).Value = Convert.ToDouble(UserHeight.Value);
                 cmmd.Parameters.Add("@VerifiedStatus", SqlDbType.VarChar).Value = "0";
                 cmmd.Parameters.Add("@Front", SqlDbType.VarChar).Value = frontPhoto;
                 cmmd.Parameters.Add("@Back", SqlDbType.VarChar).Value = backPhoto;
+                cmmd.Parameters.Add("@Father", SqlDbType.VarChar).Value = Father.Value.Trim();
+                cmmd.Parameters.Add("@Mother", SqlDbType.VarChar).Value = Mother.Value.Trim();
+                cmmd.Parameters.Add("@FatherOccupation", SqlDbType.VarChar).Value = FOccupation.Value.Trim();
                 DBconnection conn = new DBconnection();
                 bool result = conn.ExecuteData(cmmd);
                 if (result)

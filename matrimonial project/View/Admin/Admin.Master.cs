@@ -13,7 +13,7 @@ namespace matrimonial_project.View.Admin
         {
             if (!IsPostBack)
             {
-                if (!string.IsNullOrEmpty(Session["UserName"].ToString()))
+                if ((Session["UserName"] != null) && !string.IsNullOrEmpty(Session["UserName"].ToString()))
                 {
                     string UserName_ = (string)(Session["UserName"]);
                     UserName.Text = UserName_.ToString();

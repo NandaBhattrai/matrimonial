@@ -10,24 +10,33 @@
 namespace matrimonial_project.View {
     
     
-    public partial class SearchResult {
+    public partial class UserVerification {
         
         /// <summary>
-        /// test control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder test;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// rptpager control.
+        /// TokenCode control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptpager;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText TokenCode;
+        
+        /// <summary>
+        /// btn_Verify control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_Verify;
     }
 }

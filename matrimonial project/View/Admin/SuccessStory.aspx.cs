@@ -24,7 +24,7 @@ namespace matrimonial_project.View.Admin
         {
             try
             {
-                string strquery = "SELECT * from dbo.Story order by StoryId";
+                string strquery = "SELECT * from dbo.Story order by StoryId DESC";
                 SqlCommand cmd = new SqlCommand(strquery);
                 DBconnection conn_ = new DBconnection();
                 DataTable dt = conn_.SelectData(cmd);

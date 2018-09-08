@@ -36,9 +36,9 @@ namespace matrimonial_project.View
                 foreach (DataRow data in dt.Rows)
                 {
                     string StoryView;
-                    if (data["Story"].ToString().Length > 20)
+                    if (data["Story"].ToString().Length > 30)
                     {
-                        StoryView = data["Story"].ToString().Substring(0, 20);
+                        StoryView = data["Story"].ToString().Substring(0, 30);
                     }
                     else
                     {

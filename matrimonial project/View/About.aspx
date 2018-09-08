@@ -14,18 +14,18 @@
 	<div class="w3l_about">
 		<div class="container">
 			<h1 style="text-align: center; margin-bottom: 45px">About Us</h1>
-			<p>CatchYourMatch.com is a leader when it comes to matchmaking services online.This fact is evident from our track record over the years.
+			<p>CatchYourMatch is a leader when it comes to matchmaking services online.This fact is evident from our track record over the years.
                Join our friendly website and browse through the millions of profiles of different religion, state, countries and community. 
-               We take immense pride in serving our valuable members and have never disappointed.CatchYourMatch logo little CatchYourMatch.com was created in Butwal County of New York in the year 2018.
+               We take immense pride in serving our valuable members and have never disappointed.CatchYourMatch logo was created in Butwal, Nepal in the year 2018.
                We began as a small service to match individuals of Nepal origin located in Butwal, and now we have become the world's leading Nepali matrimonial brand.
-               Our ultimate goal for CatchYourMatch.com is to facilitate the making of happy relationships and strong marriages for the long term.
+               Our ultimate goal for CatchYourMatch is to facilitate the making of happy relationships and strong marriages for the long term.
                Providing matchmaking service for a years and we understand the importance of selecting the best partner for your life. 
-               We aim to provide a secure environment for your matchmaking journey. CatchYourMatch.com is a highly trusted matchmaking and matrimonial service. 
+               We aim to provide a secure environment for your matchmaking journey. CatchYourMatch is a highly trusted matchmaking and matrimonial service. 
                Our members are thoroughly screened with the aid of features such as email verification, phone confirmation and photo validation. 
-               CatchYourMatch.com is the website parents turn to when they are looking for online matrimonial services.We have a vast number of members from around the world of all ages and religions.
+               CatchYourMatch is the website parents turn to when they are looking for online matrimonial services.We have a vast number of members from around the world of all ages and religions.
                So, whether you are single, divorced, or getting married for the second time, we have someone for you. We encourage you to join us with confidence.
-               Your personal information is secure with us.CatchYourMatch.com is a registered and trademarked corporation based in the Nepal and we specialize in our brand of matchmaking and matrimonial services.
-               We have a hard-working team ready to help with your matchmaking journey. Come and join us at CatchYourMatch.com where we make Dreams into Reality.</p>
+               Your personal information is secure with us.CatchYourMatch is a registered and trademarked corporation based in the Nepal and we specialize in our brand of matchmaking and matrimonial services.
+               We have a hard-working team ready to help with your matchmaking journey. Come and join us at CatchYourMatch where we make dreams into reality.</p>
 		</div>
 	</div>
 	
@@ -48,14 +48,14 @@
 			<div class="col-md-6 w3ls_services-grids">
 				<ul class="w3_servicesgrid_info">
 					<li class="tick">Best Service Support</li>
-					<li class="tick">There are many variations of passages.</li>
-					<li class="tick">The standard chunk Ipsum used since the 1500s.</li>
+					<li class="tick">Genuine Profiles</li>
+					<li class="tick">Best Security</li>
 				</ul>
 			</div>
 		</div>
 	</div>
 	<div class="wthree_services-bottom">
-		<p>Our company have more than<span>200.000 customers</span>around the world!</p>
+		<p>Our company have lots of<span>customers</span>around the world!</p>
 	</div>
 	<!-- //services -->
 	<!-- //about us -->

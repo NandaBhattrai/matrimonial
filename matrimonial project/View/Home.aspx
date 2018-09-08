@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="matrimonial_project.View.Home" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="matrimonial_project.View.Home" Async="true"  %>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -28,7 +28,7 @@
         // Wait for window load
         $(window).load(function () {
             // Animate loader off screen
-            $(".se-pre-con").fadeOut("slow");;
+            $(".se-pre-con").fadeOut("slow");
         });
     </script>
     <!-- Start WOWSlider.com HEAD section -->
@@ -36,7 +36,7 @@
     <link href="../Content/matrimonial/engine1/style.css" rel="stylesheet" />
 
 <!-- End WOWSlider.com HEAD section -->
-<title>Match a Matrimonial Category Bootstrap Responsive Web Template | index :: w3layouts</title>
+<title>Register/Login</title>
 <link href="../content/matrimonial/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" /><!-- bootstrap-CSS -->
 <link href="../content/matrimonial/css/font-awesome.css" rel="stylesheet" type="text/css" media="all" /><!-- Fontawesome-CSS -->
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -81,14 +81,6 @@ $(document).ready(function(){
 		</script>--%>
 <!-- //Calendar -->			
 <link rel="stylesheet" href="../Content/matrimonial/css/intlTelInput.css"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-    <script type="text/javascript">
-        function showModal() {
-            $("#registerModal").modal('show');
-        };
-    </script>
 </head>
 <!-- //head -->
 <!-- body -->
@@ -105,7 +97,7 @@ $(document).ready(function(){
 					<div class="cd-dropdown-wrapper">						
 						<div class="logo" style="margin-top:-6px;">
 						<%--<h1><a class="cd-logo link link--takiri">Catch Your Match <span><i class="fa fa-heart" aria-hidden="true"></i>Made in heaven.</span></a></h1>--%>
-                            <img src="../Content/matrimonial/images/logo.PNG" class="img-responsive" alt="" style="height:70px; width:80px;" />
+                            <img src="../Content/matrimonial/images/logo copy.png" class="img-responsive" alt="" height="100" width="100" /> 
 						</div>
 			            </div> 
 					</div> 	 
@@ -182,8 +174,7 @@ $(document).ready(function(){
 					<div class="modal-content">
 					  <div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>		
-						<h4 class="modal-title">Register</h4>
-                          <asp:Label runat="server" ID="popmsg" Text=""></asp:Label>
+						<h4 class="modal-title">Register</h4>                          
 					  </div>
 					  <div class="modal-body">
 						<div class="login-w3ls">
@@ -199,13 +190,20 @@ $(document).ready(function(){
                                          </asp:RegularExpressionValidator>					                    
 					                    <input id="name" class="form-control" runat="server" type="text" placeholder="Enter Name"/> <br />  
                                     </div>
-                                    <div class="clearfix"></div>
+                                    <div class="clearfix"></div>                     
                                     <div class="login-w3ls">
-					                    <span class="block">UserName:</span>
-                                            <asp:RequiredFieldValidator runat="server" ForeColor="Red" ValidationGroup="masterGroup" ID="UsernameValidator" ControlToValidate="username" ErrorMessage="Required Field" />                                        					                    
-					                    <input id="username" class="form-control" runat="server" type="text" placeholder="Enter UserName"/><br />                                        
-                                     </div>
-                                    <div class="clearfix"></div>
+                                        <asp:ScriptManager ID="scriptmanager" runat="server"></asp:ScriptManager>
+                                        <asp:UpdatePanel ID="something" runat="server">
+                                            <ContentTemplate>
+                                                <span class="block">UserName:</span>
+                                        <asp:TextBox AutoPostBack="true" OnTextChanged="Username_change_TextChanged" CssClass="form-control"  ID="Username_change" runat="server"></asp:TextBox>
+                                        <asp:RequiredFieldValidator runat="server" ForeColor="Red" ID="UserNameValidator" ValidationGroup="masterGroup" ControlToValidate="Username_change" ErrorMessage="Required Field" />
+                                        <asp:RegularExpressionValidator ID="SpaceValidator" runat="server" ControlToValidate="Username_change" ValidationGroup="masterGroup"
+                                            ErrorMessage="Space are not allowed!" ValidationExpression="[^\s]+" />
+					                    <asp:Label ID="usermessage" runat="server" Visible="false"> User name already used</asp:Label>                                            
+                                                </ContentTemplate>
+                                        </asp:UpdatePanel>
+					                </div>
 				                    <div class="w3_modal_body_grid">
 					                    <span class="block">Gender:</span>
 					                    <div class="w3_gender">
@@ -270,16 +268,18 @@ $(document).ready(function(){
                                     <div class="clearfix"></div>
 				                    <div class="login-w3ls">
 					                    <span class="block">Email:</span>
-                                            <asp:RequiredFieldValidator runat="server" ValidationGroup="masterGroup" ForeColor="Red" ID="Emailvalidator" ControlToValidate="email" ErrorMessage="Required Field" />
-                                        <asp:RegularExpressionValidator ID="regexEmailValid" runat="server" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="email" ErrorMessage="Invalid Email Format"></asp:RegularExpressionValidator>					                    
-					                    <input id="email" runat="server" class="form-control" type="email" placeholder="abc@xyz.com "/><br />                                     
-				                    </div>
+                                            <asp:RequiredFieldValidator runat="server" ValidationGroup="masterGroup" ForeColor="Red" ID="Emailvalidator" ControlToValidate="mailblock" ErrorMessage="Required Field" />
+                                        <asp:RegularExpressionValidator ID="regexEmailValid" runat="server" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="mailblock" ErrorMessage="Invalid Email Format"></asp:RegularExpressionValidator>                                     
+                                        <%--<asp:Label ID="emailmessage" runat="server" Visible="false"> Email Address already Used</asp:Label>
+                                        <asp:TextBox AutoPostBack="true" OnTextChanged="email_TextChanged" CssClass="form-control"  ID="email" runat="server"></asp:TextBox>--%>                                        
+                                        <input id="mailblock" runat="server" type="email" class="form-control" placeholder="abc@xyz.com" /><br />
+				                    </div>                                
                                     <div class="clearfix"></div>
 				                    <div class="login-w3ls">
 					                    <span class="block">Password:</span>
                                             <asp:RequiredFieldValidator runat="server" ValidationGroup="masterGroup" ForeColor="Red" ID="PasswordValidator" ControlToValidate="password" ErrorMessage="Required Field" />
                                             <asp:RegularExpressionValidator ID="PasswordlengthValidator" runat="server"
-                                                ControlToValidate="username" 
+                                                ControlToValidate="password" 
                                                 ForeColor="Red" 
                                                 ErrorMessage="Length must be greater than 6" 
                                                 SetFocusOnError="true" 
@@ -340,13 +340,13 @@ $(document).ready(function(){
 					</div>			
 					<div class="col-md-3 w3_soulgrid">
 						<i class="fa fa-users" aria-hidden="true"></i>
-						<h3>Connect</h3>
-						<p>Connect with your perfect Match</p>
+						<h3>Interest</h3>
+						<p>Send Interest to your perfect Match</p>
 					</div>	
 					<div class="col-md-3 w3_soulgrid">
 						<i class="fa fa-comments-o" aria-hidden="true"></i>
-						<h3>Interact</h3>
-						<p>Become a member and start Conversation</p>
+						<h3>Story</h3>
+						<p>Share your Story with Our Customers</p>
 					</div>				
 				<div class="clearfix"> </div>
 			</div>
@@ -358,15 +358,15 @@ $(document).ready(function(){
 				<div class="agile_featured-profiles">
 					<h2>Happy Marriages</h2>
                     <ul id="flexiselDemo3">
-                        <li>
+                        
                     <asp:PlaceHolder runat="server" ID="StoryPalace"></asp:PlaceHolder>
-                        </li>	
+                       	
                     </ul>						
 					</div>   
 			</div>
 			<!-- //slider -->				
 			</div>
-			<script type="text/javascript" src="js/jquery.flexisel.js"></script><!-- flexisel-js -->	
+			<!-- flexisel-js --><script src="../Content/matrimonial/js/jquery.flexisel.js"></script>
 					<script type="text/javascript">
 						 $(window).load(function() {
 							$("#flexiselDemo3").flexisel({
@@ -497,31 +497,9 @@ $(document).ready(function(){
 		});
 	});
 	</script>
-     
-	<!-- //for smooth scrolling -->
-    <!--validation-->
-    <script>
-        function validate() {         
-            if ($("#datebirth").val() != "") {
-                var dob = $("#datebirth").val();
-                dob = new Date(dob);
-                var today = new Date();
-                var age = Math.floor((today - dob) / (365.25 * 24 * 60 * 60 * 1000));
-                $('#age').html(age);
-            }
-            if ($('#name').val() == "") {
-                $('#namevalidate').show();
-                return false;
-            }
-            if ($('#username').val() == "") {
-                $('#usernamevalidate').show();
-                return false;
-            }
-            return true;
-        }
-    </script>
-    <!-- validation-->
+
+	<!-- //for smooth scrolling -->    
+    <asp:Label runat="server" ID="test" />
 </body>
-
-
+    
 </html>

@@ -1,12 +1,10 @@
 ﻿using matrimonial_project.model;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
+using System.Security.Cryptography;
+using System.Text;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace matrimonial_project.View
 {
@@ -80,11 +78,12 @@ namespace matrimonial_project.View
 
         protected void ContentPlaceHolder1_Submit_Click(object sender, EventArgs e)
         {
+            string password= EncodePasswordToBase64(Pass.Value.ToString());
             DataTable dt = new DataTable();
             string strQuery = "SELECT UserName,Password FROM dbo.Register WHERE UserName=@UserName AND Password=@Password";
             SqlCommand cmd = new SqlCommand(strQuery);
             cmd.Parameters.Add("@UserName", SqlDbType.VarChar).Value = Username.Value.Trim();
-            cmd.Parameters.Add("@Password", SqlDbType.VarChar).Value = Pass.Value.Trim();
+            cmd.Parameters.Add("@Password", SqlDbType.VarChar).Value = password;
             DBconnection conn_ = new DBconnection();
             dt = conn_.SelectData(cmd);
             if (dt.Rows.Count > 0)
@@ -100,6 +99,9 @@ namespace matrimonial_project.View
                 Update.Visible = true;
                 Check.Visible = false;
                 Pass.Disabled = true;
+                message_block.Visible = true;
+                message.Text = "Change Your Password!!!";
+                message.ForeColor = System.Drawing.Color.Green;
             }
             else
             {
@@ -109,13 +111,20 @@ namespace matrimonial_project.View
             }
         }
 
-       
+        public static string EncodePasswordToBase64(string password)
+        {
+            byte[] bytes = Encoding.Unicode.GetBytes(password);
+            byte[] inArray = HashAlgorithm.Create("SHA1").ComputeHash(bytes);
+            return Convert.ToBase64String(inArray);
+        }
 
         protected void ContentPlaceHolder1_Update_Click1(object sender, EventArgs e)
         {
             try
             {
-                if (Password1.Value.Trim().ToString() == Password2.Value.Trim().ToString())
+                string oldPass = EncodePasswordToBase64(Password1.Value.Trim().ToString());
+                string confirmPass = EncodePasswordToBase64(Password2.Value.Trim().ToString());
+                if (oldPass == confirmPass)
                 {
                     string religious = Religion.SelectedItem.ToString();
                     bool male = rad_male.Checked;
@@ -138,28 +147,28 @@ namespace matrimonial_project.View
                     cmd.Parameters.Add("@Mobile", SqlDbType.VarChar).Value = Phone.Value.Trim();
                     cmd.Parameters.Add("@Email", SqlDbType.VarChar).Value = Email.Value.Trim();
                     cmd.Parameters.Add("@UserName", SqlDbType.VarChar).Value = Username.Value.Trim();
-                    cmd.Parameters.Add("@Password", SqlDbType.VarChar).Value = Password1.Value.Trim();
+                    cmd.Parameters.Add("@Password", SqlDbType.VarChar).Value = oldPass;
                     cmd.Parameters.Add("@UserId", SqlDbType.Int).Value = Id.Value.Trim();
                     DBconnection conn_ = new DBconnection();
                     bool result = conn_.ExecuteData(cmd);
                     if (result)
                     {
                         message_block.Visible = true;
-                        message.Text = "successfully changed";
+                        message.Text = "Successfully changed";
                         message.ForeColor = System.Drawing.Color.Green;
                     }
 
                     else
                     {
                         message_block.Visible = true;
-                        message.Text = "something went wrong ";
+                        message.Text = "Something went wrong ";
                         message.ForeColor = System.Drawing.Color.Red;
                     }
                 }
                 else
                 {
                     message_block.Visible = true;
-                    message.Text = "password does not match";
+                    message.Text = "Password does not match";
                     message.ForeColor = System.Drawing.Color.Red;
                 }
             }

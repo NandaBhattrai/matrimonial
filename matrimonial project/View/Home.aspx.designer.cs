@@ -85,15 +85,6 @@ namespace matrimonial_project.View {
         protected global::System.Web.UI.WebControls.Button login;
         
         /// <summary>
-        /// popmsg control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label popmsg;
-        
-        /// <summary>
         /// Namevalidator control.
         /// </summary>
         /// <remarks>
@@ -121,22 +112,58 @@ namespace matrimonial_project.View {
         protected global::System.Web.UI.HtmlControls.HtmlInputText name;
         
         /// <summary>
-        /// UsernameValidator control.
+        /// scriptmanager control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator UsernameValidator;
+        protected global::System.Web.UI.ScriptManager scriptmanager;
         
         /// <summary>
-        /// username control.
+        /// something control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText username;
+        protected global::System.Web.UI.UpdatePanel something;
+        
+        /// <summary>
+        /// Username_change control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Username_change;
+        
+        /// <summary>
+        /// UserNameValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator UserNameValidator;
+        
+        /// <summary>
+        /// SpaceValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator SpaceValidator;
+        
+        /// <summary>
+        /// usermessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label usermessage;
         
         /// <summary>
         /// rad_male control.
@@ -229,13 +256,13 @@ namespace matrimonial_project.View {
         protected global::System.Web.UI.WebControls.RegularExpressionValidator regexEmailValid;
         
         /// <summary>
-        /// email control.
+        /// mailblock control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl email;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl mailblock;
         
         /// <summary>
         /// PasswordValidator control.
@@ -281,5 +308,14 @@ namespace matrimonial_project.View {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.PlaceHolder StoryPalace;
+        
+        /// <summary>
+        /// test control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label test;
     }
 }

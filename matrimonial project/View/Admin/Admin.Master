@@ -72,7 +72,7 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Matrimonial</span></a>
+              <a href="#" class="site_title"><i class="fa fa-paw"></i> <span>CatchYourMatch</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -97,39 +97,33 @@
                 <ul class="nav side-menu">
                     <li><a href="Home.aspx"><i class="fa fa-home"></i>Home</a>                    
                     </li>
-                    <li><a><i class="fa fa-edit"></i> Users <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                        <li><a href="UserList.aspx">User List</a></li>                     
-                    </ul>
+                    <li><a href="UserList.aspx"><i class="fa fa-edit"></i> Users</a>                    
                     </li>
-                    <li><a><i class="fa fa-desktop"></i> Admin <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                        <li><a href="AdminList.aspx">Admin List</a></li>
-                    </ul>
-                    </li>  
-                  
+                    <li><a href="AdminList.aspx"><i class="fa fa-desktop"></i> Admin</a>                    
+                    </li>                 
                 </ul>
                 </div>
                
                 <div class="menu_section">
-                <h3>Stories</h3>
+                    <h3>Story</h3>
                 <ul class="nav side-menu">
-                    <li><a href="SuccessStory.aspx"><i class="fa fa-windows"></i>Successful Stories<span class="fa fa-chevron-down"></span></a>                    
+                    <li><a href="SuccessStory.aspx"><i class="fa fa-windows"></i>Successful Stories</a>                    
                     </li>
                  </ul>
                  </div>
                 <div class="menu_section">
                 <h3>Notifications</h3>
                 <ul class="nav side-menu">             
-                    <li><a href="Help.aspx">Help</a></li> 
-                    <li><a href="Feedback.aspx">Feedback</a></li>
-                    <li><a href="Assisted.aspx">Assisted</a></li>              
-                    <li><a href="Report.aspx">Report</a></li>                        
+                    <li><a href="Help.aspx"><i class="fa fa-edit"></i>Help</a></li> 
+                    <li><a href="Feedback.aspx"><i class="fa fa-edit"></i>Feedback</a></li>
+                    <li><a href="Assisted.aspx"><i class="fa fa-edit"></i>Assisted</a></li>              
+                    <li><a href="Report.aspx"><i class="fa fa-edit"></i>Report</a></li>                        
                 </ul>
                 </div>
                 <div class="menu_section">
+                <h3>Add</h3>
                 <ul class="nav side-menu">             
-                    <li><a href="Religion.aspx">Religion</a></li>                                           
+                    <li><a href="Religion.aspx"><i class="fa fa-windows"></i>Religion</a></li>                                            
                 </ul>
                 </div>                 
             </div>
@@ -196,7 +190,7 @@
        
 
         <!-- footer content -->
-        <footer style="position:fixed; bottom:0; width:100%;">
+        <footer class="footer_fixed"  style="position:fixed; bottom:0; width:100%;">
           <div>
             Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
           </div>

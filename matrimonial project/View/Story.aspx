@@ -41,36 +41,35 @@
 			                        <div class="col-md-6">
 				                        <div class="agileits">
 					                        <label>Name:</label>
-					                        <input type="text" id="name" runat="server" placeholder="Name" required="required"/>
+					                        <input type="text" id="name" runat="server" class="form-control" placeholder="Name" required="required"/>
 				                        </div>
 				                        <div class="agileits">
 					                        <label>Email:</label>
-					                        <input type="email" id="email" runat="server" placeholder="Email" required="required"/>
-				                        </div>                                        	
+					                        <input type="email" id="email" runat="server" class="form-control" placeholder="Email" required="required"/>
+				                        </div> 
+                                        <div class="agileits">
+					                        <label>Wedding Date:</label>                         
+                                             <input runat="server" id="WDate" type="date" required="required" />
+				                        </div>                                       	
                                         </div>
 			                        <div class="col-md-6">
                                         <div class="agileits">
 					                        <label>UserName:</label>
-					                        <input type="text" id="User" placeholder="UserName" runat="server" required="required"/>
+					                        <input type="text" id="User" placeholder="UserName" class="form-control" runat="server" required="required"/>
 				                        </div>				                        			
 				                        <div class="agileits">
 					                        <label>Phone no:</label>
-					                        <input type="tel" id="tel" placeholder="Phone no" runat="server" required="required"/>
+					                        <input type="tel" id="tel" placeholder="Phone no" class="form-control" runat="server" required="required"/>
+				                        </div>
+                                        <div class="agileits">
+					                        <label>Couple Picture:</label>                         
+                                            <input runat="server" id="upload" type="file" required="required" />
 				                        </div>
 			                        </div>
-			                        <div class="clearfix"></div>
-                                    <div class="col-md-12 w3_feedbacktextmessage">
-				                    <label><span style="color:red;font-weight: 100;">*</span>Wedding Date :</label>                         
-                                        <input runat="server" id="WDate" type="date" />
-			                        </div>                                        
-                                    <div class="col-md-12 w3_feedbacktextmessage">
-				                    <label><span style="color:red;font-weight: 100;">*</span>Couple Picture :</label>                         
-                                        <input runat="server" id="upload" type="file" />
-			                        </div>
-			                        <div class="clearfix"></div>
+			                        <div class="clearfix"></div>                                    
 			                        <div class="col-md-12 w3_feedbacktextmessage">
-				                        <label><span style="color:red;font-weight: 100;">*</span>Story :</label>
-				                        <textarea required="required" name="Comments" id="story" runat="server"></textarea>
+				                        <label>Story:</label>
+				                        <textarea required="required" name="Comments" class="form-control" id="story" runat="server"></textarea>
 			                        </div>
 			                        <div class="clearfix"></div>
 			                        <div class="w3_submit">
@@ -98,8 +97,8 @@
 					             <h3 class="bars">IS YOUR PARTNER?</h3>
                                     <div class="alert alert-info alert-dismissable" runat="server" visible="false" id="messg">
 							            <button aria-hidden="true" data-dismiss="alert" class="close" type="button"> × </button>
-                                <h4><asp:Label runat="server" ID="msge" Text=""></asp:Label></h4>
-						     </div>                                    
+                                        <h4><asp:Label runat="server" ID="msge" Text=""></asp:Label></h4>">                               
+						            </div>                                                                        
                                     <input id="Sid" runat="server" visible="false" type="number"/>
                                          <div class="col-md-6">
 				                        <div class="agileits">

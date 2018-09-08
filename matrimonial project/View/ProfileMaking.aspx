@@ -53,7 +53,7 @@
                             <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Marital Status : </label>
 								<div class="col-sm-7 form_radios">
-									<label><input type="checkbox" id="Single" class="chb" runat="server" /> Single</label>
+									<label><input type="checkbox" id="Single" class="chb" runat="server" checked="" /> Single</label>
                                     <label><input type="checkbox" id="Divorced" class="chb" runat="server" /> Divorced</label>
                                     <label><input type="checkbox" id="Widow" class="chb" runat="server"/>Widow</label>                    
                               </div>
@@ -191,29 +191,39 @@
 							</div>
 							<div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Height : </label>
+                                <asp:RequiredFieldValidator runat="server" ForeColor="Red" ID="HeightValidator" ControlToValidate="UserHeight" ErrorMessage="Required Field" />
+                                <asp:RegularExpressionValidator ID="TextValidator" ControlToValidate="UserHeight" runat="server" ForeColor="Red"
+                                     ErrorMessage="*No Text" Display="Dynamic" ValidationExpression="[0-9]*\.?[0-9]*"></asp:RegularExpressionValidator>
 								<div class="col-sm-7 form_radios">     
-                                <input type="number" id="Height" class="form-control" runat="server" required="required" />
+                                <input id="UserHeight" class="form-control" runat="server"/>
                                 </div>
 								<div class="clearfix"></div>
 							</div>
                             <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Weight : </label>
 								<div class="col-sm-7 form_radios">     
-                                <input type="number" id="Weight" class="form-control" runat="server"/>
+                                <input type="number" id="Weight" class="form-control" runat="server" required="required"/>
                                 </div>
 								<div class="clearfix"></div>
 							</div>
                              <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Complexion : </label>
-								<div class="col-sm-7 form_radios">     
-                                <input type="text" id="Complexion" class="form-control" runat="server" required="required"/>
+								<div class="col-sm-7 form_radios">                               
+                                    <select id="SkinComplexion" class="form-control" runat="server">
+                                        <option runat="server" value="Fair">Fair</option>
+                                        <option runat="server" value="Light">Light</option>
+                                        <option runat="server" value="Medium">Medium</option>
+                                        <option runat="server" value="Brown">Brown</option>
+                                        <option runat="server" value="Olive">Olive</option>
+                                        <option runat="server" value="Black">Black</option>                                        
+								  </select>
                                 </div>
 								<div class="clearfix"></div>
 							</div>
                               <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Diet : </label>
 								<div class="col-sm-7 form_radios">
-									<label><input type="checkbox" id="Vegetarian" class="chb2" runat="server" /> Vegetarian</label>
+									<label><input type="checkbox" id="Vegetarian" class="chb2" runat="server" checked="" /> Vegetarian</label>
                                     <label><input type="checkbox" id="Non_Vegetarian"  class="chb2" runat="server" /> Non Vegetarian</label>
 									</div>
 								<div class="clearfix"> </div>
@@ -221,7 +231,7 @@
                             <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Drink : </label>
 								<div class="col-sm-7 form_radios">
-									<label><input type="checkbox" id="Drinker" class="chb3" runat="server" />Drinker</label>
+									<label><input type="checkbox" id="Drinker" class="chb3" runat="server" checked="" />Drinker</label>
                                     <label><input type="checkbox" id="Non_Drinker" class="chb3" runat="server" />Non Drinker</label>
 									</div>
 								<div class="clearfix"> </div>
@@ -229,7 +239,7 @@
                              <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Smoke : </label>
 								<div class="col-sm-7 form_radios">
-									<label><input type="checkbox" id="Smoker" class="chb4" runat="server" />Smoker</label>
+									<label><input type="checkbox" id="Smoker" class="chb4" runat="server" checked="" />Smoker</label>
                                     <label><input type="checkbox" id="Non_Smoker" class="chb4" runat="server" />Non Smoker</label>                            
 									</div>
 								<div class="clearfix"> </div>
@@ -248,7 +258,28 @@
 							 <div class="form_but1">
 								<label class="col-sm-12 control-label1" for="sex"><h3>Family Details</h3> </label>
                                 <div class="clearfix"></div>
-							</div>                            
+							</div> 
+                              <div class="form_but1">
+								<label class="col-sm-5 control-label1">Father Name : </label>
+								<div class="col-sm-7 form_radios">                                     
+                                    <input runat="server" id="Father" type="text" class="form-control" required="required"/>
+								</div>
+								<div class="clearfix"> </div>
+							  </div>
+                              <div class="form_but1">
+								<label class="col-sm-5 control-label1">Mother Name : </label>
+								<div class="col-sm-7 form_radios">                                     
+                                    <input runat="server" id="Mother" type="text" class="form-control" required="required"/>
+								</div>
+								<div class="clearfix"> </div>
+							  </div> 
+                              <div class="form_but1">
+								<label class="col-sm-5 control-label1">Father Occupation : </label>
+								<div class="col-sm-7 form_radios">                                     
+                                    <input runat="server" id="FOccupation" type="text" class="form-control" required="required"/>
+								</div>
+								<div class="clearfix"> </div>
+							  </div>                          
                             <div class="form_but1">
 								<label class="col-sm-5 control-label1">Family Description : </label>
 								<div class="col-sm-7 form_radios">                                     

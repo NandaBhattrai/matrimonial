@@ -220,13 +220,31 @@ namespace matrimonial_project.View {
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl Age;
         
         /// <summary>
-        /// Height control.
+        /// HeightValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl Height;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator HeightValidator;
+        
+        /// <summary>
+        /// TextValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator TextValidator;
+        
+        /// <summary>
+        /// UserHeight control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText UserHeight;
         
         /// <summary>
         /// Weight control.
@@ -238,13 +256,13 @@ namespace matrimonial_project.View {
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl Weight;
         
         /// <summary>
-        /// Complexion control.
+        /// SkinComplexion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Complexion;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect SkinComplexion;
         
         /// <summary>
         /// Vegetarian control.
@@ -308,6 +326,33 @@ namespace matrimonial_project.View {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputFile Image;
+        
+        /// <summary>
+        /// Father control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Father;
+        
+        /// <summary>
+        /// Mother control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Mother;
+        
+        /// <summary>
+        /// FOccupation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText FOccupation;
         
         /// <summary>
         /// Textarea1 control.

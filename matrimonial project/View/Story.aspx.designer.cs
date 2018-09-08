@@ -103,6 +103,15 @@ namespace matrimonial_project.View {
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl email;
         
         /// <summary>
+        /// WDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl WDate;
+        
+        /// <summary>
         /// User control.
         /// </summary>
         /// <remarks>
@@ -119,15 +128,6 @@ namespace matrimonial_project.View {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl tel;
-        
-        /// <summary>
-        /// WDate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl WDate;
         
         /// <summary>
         /// upload control.

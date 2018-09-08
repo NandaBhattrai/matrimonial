@@ -1,16 +1,16 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Matrimonialhome.Master" AutoEventWireup="true" CodeBehind="DesiredPart.aspx.cs" Inherits="matrimonial_project.View.DesiredPart" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Matrimonialhome.Master" AutoEventWireup="true" CodeBehind="Partner.aspx.cs" Inherits="matrimonial_project.View.Partner" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-
+    <link href="../Content/select2/select2.css" rel="stylesheet" />
+    <script src="../Content/select2/select2.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="w3layouts-breadcrumbs text-center">
+        <div class="w3layouts-breadcrumbs text-center">
 		<div class="container">
 			<span class="agile-breadcrumbs"><a href="Home.aspx">Home</a>><span>Partner Description</span></span>
 		</div>
 	</div>
-    <asp:ScriptManager ID="adminScriptManager" runat="server" EnablePageMethods="true"></asp:ScriptManager>
-        <asp:UpdatePanel ID="updatePanel" runat="server">
-            <ContentTemplate>
+
+          
     	<!-- Search form -->
 	<div class="w3ls-list">
 		<div class="container">
@@ -36,9 +36,11 @@
                             <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Marital Status : </label>
 								<div class="col-sm-7 form_radios">
-									<input runat="server" id="rad_single" type="radio" name="marital" value="Single" checked=""/> Single &nbsp;&nbsp;
-									<input runat="server" id="rad_divorced" type="radio" name="marital" value="Divorced"/> Divorced&nbsp;&nbsp;
-                                   <input runat="server" id="rad_widow" type="radio"  name="marital" value="Widow"/>Widow
+									<select id="Marital" class="form-control select2" runat="server" multiple="true">
+                                        <option runat="server" value="Single">Single</option>
+                                        <option runat="server" value="Divorced">Divorced</option>
+                                        <option runat="server" value="Widow">Widow</option>                                                                                
+								  </select>
 								</div>
 								<div class="clearfix"> </div>
 							  </div>                                             		
@@ -53,28 +55,64 @@
                             <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Caste : </label>
 								<div class="col-sm-7 form_radios">
-								 <input runat="server" id="Caste" class="form-control" type="text" required="required" />
+								 <select id="Caste" class="form-control select2" runat="server" multiple="true">
+                                        <option runat="server" value="Brahmin">Brahmin</option>
+                                        <option runat="server" value="Chetri">Chetri</option>
+                                        <option runat="server" value="Newar">Newar</option>                                                                                
+                                        <option runat="server" value="Magar">Magar</option>
+                                        <option runat="server" value="Rai">Rai</option>
+                                        <option runat="server" value="Gurung">Gurung</option>
+                                     <option runat="server" value="Thakuri">Thakuri</option>
+                                        <option runat="server" value="Sunar">Sunar</option>
+                                        <option runat="server" value="Muslim">Muslim</option>                                                                                
+                                        <option runat="server" value="Tharu">Tharu</option>
+                                        <option runat="server" value="Christian">Christian</option>
+                                        <option runat="server" value="Sikh">Sikh</option>
+                                        <option runat="server" value="Jain">Jain</option>
+								  </select>
 								</div>
 								<div class="clearfix"> </div>
 							  </div>                           
                             <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Education : </label>
 								<div class="col-sm-7 form_radios">
-								    <input runat="server" id="Education" class="form-control" type="text" required="required"/>
+								    <select id="Education" class="form-control select2" runat="server" multiple="true">
+                                        <option runat="server" value="Bachelor">Bachelor</option>
+                                        <option runat="server" value="Illetrate">Illetrate</option>
+                                        <option runat="server" value="Intermediate">Intermediate</option>                                                                                
+                                        <option runat="server" value="Master">Master</option>
+                                        <option runat="server" value="phd">phd</option>
+                                        <option runat="server" value="SEE">SEE</option>
+                                        <option runat="server" value="Management">Management</option>
+                                        <option runat="server" value="Agriculture">Agriculture</option>
+                                        <option runat="server" value="Engineering">Engineering</option>                                                                                
+                                        <option runat="server" value="Software Engineering">Software Engineering</option>
+								  </select>
 								</div>
 								<div class="clearfix"> </div>
 							  </div>
                              <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Profession : </label>
 								<div class="col-sm-7 form_radios">
-								    <input type="text" id="Profession" class="form-control" runat="server" required="required" />
+								    <select id="Profession" class="form-control select2" runat="server" multiple="true">
+                                        <option runat="server" value="Engineer">Engineer</option>
+                                        <option runat="server" value="Teacher">Teacher</option>
+                                        <option runat="server" value="Doctor">Doctor</option>                                                                                
+                                        <option runat="server" value="Unemployed">Unemployed</option>
+                                        <option runat="server" value="Banker">Banker</option>
+                                        <option runat="server" value="Businessman">Businessman</option>                                        
+								  </select>
 								</div>
 								<div class="clearfix"> </div>
 							  </div>   
                              <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Country : </label>
 								<div class="col-sm-7 form_radios">
-								    <input runat="server" id="Country" type="text" class="form-control" required="required" />
+								    <select id="Country" class="form-control select2" runat="server" multiple="true">
+                                        <option runat="server" value="Nepal">Nepal</option>
+                                        <option runat="server" value="India">India</option>
+                                        <option runat="server" value="Pakistan">Pakistan</option>                                                                                                                        
+								  </select>
 								</div>
 								<div class="clearfix"> </div>
 							  </div>                           
@@ -103,7 +141,7 @@
                              <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Complexion : </label>
 								<div class="col-sm-7 form_radios">     
-                                     <select id="SkinComplexion" class="form-control" runat="server">
+                                     <select id="SkinComplexion" class="form-control select2" runat="server" multiple="true">
                                         <option runat="server" value="Fair">Fair</option>
                                         <option runat="server" value="Light">Light</option>
                                         <option runat="server" value="Medium">Medium</option>
@@ -117,29 +155,34 @@
                               <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Diet : </label>
 								<div class="col-sm-7 form_radios">
-									<input runat="server" id="rad_veg" type="radio" name="diet" value="Vegetarian" checked=""/> Vegetarian&nbsp;&nbsp;
-                                    <input runat="server" id="rad_non_veg" type="radio" name="diet" value="Non Vegetarian"/> Non Vegetarian<br />
+									<select id="Diet" class="form-control select2" runat="server" multiple="true">
+                                        <option runat="server" value="Vegetarian">Vegetarian</option>
+                                        <option runat="server" value="Non Vegetarian">Non Vegitarian</option>                                                                                                                      
+								  </select>
 									</div>
 								<div class="clearfix"> </div>
 							  </div>
                             <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Drink : </label>
 								<div class="col-sm-7 form_radios">
-										<input runat="server" id="rad_drinker" type="radio" name="drink" value="Drinker" checked=""/> Drinker&nbsp;&nbsp;
-                                    <input runat="server" id="rad_non_drinker" type="radio" name="drink" value="Non Drinker"/> Non Drinker<br />
+								<select id="Drink" class="form-control select2" runat="server" multiple="true">
+                                        <option runat="server" value="Drinker">Drinker</option>
+                                        <option runat="server" value="Non Drinker">Non Drinker</option>                                                                                                                      
+								  </select>
 									</div>
 								<div class="clearfix"> </div>
 							  </div>
                              <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Smoke : </label>
 								<div class="col-sm-7 form_radios">
-									<input runat="server" name="smoker" type="radio" id="rad_smoker" value="Smoker" checked=""/> Smoker&nbsp;&nbsp;
-                                    <input runat="server" name="smoker" type="radio" id="rad_non_smoker" value="Non Smoker" /> Non Smoker<br />
+								<select id="Smoke" class="form-control select2" runat="server" multiple="true">
+                                        <option runat="server" value="Smoker">Smoker</option>
+                                        <option runat="server" value="Non smoker">Non Smoker</option>                                                                                                                      
+								  </select>	
                                </div>
 								<div class="clearfix"> </div>
 							  </div>                         
-                              <asp:Button style="width:auto;" ID="ContentPlaceHolder1_Submit" runat="server" Text="Submit" OnClick="ContentPlaceHolder1_Submit_Click"/>
-							  <asp:Button ID="ContentPlaceHolder1_Cancel"  runat="server" Text="Cancel" OnClick="ContentPlaceHolder1_Cancel_Click"/>
+                              <asp:Button runat="server" ID="btn_Submit" Text="Submit" OnClick="btn_Submit_Click" />
                        </div>
 					</div>
                 </div>	
@@ -149,8 +192,10 @@
 	</div>  
 <script>
 // When the user scrolls the page, execute myFunction 
-window.onscroll = function() {myFunction()};
-
+    window.onscroll = function () { myFunction() };
+    $(document).ready(function () {
+        $('.select2').select2();
+    })
 function myFunction() {
   var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
   var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -158,6 +203,5 @@ function myFunction() {
   document.getElementById("myBar").style.width = scrolled + "%";
 }
 </script>
-                </ContentTemplate>
-            </asp:UpdatePanel>
+                
 </asp:Content>

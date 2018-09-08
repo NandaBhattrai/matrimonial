@@ -3,8 +3,7 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:Label runat="server" ID="Msg" Text="" Visible="false"></asp:Label>
-    <a href="Chat.aspx">Send Message</a>
+    <asp:Label runat="server" ID="Msg" Text="" Visible="false"></asp:Label>    
          	<!-- Interest profiles -->			
 			<div class="w3layouts_featured-profiles" style="padding-top:20px;">
 				<div class="container">

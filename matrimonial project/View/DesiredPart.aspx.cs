@@ -1,12 +1,8 @@
 ﻿using matrimonial_project.model;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace matrimonial_project.View
 {
@@ -18,6 +14,7 @@ namespace matrimonial_project.View
             {
                 if (!Page.IsPostBack)
                 {
+                    this.getGender();
                     DataTable data = this.getreligion();
                     if (data.Rows.Count > 0)
                     {
@@ -32,6 +29,30 @@ namespace matrimonial_project.View
             catch (Exception ex)
             {
 
+            }
+        }
+
+        private void getGender()
+        {
+            DataTable data = new DataTable();
+            string StrQuery = "select Gender from UserProfile where RegisterId=@RegisterId AND VerifiedStatus=1 AND ProfileStatus=1";
+            SqlCommand cmmd = new SqlCommand(StrQuery);
+            cmmd.Parameters.Add("@RegisterId", SqlDbType.Int).Value = Convert.ToInt16(Session["UserId"].ToString());
+            DBconnection conn = new DBconnection();
+            data = conn.SelectData(cmmd);
+            if (data.Rows.Count > 0)
+            {
+                DataRow row = data.Rows[0];
+                string sex = row["Gender"].ToString();
+                if (sex == "Male")
+                {
+                    rad_female.Checked = true;                    
+                }
+                else
+                {
+                    rad_male.Checked = true;
+                }
+                
             }
         }
 
@@ -83,7 +104,7 @@ namespace matrimonial_project.View
                     Smoke = "Smoker";
                 else
                     Smoke = "Non Smoker";
-
+                string skin = SkinComplexion.Value.ToString();
                 string Query = "INSERT INTO dbo.Partner (Gender,MaritalStatus,Religion,Caste,Education,Profession,Country,Agefrom,AgeTo,HeightFrom,HeightTo,Complexion,Diet,Drink,Smoke,RegisterId) VALUES (@Gender,@MaritalStatus,@Religion,@Caste,@Education,@Profession,@Country,@Agefrom,@AgeTo,@HeightFrom,@HeightTo,@Complexion,@Diet,@Drink,@Smoke,@RegisterId)";
                 SqlCommand cmmd = new SqlCommand(Query);
                 cmmd.Parameters.Add("@Gender", SqlDbType.VarChar).Value = Gender;
@@ -97,7 +118,7 @@ namespace matrimonial_project.View
                 cmmd.Parameters.Add("@AgeTo", SqlDbType.Int).Value = Convert.ToInt32(AgeTo.Value);
                 cmmd.Parameters.Add("@HeightFrom", SqlDbType.Float).Value = Convert.ToDouble(HeightFrom.Value);
                 cmmd.Parameters.Add("@HeightTo", SqlDbType.Float).Value = Convert.ToDouble(HeightTo.Value);
-                cmmd.Parameters.Add("@Complexion", SqlDbType.VarChar).Value = complexion.Value.Trim();
+                cmmd.Parameters.Add("@Complexion", SqlDbType.VarChar).Value = skin;
                 cmmd.Parameters.Add("@Diet", SqlDbType.VarChar).Value = Diet;
                 cmmd.Parameters.Add("@Drink", SqlDbType.VarChar).Value = Drink;
                 cmmd.Parameters.Add("@Smoke", SqlDbType.VarChar).Value = Smoke;
@@ -106,6 +127,8 @@ namespace matrimonial_project.View
                 bool result = conn.ExecuteData(cmmd);
                 if (result)
                 {
+                    string msg = "Wait For Profile Verification!!!!";
+                    Response.Write("<script>alert('" + msg + "')</script>");
                     Response.Redirect("Home.aspx", false);
                 }
                 else

@@ -17,87 +17,14 @@
 				<!-- slider -->
 				<div class="agile_featured-profiles">
 					<h2>Featured Profiles</h2>
-							<ul id="flexiselDemo3">
-								<li>	
-									<div class="col-md-3 biseller-column">
-										<a href="bride_profile.html">
-											<div class="profile-image">
-												<img src="../Content/matrimonial/images/p12.jpg" class="img-responsive" alt="profile image"/>
-												<div class="agile-overlay">
-												<h4>Profile ID: 458645</h4>
-													<ul>
-														<li><span>Age / Height</span>: 26 / 5'0''</li>
-														<li><span>Caste</span>: Ipsum</li>
-														<li><span>Religion</span>: Lorem</li>
-														<li><span>Profession</span>: IT Software</li>
-														<li><span>Profile Created By</span>: Self</li>
-														<li><span>Location</span>: Semrd, 7th c, Los</li>
-													</ul>
-												</div>
-											</div>
-										</a>
-									</div>
-                                    	<div class="col-md-3 biseller-column">
-										<a href="bride_profile.html">
-											<div class="profile-image">
-												<img src="../Content/matrimonial/images/p5.jpg" class="img-responsive" alt="profile image"/>
-												<div class="agile-overlay">
-												<h4>Profile ID: 458645</h4>
-													<ul>
-														<li><span>Age / Height</span>: 26 / 5'0''</li>
-														<li><span>Caste</span>: Ipsum</li>
-														<li><span>Religion</span>: Lorem</li>
-														<li><span>Profession</span>: IT Software</li>
-														<li><span>Profile Created By</span>: Self</li>
-														<li><span>Location</span>: Semrd, 7th c, Los</li>
-													</ul>
-												</div>
-											</div>
-										</a>
-									</div>
-                                    <div class="col-md-3 biseller-column">
-										<a href="groom_profile.html">
-											<div class="profile-image">
-												<img src="../Content/matrimonial/images/p9.jpg" class="img-responsive" alt="profile image">
-												<div class="agile-overlay">
-												<h4>Profile ID: 458645</h4>
-													<ul>
-														<li><span>Age / Height</span>: 26 / 5'0''</li>
-														<li><span>Caste</span>: Ipsum</li>
-														<li><span>Religion</span>: Lorem</li>
-														<li><span>Profession</span>: IT Software</li>
-														<li><span>Profile Created By</span>: Self</li>
-														<li><span>Location</span>: Semrd, 7th c, Los</li>
-													</ul>
-												</div>
-											</div>
-										</a>
-									</div>
-									<div class="col-md-3 biseller-column">
-										<a href="groom_profile.html">
-											<div class="profile-image">
-												<img src="../Content/matrimonial/images/p10.jpg" class="img-responsive" alt="profile image">
-												<div class="agile-overlay">
-												<h4>Profile ID: 458645</h4>
-													<ul>
-														<li><span>Age / Height</span>: 26 / 5'0''</li>
-														<li><span>Caste</span>: Ipsum</li>
-														<li><span>Religion</span>: Lorem</li>
-														<li><span>Profession</span>: IT Software</li>
-														<li><span>Profile Created By</span>: Self</li>
-														<li><span>Location</span>: Semrd, 7th c, Los</li>
-													</ul>
-												</div>
-											</div>
-										</a>
-									</div>
-							    </li>
-							</ul>
-					</div>   
+							<ul id="flexiselDemo3">							                 	
+                                    <asp:PlaceHolder runat="server" ID="test"></asp:PlaceHolder>
+  							</ul>
+  				</div>   
 			</div>
 			<!-- //slider -->				
 			</div>
-			<script type="text/javascript" src="js/jquery.flexisel.js"></script><!-- flexisel-js -->	
+			<!-- flexisel-js -->	<script src="../Content/matrimonial/js/jquery.flexisel.js"></script>
 					<script type="text/javascript">
 						 $(window).load(function() {
 							$("#flexiselDemo3").flexisel({
@@ -142,4 +69,26 @@
 		</div>
 	</div>
 	<!-- //Get started -->
+        <!--Partner Block-->
+    <div id="Partner_Edit" class="w3ls-list" runat="server" visible="false">
+		<div class="container">
+		<h2>Your Partner Description</h2>
+		<input runat="server"  id="Gender"/>
+        <input  runat="server"  id="AgeFrom"/>
+        <input  runat="server"  id="AgeTo"/>
+        <input runat="server"  id="HeightFrom"/>
+        <input runat="server"  id="HeightTo"/>
+        <input runat="server"  id="Marital"/>
+        <input  runat="server"  id="Religion"/>
+        <input runat="server"  id="Caste"/>
+        <input  runat="server"  id="Country"/>
+        <input runat="server"  id="Education"/>
+        <input runat="server"  id="Occupation"/>
+        <input runat="server"  id="Complexion"/>
+        <input runat="server"  id="Diet"/>
+        <input runat="server"  id="Drink"/>
+        <input   runat="server"  id="Smoke"/>
+	</div>
+	</div>
+    <!--Partner Block-->
 </asp:Content>

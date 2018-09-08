@@ -1,42 +1,24 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="Religion.aspx.cs" Inherits="matrimonial_project.View.Admin.Religion" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:ScriptManager ID="adminScriptManager" runat="server" EnablePageMethods="true"></asp:ScriptManager>
-        <asp:UpdatePanel ID="updatePanel" runat="server">
-            <ContentTemplate>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">   
     <!-- page content -->
         <div class="right_col" role="main">
-          <div class="">
-            <div class="page-title">
-              <div class="title_left">
-                <h3>Religion</h3>
-              </div>              
-            </div>            
-            <div class="clearfix"></div>
-            <div class="row">
+            <asp:Button runat="server" ID="Add_btn" Text="Add Religion" CssClass="btn btn-primary pull-right" OnClick="Add_btn_Click" />
+          <div class="row tile_count">           
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                  <div class="clearfix"></div>
-                  </div>
-                  <div class="x_content">                     
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">Religion</label>
-                      <input type="text" class="form-control" id="Religion_" runat="server"/>
-                    </div>
-                    <div class="form-group">
-                      <asp:Button runat="server" ID="add" Text="Add" OnClick="add_Click" CssClass="btn btn-primary"/>                  
-                    </div>                 
-                    <asp:Label runat="server" ID="msg" Text=""></asp:Label>
-              </div>                                    
-               </div>
-              </div>
-            </div>
-              <div class="clearfix"></div>
-              <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="x_panel">                  
-                  <div class="x_content">
+                    <h2>Religion List</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>                      
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>                  
+                  <div class="x_content" runat="server" id="List_Block">
                               <asp:Label ID="success" Text="" runat="server"></asp:Label>    
             <asp:GridView ID="ReligionData" runat="server" AllowPaging="true" OnPageIndexChanging="ReligionData_PageIndexChanging"
                 AutoGenerateColumns="false" OnRowCommand="ReligionData_RowCommand"
@@ -75,11 +57,18 @@
         <%=ReligionData.PageCount%>
         </i> 
          </div>
+                <div class="x_content" runat="server" id="Add_Block" visible="false">
+                    <asp:Label runat="server" ID="msg" Text=""></asp:Label>
+                    <div class="form-group">
+                        <input runat="server" id="Religion_" type="text" class="form-control" />
+                    </div>
+                    <div>
+                        <asp:Button runat="server" Text="Add" CssClass="btn btn-primary" OnClick="add_Click" />
+                    </div>
+                </div>
          </div>
-         </div> 
+         </div>               
           </div>
         </div>
-        <!-- /page content -->
-                </ContentTemplate>
-            </asp:UpdatePanel>
+        <!-- /page content -->               
 </asp:Content>

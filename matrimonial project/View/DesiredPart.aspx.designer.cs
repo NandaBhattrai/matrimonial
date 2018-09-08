@@ -157,13 +157,49 @@ namespace matrimonial_project.View {
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl AgeTo;
         
         /// <summary>
+        /// HeightValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator HeightValidator;
+        
+        /// <summary>
+        /// TextValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator TextValidator;
+        
+        /// <summary>
+        /// RequiredFieldValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        
+        /// <summary>
+        /// RegularExpressionValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
+        
+        /// <summary>
         /// HeightFrom control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl HeightFrom;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText HeightFrom;
         
         /// <summary>
         /// HeightTo control.
@@ -172,16 +208,16 @@ namespace matrimonial_project.View {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl HeightTo;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText HeightTo;
         
         /// <summary>
-        /// complexion control.
+        /// SkinComplexion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText complexion;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect SkinComplexion;
         
         /// <summary>
         /// rad_veg control.

@@ -25,7 +25,7 @@ namespace matrimonial_project.View.Admin
         {
             try
             {
-                string strquery = "SELECT * from dbo.Feedback order by Id";
+                string strquery = "SELECT * from dbo.Feedback order by Id DESC";
                 SqlCommand cmd = new SqlCommand(strquery);
                 DBconnection conn_ = new DBconnection();
                 DataTable dt = conn_.SelectData(cmd);

@@ -20,7 +20,7 @@ namespace matrimonial_project.View.Admin
         {
             try
             {
-                string strquery = "SELECT ProfileId,Name,Email,Mobile,Country,ProfileStatus,RegisterId,VerifiedStatus from dbo.UserProfile order by RegisterId";
+                string strquery = "SELECT ProfileId,Name,Email,Mobile,Country,ProfileStatus,RegisterId,VerifiedStatus from dbo.UserProfile order by RegisterId DESC";
                 SqlCommand cmd = new SqlCommand(strquery);
                 DBconnection conn_ = new DBconnection();
                 DataTable dt = conn_.SelectData(cmd);
