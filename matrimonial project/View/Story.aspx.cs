@@ -68,10 +68,10 @@ namespace matrimonial_project.View
             dt = conn_.SelectData(cmd);
             if (dt.Rows.Count > 0)
             {
-                Req_Block.Visible = false;
-                Block_first.Visible = false;
+                Block_first.Visible = true;
                 Request_Block.Visible = false;
                 Response_Block.Visible = true;
+                Req_Block.Visible = true;
                 response.Text = "Your Request Has Been Cancelled!!";
             }
         }

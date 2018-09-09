@@ -4481,6 +4481,7 @@
     <Content Include="Content\matrimonial\js\main.js" />
     <Content Include="Content\matrimonial\js\move-top.js" />
     <Content Include="Content\matrimonial\js\utils.js" />
+    <Content Include="View\MultiSearch.aspx" />
     <Content Include="View\Pages.aspx" />
     <Content Include="View\Partner.aspx" />
     <Content Include="View\Process.aspx" />
@@ -4682,6 +4683,13 @@
     </Compile>
     <Compile Include="View\Matrimonialhome.Master.designer.cs">
       <DependentUpon>Matrimonialhome.Master</DependentUpon>
+    </Compile>
+    <Compile Include="View\MultiSearch.aspx.cs">
+      <DependentUpon>MultiSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\MultiSearch.aspx.designer.cs">
+      <DependentUpon>MultiSearch.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Pages.aspx.cs">
       <DependentUpon>Pages.aspx</DependentUpon>

@@ -66,11 +66,11 @@ namespace matrimonial_project.View
               
                 string str = "SELECT * FROM dbo.UserProfile where Religion=@Religion ";
                 str += " AND Gender = @Gender AND(Age BETWEEN @AgeFrom AND @AgeTo) AND(Height BETWEEN @HeightFrom AND @HeightTo) AND";
-                str += " MaritalStatus = @MaritalStatus AND Country = @Country AND ProfileStatus = 1 AND VerifiedStatus = 1 AND(";
+                str += " MaritalStatus = @MaritalStatus AND Country = @Country AND Profession =@Profession AND ProfileStatus = 1 AND VerifiedStatus = 1 AND(";
       str += "(Caste LIKE '%' + @Caste + '%')";
                 str += "OR (Education LIKE '%' + @Education + '%')";
-      str += " OR (Profession LIKE '%' + @Profession + '%')";
-      str += " OR Complexion = @Complexion";
+     // str += " OR (Profession = @Profession)";
+      str += " OR (Complexion LIKE '%' + @Complexion + '%')";
                 str += " OR Diet = @Diet";
      str += " OR Drink = @Drink";
      str += " OR Smoker = @Smoker)";

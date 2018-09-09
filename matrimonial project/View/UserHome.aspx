@@ -16,7 +16,7 @@
 				<div class="container">
 				<!-- slider -->
 				<div class="agile_featured-profiles">
-					<h2>Featured Profiles</h2>
+					<h2>Suggested Profiles</h2>
 							<ul id="flexiselDemo3">							                 	
                                     <asp:PlaceHolder runat="server" ID="test"></asp:PlaceHolder>
   							</ul>
@@ -55,20 +55,20 @@
 			<!-- //featured profiles -->	
 	<!-- Assisted Service -->
 	<div class="agile-assisted-service text-center">
-		<h4>Assisted Service</h4>
+		<h4>Share Your Story</h4>
 		<p>Our Relationship Managers have helped thousands of members find their life partners.</p>
-		<a href="Assisted_Services.aspx">Know More</a>
+		<a href="Story.aspx">Get Started</a>
 	</div>
 	<!-- //Assisted Service -->	
 	
 	
-	<!-- Get started -->
+	<%--<!-- Get started -->
 	<div class="w3layous-story text-center">
 		<div class="container">
 			<h4>Your story !!!<a href="Story.aspx">Get started</a></h4>
 		</div>
 	</div>
-	<!-- //Get started -->
+	<!-- //Get started -->--%>
         <!--Partner Block-->
     <div id="Partner_Edit" class="w3ls-list" runat="server" visible="false">
 		<div class="container">

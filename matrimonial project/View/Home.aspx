@@ -441,7 +441,7 @@ $(document).ready(function(){
                     <div class="col-md-4 footer-grids">
 						<h3>Quick Links</h3>
 						<section>
-                        <ul>
+                        <ul>                            
 							<li><a href="Pages.aspx">About Us</a></li>
 							<li><a href="Pages.aspx">FAQ</a></li>	
 							<li><a href="Pages.aspx">Privacy Policy</a></li>

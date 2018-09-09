@@ -127,7 +127,7 @@ namespace matrimonial_project.View
                         }
                         else
                         {
-                            string msg = "Your credentials does not match";
+                            string msg = "UserName and Password does not match";
                             Response.Write("<script>alert('" + msg + "')</script>");
                         }
 

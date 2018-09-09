@@ -1,10 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Matrimonialhome.Master" AutoEventWireup="true" CodeBehind="Partner.aspx.cs" Inherits="matrimonial_project.View.Partner" EnableEventValidation="false" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Matrimonial.Master" AutoEventWireup="true" CodeBehind="MultiPartner.aspx.cs" Inherits="matrimonial_project.View.MultiPartner" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="../Content/select2/select2.css" rel="stylesheet" />
-    <script src="../Content/select2/select2.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <div class="w3layouts-breadcrumbs text-center">
+            <div class="w3layouts-breadcrumbs text-center">
 		<div class="container">
 			<span class="agile-breadcrumbs"><a href="Home.aspx">Home</a>><span>Partner Description</span></span>
 		</div>
@@ -163,7 +161,7 @@
 								<div class="col-sm-7 form_radios">
 									<select  id="diet" class="form-control" runat="server" >
                                         <option runat="server" value="Vegetarian">Vegetarian</option>
-                                        <option runat="server" value="Non Vegetarian">Non </option>                                                                                                                      
+                                        <option runat="server" value="Non Vegetarian">Non Vegetarian</option>                                                                                                                      
                                         <option runat="server" value="">Both </option>                                                                                                                      
 								  </select>
 									</div>
@@ -265,5 +263,4 @@ function myFunction() {
   document.getElementById("myBar").style.width = scrolled + "%";
 }
 </script>
-                
 </asp:Content>

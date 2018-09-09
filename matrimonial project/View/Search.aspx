@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Matrimonial.Master" AutoEventWireup="true" CodeBehind="Search.aspx.cs" Inherits="matrimonial_project.View.Search" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Matrimonial.Master" AutoEventWireup="true" CodeBehind="Search.aspx.cs" Inherits="matrimonial_project.View.Search" EnableEventValidation="false" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="../Content/matrimonial/css/ScrollIndicator.css" rel="stylesheet" />
@@ -14,8 +14,7 @@
 			<span class="agile-breadcrumbs"><a href="UserHome.aspx">Home</a> > <span>Search</span></span>
 		</div>
 	</div>
-	<!-- //breadcrumbs -->
-    
+	<!-- //breadcrumbs -->    
     	<!-- Search form -->
 	<div class="w3ls-list" runat="server" id="Search_block">
 		<div class="container">
@@ -38,17 +37,25 @@
 							</div>
 						    <div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Age in years : </label>
+                                <asp:RequiredFieldValidator runat="server" ForeColor="Red" ID="RequiredFieldValidator2" ControlToValidate="AgeFrom" ErrorMessage="Required Field" />
+                                <asp:RequiredFieldValidator runat="server" ForeColor="Red" ID="RequiredFieldValidator3" ControlToValidate="AgeTo" ErrorMessage="Required Field" />
 								<div class="col-sm-7 form_radios">    
-                                <input type="number" id="AgeFrom" runat="server" /><span>To</span>
-                                <input type="number" id="AgeTo" runat="server" />
+                                <input type="number" id="AgeFrom" runat="server" required="required"/><span>To</span>
+                                <input type="number" id="AgeTo" runat="server"  required="required"/>
                                  </div>
 								<div class="clearfix"></div>
 							</div>
 							<div class="form_but1">
 								<label class="col-sm-5 control-label1" for="sex">Height : </label>
+                                 <asp:RequiredFieldValidator runat="server" ForeColor="Red" ID="HeightValidator" ControlToValidate="HeightFrom" ErrorMessage="Required Field" />
+                                <asp:RegularExpressionValidator ID="TextValidator" ControlToValidate="HeightFrom" runat="server" ForeColor="Red"
+                                     ErrorMessage="*No Text" Display="Dynamic" ValidationExpression="[0-9]*\.?[0-9]*"></asp:RegularExpressionValidator>
+                                 <asp:RequiredFieldValidator runat="server" ForeColor="Red" ID="RequiredFieldValidator1" ControlToValidate="HeightTo" ErrorMessage="Required Field" />
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" ControlToValidate="HeightTo" runat="server" ForeColor="Red"
+                                     ErrorMessage="*No Text" Display="Dynamic" ValidationExpression="[0-9]*\.?[0-9]*"></asp:RegularExpressionValidator>
 								<div class="col-sm-7 form_radios">     
-                                <input type="number" id="HeightFrom" runat="server" /><span>To</span>
-                                <input type="number" id="HeightTo" runat="server" />
+                                <input type="number" id="HeightFrom" runat="server"/><span>To</span>
+                                <input type="number" id="HeightTo" runat="server"/>
                                 </div>
 								<div class="clearfix"></div>
 							</div>				
@@ -97,7 +104,7 @@
 								<label class="col-sm-5 control-label1" for="sex">Caste : </label>
 								<div class="col-sm-7 form_radios">
 								  <asp:DropDownList ID="Caste" runat="server">                                                            
-                                     </asp:DropDownList>
+                                  </asp:DropDownList>
 								</div>
 								<div class="clearfix"> </div>
 							  </div>			 
@@ -132,7 +139,7 @@
 			<!-- //slider -->
                 			
 			</div>
-			<script type="text/javascript" src="js/jquery.flexisel.js"></script><!-- flexisel-js -->	
+			<!-- flexisel-js -->	<script src="../Content/matrimonial/js/jquery.flexisel.js"></script>
 					<script type="text/javascript">
 						 $(window).load(function() {
 							$("#flexiselDemo3").flexisel({

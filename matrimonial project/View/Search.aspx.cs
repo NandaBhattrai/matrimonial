@@ -149,8 +149,7 @@ namespace matrimonial_project.View
                 string SearchCaste = Caste.SelectedItem.ToString();
                 string SearchProfession = Profession.SelectedItem.ToString();
                 string Stay_Address = Stay.SelectedItem.ToString();
-                bool male = rad_male.Checked;
-                bool female = rad_female.Checked;
+                bool male = rad_male.Checked;               
                 string Gender;
                 if (male)
                     Gender = "Male";

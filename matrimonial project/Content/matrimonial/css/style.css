@@ -808,9 +808,7 @@ p.w3ls-login a:hover {
 
 /*-- List of brides and grooms --*/
 .w3ls-list {
-	padding: 50px 0;   
-    margin-left:-100px;
-    margin-right:-100px; 
+	padding: 50px 0;     
 }
 .w3ls-aside {
     background: #fff;

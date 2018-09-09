@@ -1,11 +1,7 @@
 ﻿using matrimonial_project.model;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace matrimonial_project.View.Admin
@@ -68,7 +64,7 @@ namespace matrimonial_project.View.Admin
                         {
                             Sid.Value = args.ToString();
                             Date.Text = row["Date"].ToString();
-                            ReceiverName.Text = row["Receivername"].ToString();
+                            ReceiverName.Text = row["RUsername"].ToString();
                             SenderName.Text = row["SUserName"].ToString();
                             StoryMessage.Text = row["Story"].ToString();
                             string Photo = row["SImage"].ToString();
@@ -97,7 +93,7 @@ namespace matrimonial_project.View.Admin
         {
             try
             {
-                string strQuery = "update Story set Status=5 where StoryId = @StoryId "; ;
+                string strQuery = "update Story set Status=5 where StoryId = @StoryId "; 
                 SqlCommand cmd = new SqlCommand(strQuery);
                 cmd.Parameters.Add("@StoryId", SqlDbType.Int).Value = Sid.Value;
                 DBconnection conn_ = new DBconnection();
@@ -105,6 +101,7 @@ namespace matrimonial_project.View.Admin
                 if (result)
                 {
                     getStoryData();
+                    //this.DeactiveProfile();
                 }
             }
             catch (Exception ex)
@@ -112,5 +109,22 @@ namespace matrimonial_project.View.Admin
                 success.Text = Convert.ToString(ex);
             }
         }
+
+        //private void DeactiveProfile()
+        //{
+        //    string strQuery = "update UserProfile set ProfileStatus=0 where RUserName = @RUserName";
+        //    string Query = "update UserProfile set ProfileStatus=0 where SUserName = @SUserName";
+        //    SqlCommand cmd = new SqlCommand(strQuery);
+        //    SqlCommand cmmd = new SqlCommand(Query);
+        //    cmd.Parameters.Add("@RUserName", SqlDbType.VarChar).Value = ReceiverName.Text;
+        //    cmmd.Parameters.Add("@SUserName", SqlDbType.VarChar).Value = SenderName.Text;
+        //    DBconnection conn_ = new DBconnection();
+        //    bool result1 = conn_.ExecuteData(cmd);
+        //    bool result2 = conn_.ExecuteData(cmmd);
+        //    if (result1 & result2)
+        //    {
+        //        getStoryData();
+        //    }
+        //}
     }
 }
